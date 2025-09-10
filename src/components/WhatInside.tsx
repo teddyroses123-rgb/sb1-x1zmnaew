@@ -59,12 +59,12 @@ const WhatInside = () => {
       description: "Секреты красоты и здоровья"
     },
     {
-      icon: "https://i.ibb.co/p6jKNLy1/image.png",
+      icon: "https://i.ibb.co/Q1LSCHC/image.png",
       title: "Видео МФР",
       description: "Миофасциальный релиз для расслабления и восстановления"
     },
     {
-      icon: "https://i.ibb.co/Q1LSCHC/image.png",
+      icon: "https://i.ibb.co/p6jKNLy1/image.png",
       title: "Индивидуальный подсчёт КБЖУ",
       description: "Для первых участников канала"
     }
