@@ -5,7 +5,6 @@ import { useScrollAnimation } from '../hooks/useScrollAnimation';
 const SpecialOffer = () => {
   const headerRef = useScrollAnimation();
   const leftContentRef = useScrollAnimation();
-  const rightContentRef = useScrollAnimation();
   const sloganRef = useScrollAnimation();
 
   const achievements = [
@@ -23,18 +22,29 @@ const SpecialOffer = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-cream-50 to-vanilla-100 relative overflow-hidden">
+    <section className="py-20 relative overflow-hidden min-h-screen">
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <img 
+          src="https://i.ibb.co/60S5Z2FK/removebg-preview.png" 
+          alt="Background"
+          className="w-full h-full object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 to-white/60"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-cream-50/80 to-vanilla-100/80"></div>
+      </div>
+      
       <div className="container mx-auto px-6">
         {/* Header */}
-        <div ref={headerRef} className="text-center mb-16 animate-on-scroll">
+        <div ref={headerRef} className="text-center mb-16 animate-on-scroll relative z-10">
           <div className="inline-flex items-center gap-2 bg-gradient-to-r from-coral-500 to-terracotta-500 text-white px-8 py-3 rounded-full shadow-lg mb-6">
             <span className="font-bold text-lg font-montserrat">ОБ АВТОРЕ / ЭКСПЕРТЕ</span>
           </div>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-center max-w-7xl mx-auto">
+        <div className="max-w-4xl mx-auto relative z-10">
           {/* Left Side - Author Info (no photo) */}
-          <div ref={leftContentRef} className="animate-on-scroll">
+          <div ref={leftContentRef} className="animate-on-scroll max-w-2xl">
             <div className="bg-white/95 backdrop-blur-sm rounded-3xl p-8 shadow-2xl">
               {/* Author Info without photo */}
               <div className="mb-8">
@@ -132,32 +142,10 @@ const SpecialOffer = () => {
               </div>
             </div>
           </div>
-
-          {/* Right Side - Full Author Photo */}
-          <div ref={rightContentRef} className="animate-on-scroll-right">
-            <div className="relative h-[800px] rounded-3xl overflow-hidden shadow-2xl">
-              <img 
-                src="https://i.ibb.co/Pst5ZD74/IMG-20250910-181202-380.jpg"
-                alt="Ася - автор рецептбука"
-                className="w-full h-full object-cover object-center"
-              />
-              
-              {/* Gradient overlay for better text readability if needed */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
-              
-              {/* Optional floating badge */}
-              <div className="absolute top-6 left-6 bg-white/90 backdrop-blur-sm rounded-2xl px-4 py-2 shadow-lg">
-                <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                  <span className="text-graphite font-semibold font-montserrat">Фитнес-тренер</span>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
 
         {/* Slogan */}
-        <div ref={sloganRef} className="text-center mt-20 animate-on-scroll">
+        <div ref={sloganRef} className="text-center mt-20 animate-on-scroll relative z-10">
           <div className="relative max-w-4xl mx-auto">
             <div className="absolute inset-0 bg-gradient-to-r from-coral-400 to-terracotta-400 rounded-3xl blur-2xl opacity-20 animate-pulse"></div>
             <div className="relative bg-gradient-to-r from-coral-500 to-terracotta-400 text-white rounded-3xl p-8 shadow-2xl transform hover:scale-105 transition-all duration-300">
