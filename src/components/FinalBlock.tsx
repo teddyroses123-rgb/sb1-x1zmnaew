@@ -86,7 +86,7 @@ const FinalBlock = () => {
             <div className="flex items-center gap-4">
               <CreditCard className="w-8 h-8 text-gray-400" />
               <Smartphone className="w-8 h-8 text-gray-400" />
-              <span className="text-gray-400 text-sm font-manrope">Visa • Mastercard • МИР • СБП</span>
+              <span className="text-gray-400 text-sm font-manrope">Visa • Mastercard</span>
             </div>
           </div>
           
@@ -95,25 +95,6 @@ const FinalBlock = () => {
           </p>
         </div>
 
-        {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-          <div className="animate-fade-in-up">
-            <div className="text-3xl font-bold text-coral-400 mb-2 font-montserrat">5247+</div>
-            <div className="text-gray-400 font-manrope">Довольных покупателей</div>
-          </div>
-          <div className="animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
-            <div className="text-3xl font-bold text-mint-400 mb-2 font-montserrat">98%</div>
-            <div className="text-gray-400 font-manrope">Положительных отзывов</div>
-          </div>
-          <div className="animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-            <div className="text-3xl font-bold text-lime-400 mb-2 font-montserrat">200+</div>
-            <div className="text-gray-400 font-manrope">Проверенных рецептов</div>
-          </div>
-          <div className="animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
-            <div className="text-3xl font-bold text-terracotta-400 mb-2 font-montserrat">24/7</div>
-            <div className="text-gray-400 font-manrope">Доступ к рецептам</div>
-          </div>
-        </div>
       </div>
 
       {/* Footer */}
