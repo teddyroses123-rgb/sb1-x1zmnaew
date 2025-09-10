@@ -54,6 +54,36 @@
   display: none !important;
 }
 
+/* Additional rules to hide Bolt watermark */
+*[class*="watermark"],
+*[id*="watermark"],
+*[class*="made-in"],
+*[id*="made-in"],
+*[class*="bolt-branding"],
+*[id*="bolt-branding"],
+div[style*="position: fixed"][style*="bottom"],
+div[style*="position: absolute"][style*="bottom"],
+*:contains("Made in Bolt"),
+*:contains("made in bolt"),
+*:contains("MADE IN BOLT") {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  height: 0 !important;
+  width: 0 !important;
+  overflow: hidden !important;
+  position: absolute !important;
+  left: -9999px !important;
+}
+
+/* Hide any fixed positioned elements at the bottom */
+body > div:last-child[style*="position: fixed"],
+body > div:last-child[style*="bottom"],
+#root ~ div,
+#root ~ * {
+  display: none !important;
+}
+
 @keyframes shimmer {
   0% {
     transform: translateX(-100%) skewX(-12deg);
