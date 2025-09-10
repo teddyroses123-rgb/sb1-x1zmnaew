@@ -34,6 +34,7 @@ const SpecialOffer = () => {
                 alt="Ася - автор рецептов"
                 className="w-full h-auto max-w-lg mx-auto"
                 style={{ minHeight: '500px', objectFit: 'contain' }}
+                style={{ minHeight: '500px', objectFit: 'contain' }}
                 style={{ maxHeight: '600px', objectFit: 'contain' }}
               />
             </div>
