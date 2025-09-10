@@ -53,8 +53,15 @@ const SpecialOffer = () => {
           <div ref={leftContentRef} className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-xl animate-on-scroll">
             {/* Photo Placeholder */}
             <div className="text-center mb-6">
-              <div className="w-24 h-24 bg-gradient-to-br from-lime-400 to-green-400 rounded-full mx-auto mb-3 flex items-center justify-center">
-                <span className="text-white text-2xl font-bold font-montserrat">А</span>
+              <div className="relative w-24 h-24 mx-auto mb-3">
+                <img 
+                  src="https://i.ibb.co/Pst5ZD74/IMG-20250910-181202-380.jpg"
+                  alt="Ася - автор рецептбука"
+                  className="w-24 h-24 rounded-full object-cover shadow-lg border-4 border-lime-400"
+                />
+                <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-lime-400 rounded-full flex items-center justify-center border-2 border-white">
+                  <span className="text-white text-xs">✓</span>
+                </div>
               </div>
               <h3 className="text-2xl font-bold text-graphite mb-1 font-montserrat">Ася</h3>
               <p className="text-lime-600 font-medium text-sm font-manrope">Сертифицированный фитнес-тренер</p>
