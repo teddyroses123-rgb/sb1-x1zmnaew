@@ -1,5 +1,5 @@
 import React from 'react';
-import { Award, Target, Heart, CheckCircle, ArrowRight, Shield, Euro, Dumbbell } from 'lucide-react';
+import { Award, Target, Heart, CheckCircle, ArrowRight, Shield, Euro, Dumbbell, User, BookOpen, Zap, Star } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const SpecialOffer = () => {
@@ -7,18 +7,43 @@ const SpecialOffer = () => {
   const leftContentRef = useScrollAnimation();
   const sloganRef = useScrollAnimation();
 
-  const achievements = [
-    { icon: Target, text: "–20 кг личный результат", color: "from-lime-400 to-green-400" },
-    { icon: Dumbbell, text: "Подтянутое тело и пресс", color: "from-lime-400 to-green-400" },
-    { icon: Award, text: "Уверенность в себе", color: "from-lime-400 to-green-400" },
-    { icon: Heart, text: "Большая любовь к вкусной еде", color: "from-lime-400 to-green-400" }
-  ];
-
-  const howItWorks = [
-    "Нажимаешь «Купить доступ» и оплачиваешь",
-    "Попадаешь внутрь закрытого канала",
-    "Начинаешь челлендж «7 дней завтраков» и выбираешь рецепты под свой день",
-    "Ловишь бонусы запуска; первым участникам — индивидуальный подсчёт КБЖУ"
+  const articles = [
+    {
+      icon: User,
+      title: "Кто такая Ася?",
+      content: "Сертифицированный фитнес-тренер, в процессе активного обучения на нутрициолога. Готовится к фитнес-бикини, тренируется сама и тренирует людей.",
+      color: "from-coral-400 to-terracotta-400"
+    },
+    {
+      icon: Target,
+      title: "Личные результаты",
+      content: "–20 кг, подтянутое тело, пресс, уверенность в себе и большая любовь к вкусной еде.",
+      color: "from-lime-400 to-green-400"
+    },
+    {
+      icon: Heart,
+      title: "Миссия канала",
+      content: "По-новому, без страха и запретов показать, что такое сбалансированное правильное питание.",
+      color: "from-pink-400 to-rose-400"
+    },
+    {
+      icon: BookOpen,
+      title: "Как это работает",
+      content: "Нажимаешь «Купить доступ» → попадаешь в закрытый канал → начинаешь челлендж «7 дней завтраков» → получаешь бонусы.",
+      color: "from-blue-400 to-indigo-400"
+    },
+    {
+      icon: Euro,
+      title: "Специальная цена",
+      content: "Вместо 19 € только 12 € (скидка 37%). Пожизненный доступ ко всем материалам и обновлениям.",
+      color: "from-amber-400 to-orange-400"
+    },
+    {
+      icon: Shield,
+      title: "Гарантии",
+      content: "Безопасная оплата, мгновенный доступ после покупки, возврат средств в течение 14 дней.",
+      color: "from-emerald-400 to-teal-400"
+    }
   ];
 
   return (
@@ -35,116 +60,95 @@ const SpecialOffer = () => {
         </div>
 
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left Side - Author Info */}
-            <div ref={leftContentRef} className="animate-on-scroll">
-              <div className="bg-white/95 backdrop-blur-sm rounded-3xl p-8 shadow-2xl">
-                {/* Author Info without photo */}
-                <div className="mb-8">
-                  <h3 className="text-4xl font-bold text-graphite mb-3 font-montserrat">Ася</h3>
-                  <p className="text-coral-600 font-semibold text-xl font-manrope">Сертифицированный фитнес-тренер</p>
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            {/* Left Side - Articles */}
+            <div ref={leftContentRef} className="animate-on-scroll space-y-6">
+              {articles.map((article, index) => (
+                <div 
+                  key={index}
+                  className="bg-white/95 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-fade-in-up"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  <div className="flex items-start gap-4">
+                    <div className={`w-12 h-12 bg-gradient-to-br ${article.color} rounded-xl flex items-center justify-center shadow-lg flex-shrink-0`}>
+                      <article.icon className="w-6 h-6 text-white" />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-xl font-bold text-graphite mb-3 font-montserrat">
+                        {article.title}
+                      </h3>
+                      <p className="text-graphite leading-relaxed font-manrope">
+                        {article.content}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+
+              {/* CTA Button */}
+              <div className="mt-8">
+                <button className="w-full bg-gradient-to-r from-coral-500 to-terracotta-400 text-white py-4 rounded-2xl font-bold text-xl hover:from-coral-600 hover:to-terracotta-500 transition-all duration-300 hover:scale-105 hover:shadow-xl mb-4 font-montserrat flex items-center justify-center gap-2">
+                  КУПИТЬ ДОСТУП ЗА 12 €
+                  <ArrowRight className="w-6 h-6" />
+                </button>
+
+                <div className="text-center">
+                  <div className="flex items-center justify-center gap-2">
+                    <Shield className="w-5 h-5 text-mint-500" />
+                    <span className="text-graphite font-medium font-manrope">Безопасная оплата</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Side - Photo like in attachment */}
+            <div className="relative">
+              <div className="bg-white rounded-3xl shadow-2xl overflow-hidden">
+                {/* Photo */}
+                <div className="relative">
+                  <img 
+                    src="https://images.pexels.com/photos/3768911/pexels-photo-3768911.jpeg?auto=compress&cs=tinysrgb&w=600&h=800&fit=crop"
+                    alt="Ася - фитнес-тренер"
+                    className="w-full h-[600px] object-cover"
+                  />
+                  
+                  {/* Overlay with handwritten style text */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                  
+                  {/* Handwritten style notes */}
+                  <div className="absolute top-6 right-6 bg-white/90 backdrop-blur-sm rounded-lg p-4 shadow-lg transform rotate-2">
+                    <div className="text-graphite font-handwriting text-lg">
+                      <div className="mb-2">Ася ✨</div>
+                      <div className="text-sm text-coral-600">Фитнес-тренер</div>
+                    </div>
+                  </div>
+
+                  <div className="absolute bottom-6 left-6 bg-white/90 backdrop-blur-sm rounded-lg p-4 shadow-lg transform -rotate-1">
+                    <div className="text-graphite font-handwriting">
+                      <div className="text-lg font-bold mb-1">-20 кг</div>
+                      <div className="text-sm">личный результат</div>
+                    </div>
+                  </div>
+
+                  <div className="absolute top-1/2 left-6 bg-lime-400 text-white rounded-full p-3 shadow-lg transform -rotate-12 animate-bounce-subtle">
+                    <Star className="w-6 h-6" />
+                  </div>
                 </div>
 
-                {/* About Text */}
-                <div className="mb-8">
-                  <p className="text-graphite leading-relaxed font-manrope mb-4 text-lg">
-                    <strong>Ася</strong> — сертифицированный фитнес-тренер, в процессе активного обучения на нутрициолога.
-                  </p>
-                  <p className="text-graphite leading-relaxed font-manrope mb-6 text-lg">
-                    Готовится к фитнес-бикини, тренируется сама и тренирует людей. Из личного опыта: –20 кг, + подтянутое тело, +пресс + уверенность в себе и большая любовь к вкусной еде.
-                  </p>
-                  
-                  <div className="bg-gradient-to-r from-coral-100 to-terracotta-100 rounded-2xl p-6">
-                    <p className="text-graphite font-medium italic font-manrope text-lg">
-                      <strong>Зачем я создала канал:</strong> чтобы по-новому, без страха и запретов показать, что такое сбалансированное ПП.
+                {/* Bottom section with key info */}
+                <div className="p-6 bg-gradient-to-r from-coral-50 to-terracotta-50">
+                  <div className="text-center">
+                    <h3 className="text-2xl font-bold text-graphite mb-2 font-montserrat">
+                      Система: баланс, вкус и результат
+                    </h3>
+                    <p className="text-sage font-manrope">
+                      Не диета — образ жизни
                     </p>
                   </div>
                 </div>
-
-                {/* Achievements Grid */}
-                <div className="grid grid-cols-2 gap-4 mb-8">
-                  {achievements.map((achievement, index) => (
-                    <div 
-                      key={index}
-                      className="flex items-center gap-3 animate-fade-in-up"
-                      style={{ animationDelay: `${index * 0.1}s` }}
-                    >
-                      <div className={`w-12 h-12 bg-gradient-to-br ${achievement.color} rounded-xl flex items-center justify-center shadow-lg`}>
-                        <achievement.icon className="w-6 h-6 text-white" />
-                      </div>
-                      <span className="text-graphite font-medium font-manrope">{achievement.text}</span>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Price and Conditions */}
-                <div className="grid grid-cols-2 gap-4 mb-8">
-                  {/* Price */}
-                  <div className="bg-gradient-to-br from-coral-100 to-terracotta-100 rounded-2xl p-4 text-center">
-                    <h4 className="text-lg font-bold text-graphite mb-2 font-montserrat flex items-center justify-center gap-2">
-                      <Euro className="w-5 h-5 text-coral-500" />
-                      Цена
-                    </h4>
-                    <div className="flex items-center justify-center gap-2 mb-2">
-                      <span className="text-lg text-sage line-through font-montserrat">19 €</span>
-                      <span className="text-2xl font-bold text-coral-500 font-montserrat">12 €</span>
-                    </div>
-                    <div className="bg-coral-400 text-white px-2 py-1 rounded-full font-bold text-xs font-montserrat">-37%</div>
-                  </div>
-
-                  {/* Access */}
-                  <div className="bg-gradient-to-br from-mint-100 to-teal-100 rounded-2xl p-4 text-center">
-                    <h4 className="text-lg font-bold text-graphite mb-2 font-montserrat flex items-center justify-center gap-2">
-                      <Shield className="w-5 h-5 text-mint-500" />
-                      Доступ
-                    </h4>
-                    <div className="text-2xl font-bold text-mint-500 mb-2 font-montserrat">∞</div>
-                    <p className="text-sage text-sm font-manrope">Навсегда</p>
-                  </div>
-                </div>
-
-                {/* How it Works */}
-                <div className="mb-8">
-                  <h3 className="text-xl font-bold text-graphite mb-6 font-montserrat">Как это работает:</h3>
-                  
-                  <div className="space-y-4 mb-8">
-                    {howItWorks.map((step, index) => (
-                      <div 
-                        key={index}
-                        className="flex items-start gap-4"
-                      >
-                        <div className="w-8 h-8 bg-gradient-to-br from-coral-400 to-terracotta-400 rounded-full flex items-center justify-center text-white font-bold text-sm font-montserrat flex-shrink-0">
-                          {index + 1}
-                        </div>
-                        <span className="text-graphite font-manrope pt-1">{step}</span>
-                      </div>
-                    ))}
-                  </div>
-
-                  <button className="w-full bg-gradient-to-r from-coral-500 to-terracotta-400 text-white py-4 rounded-2xl font-bold text-xl hover:from-coral-600 hover:to-terracotta-500 transition-all duration-300 hover:scale-105 hover:shadow-xl mb-4 font-montserrat flex items-center justify-center gap-2">
-                    КУПИТЬ ДОСТУП
-                    <ArrowRight className="w-6 h-6" />
-                  </button>
-
-                  <div className="text-center">
-                    <div className="flex items-center justify-center gap-2">
-                      <Shield className="w-5 h-5 text-mint-500" />
-                      <span className="text-graphite font-medium font-manrope">Безопасная оплата</span>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
-
-            {/* Right Side - Full Height Photo */}
-              <div className="relative">
-                <img 
-                  src="https://i.ibb.co/60S5Z2FK/removebg-preview.png"
-                  alt="Ася - фитнес-тренер"
-                  className="w-full h-auto max-w-lg"
-                />
-              </div>
-            </div>
+          </div>
         </div>
 
         {/* Slogan */}
@@ -157,7 +161,7 @@ const SpecialOffer = () => {
               <div className="absolute bottom-4 left-6 w-2 h-2 bg-yellow-300 rounded-full animate-bounce"></div>
               
               <h3 className="text-3xl lg:text-4xl font-bold font-montserrat leading-tight">
-                Не диета. Система: баланс, вкус и результат
+                Начни менять свою жизнь уже сегодня!
               </h3>
             </div>
           </div>
