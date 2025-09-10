@@ -4,36 +4,36 @@ import { Gift, Sparkles, Clock, Star } from 'lucide-react';
 const Bonuses = () => {
   const bonuses = [
     {
-      icon: "https://i.ibb.co/zhKrsd6r/image.png",
+      icon: "https://i.ibb.co/R4T0DYTX/image.png",
       title: "30 рецептов смузи",
       description: "Детокс-смузи для очищения организма и ускорения метаболизма",
       value: "БОНУС",
-      bgColor: "from-yellow-300 to-yellow-400",
-      textColor: "text-yellow-900"
+      bgColor: "from-yellow-100 to-yellow-200",
+      textColor: "text-yellow-800"
     },
     {
-      icon: "https://i.ibb.co/ymcJmS3B/image.png",
+      icon: "https://i.ibb.co/Q1LSCHC/image.png",
       title: "Гид по суперфудам",
       description: "Полный справочник полезных продуктов и их свойств",
       value: "БОНУС",
-      bgColor: "from-blue-300 to-blue-400",
-      textColor: "text-blue-900"
+      bgColor: "from-blue-100 to-blue-200",
+      textColor: "text-blue-800"
     },
     {
-      icon: "https://i.ibb.co/CsbS6DYM/image.png",
+      icon: "https://i.ibb.co/p6jKNLy1/image.png",
       title: "Планы питания на неделю",
       description: "Готовые меню на 7 дней с рецептами и списками покупок",
       value: "БОНУС",
-      bgColor: "from-green-300 to-green-400",
-      textColor: "text-green-900"
+      bgColor: "from-green-100 to-green-200",
+      textColor: "text-green-800"
     },
     {
       icon: "https://i.ibb.co/XhNmmLM/image.png",
       title: "Рецепты для особых случаев",
       description: "Праздничные блюда, которые не навредят фигуре",
       value: "БОНУС",
-      bgColor: "from-purple-300 to-purple-400",
-      textColor: "text-purple-900"
+      bgColor: "from-purple-100 to-purple-200",
+      textColor: "text-purple-800"
     }
   ];
 
