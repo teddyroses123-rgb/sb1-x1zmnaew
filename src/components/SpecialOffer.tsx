@@ -137,24 +137,12 @@ const SpecialOffer = () => {
             </div>
 
             {/* Right Side - Full Height Photo */}
-            {/* Right Side - Photo */}
-            <div className="flex justify-center lg:justify-end">
-              <div className="relative w-full max-w-md">
-                {/* Main Photo */}
+              <div className="relative">
                 <img 
                   src="https://i.ibb.co/60S5Z2FK/removebg-preview.png"
                   alt="Ася - фитнес-тренер"
-                  className="w-full h-[600px] object-contain rounded-3xl shadow-2xl bg-gradient-to-b from-coral-50 to-terracotta-50"
+                  className="w-full h-auto max-w-lg"
                 />
-                
-                {/* Badge */}
-                <div className="absolute top-4 left-4 bg-gradient-to-r from-coral-500 to-terracotta-400 text-white px-4 py-2 rounded-full font-bold text-sm font-montserrat shadow-lg z-10">
-                  Фитнес-тренер
-                </div>
-                
-                {/* Decorative elements */}
-                <div className="absolute -top-4 -right-4 w-8 h-8 bg-lime-400 rounded-full animate-bounce-subtle"></div>
-                <div className="absolute bottom-10 -left-4 w-6 h-6 bg-coral-400 rounded-full animate-float"></div>
               </div>
             </div>
           </div>
