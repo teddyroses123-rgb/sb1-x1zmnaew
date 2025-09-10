@@ -161,13 +161,13 @@ const WhatInside = () => {
               const bonusRef = useScrollAnimation();
               // Цвета для карточек - первая карточка более темная для лучшей читаемости
               const cardColors = [
-                'bg-gradient-to-br from-orange-200 to-orange-300', // Изменили с желтого на оранжевый
+                'bg-gradient-to-br from-orange-400 to-red-400', // Еще более контрастный оранжево-красный
                 'bg-gradient-to-br from-blue-100 to-blue-200',
                 'bg-gradient-to-br from-green-100 to-green-200',
                 'bg-gradient-to-br from-purple-100 to-purple-200'
               ];
               const textColors = [
-                'text-orange-800', // Изменили с желтого на оранжевый
+                'text-white', // Белый текст для лучшей читаемости
                 'text-blue-800',
                 'text-green-800',
                 'text-purple-800'
@@ -206,7 +206,7 @@ const WhatInside = () => {
 
         {/* CTA Button */}
         <div ref={ctaRef} className="text-center animate-on-scroll">
-          <button className="group bg-gradient-to-r from-lime-400 to-green-400 text-white px-12 py-4 rounded-full font-bold text-xl hover:from-lime-500 hover:to-green-500 transition-all duration-300 hover:scale-105 hover:shadow-xl font-montserrat relative overflow-hidden animate-pulse-gentle before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/30 before:to-transparent before:translate-x-[-100%] before:animate-[shimmer_2s_infinite] before:skew-x-12">
+          <button className="group bg-gradient-to-r from-coral-500 to-terracotta-500 text-white px-12 py-4 rounded-full font-bold text-xl hover:from-coral-600 hover:to-terracotta-600 transition-all duration-300 hover:scale-105 hover:shadow-2xl font-montserrat relative overflow-hidden animate-pulse-gentle before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/30 before:to-transparent before:translate-x-[-100%] before:animate-[shimmer_2s_infinite] before:skew-x-12 shadow-lg">
             <span className="relative z-10">ПОЛУЧИТЬ ДОСТУП</span>
           </button>
         </div>
