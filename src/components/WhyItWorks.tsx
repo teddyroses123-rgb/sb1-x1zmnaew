@@ -38,7 +38,6 @@ const WhyItWorks = () => {
   }, []);
 
   const benefits = [
-    "200+ проверенных рецептов",
     "Мгновенный доступ после оплаты", 
     "Бонусы в подарок",
     "Пожизненный доступ",
@@ -152,21 +151,6 @@ const WhyItWorks = () => {
           </p>
         </div>
 
-        {/* Stats */}
-        <div className="grid grid-cols-3 gap-2 text-center max-w-lg mx-auto">
-          <div className="animate-fade-in-up">
-            <div className="text-2xl font-bold text-yellow-300 mb-1 font-montserrat">5247+</div>
-            <div className="text-white/80 text-xs font-manrope">покупателей</div>
-          </div>
-          <div className="animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
-            <div className="text-2xl font-bold text-lime-300 mb-1 font-montserrat">98%</div>
-            <div className="text-white/80 text-xs font-manrope">довольных</div>
-          </div>
-          <div className="animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-            <div className="text-2xl font-bold text-white mb-1 font-montserrat">200+</div>
-            <div className="text-white/80 text-xs font-manrope">рецептов</div>
-          </div>
-        </div>
       </div>
     </section>
   );
