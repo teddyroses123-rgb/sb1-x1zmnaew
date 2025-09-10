@@ -54,12 +54,12 @@ const WhatInside = () => {
       description: "Наглядная схема баланса БЖУ и порций"
     },
     {
-      icon: "https://i.ibb.co/R4T0DYTX/image.png",
+      icon: "https://i.ibb.co/p6jKNLy1/image.png",
       title: "Рекомендации по уходу за кожей",
       description: "Секреты красоты и здоровья"
     },
     {
-      icon: "https://i.ibb.co/p6jKNLy1/image.png",
+      icon: "https://i.ibb.co/R4T0DYTX/image.png",
       title: "Видео МФР",
       description: "Миофасциальный релиз для расслабления и восстановления"
     },
