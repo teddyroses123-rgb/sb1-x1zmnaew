@@ -142,7 +142,7 @@ const SpecialOffer = () => {
                 <img 
                   src="https://i.ibb.co/60S5Z2FK/removebg-preview.png" 
                   alt="Ася - фитнес-тренер"
-                  className="w-full max-w-lg h-[800px] object-cover object-center rounded-3xl shadow-2xl"
+                  className="w-full max-w-lg h-[800px] object-contain object-center rounded-3xl shadow-2xl bg-gradient-to-b from-cream-50 to-vanilla-100"
                 />
                 
                 {/* Badge */}
