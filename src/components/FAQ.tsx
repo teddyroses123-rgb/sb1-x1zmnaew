@@ -40,7 +40,7 @@ const FAQ = () => {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-b from-sage-50 to-powder-100">
+    <section className="py-20 bg-gradient-to-b from-gray-50 to-gray-100 relative overflow-hidden">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 bg-white px-6 py-3 rounded-full shadow-lg mb-6">
@@ -51,59 +51,131 @@ const FAQ = () => {
           <h2 className="text-4xl lg:text-5xl font-bold text-graphite mb-6 font-montserrat">
             Ответы на ваши вопросы
           </h2>
-          <p className="text-xl text-sage max-w-3xl mx-auto font-manrope">
-            Собрали самые популярные вопросы от наших покупателей
-          </p>
-          
         </div>
 
-        {/* Декоративное фоновое изображение */}
-        <div className="absolute top-0 right-0 w-1/2 h-full opacity-10 pointer-events-none overflow-hidden">
-          <img 
-            src="https://i.ibb.co/MDnPRNFr/image.png" 
-            alt="Декоративный элемент"
-            className="w-full h-full object-contain transform scale-150 translate-x-1/4"
-          />
-        </div>
+        {/* Layout inspired by the reference image */}
+        <div className="relative max-w-7xl mx-auto">
+          {/* Central Bowl Image */}
+          <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 z-10">
+            <img 
+              src="https://i.ibb.co/MDnPRNFr/image.png" 
+              alt="Здоровая еда"
+              className="w-full h-full object-contain"
+            />
+          </div>
 
-        <div className="max-w-3xl mx-auto space-y-4">
-          {faqs.map((faq, index) => (
-            <div 
-              key={index}
-              className="bg-white rounded-2xl shadow-lg overflow-hidden animate-fade-in-up"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <button
-                onClick={() => toggleFAQ(index)}
-                className="w-full p-6 text-left flex items-center justify-between hover:bg-sage-50 transition-colors duration-200"
-              >
-                <div className="flex items-center gap-4">
-                  <div className="w-8 h-8 bg-gradient-to-br from-coral-400 to-terracotta-400 rounded-full flex items-center justify-center text-white font-bold text-sm font-montserrat">
-                    {index + 1}
-                  </div>
-                  <h3 className="text-lg font-semibold text-graphite pr-4 font-montserrat">
-                    {faq.question}
+          {/* FAQ Items positioned around the bowl */}
+          <div className="relative min-h-[800px]">
+            {/* Top questions */}
+            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-80">
+              <div className="bg-white rounded-2xl shadow-lg p-4 mb-4 animate-fade-in-up">
+                <button
+                  onClick={() => toggleFAQ(0)}
+                  className="w-full text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200"
+                >
+                  <h3 className="text-lg font-semibold text-graphite font-montserrat">
+                    {faqs[0].question}
                   </h3>
-                </div>
-                
-                {openIndex === index ? (
-                  <ChevronUp className="w-6 h-6 text-coral-500 flex-shrink-0" />
-                ) : (
-                  <ChevronDown className="w-6 h-6 text-sage-400 flex-shrink-0" />
-                )}
-              </button>
-              
-              {openIndex === index && (
-                <div className="px-6 pb-6 animate-slide-down">
-                  <div className="pl-12">
-                    <p className="text-sage leading-relaxed font-manrope">
-                      {faq.answer}
+                  {openIndex === 0 ? (
+                    <ChevronUp className="w-5 h-5 text-coral-500 flex-shrink-0" />
+                  ) : (
+                    <ChevronDown className="w-5 h-5 text-gray-400 flex-shrink-0" />
+                  )}
+                </button>
+                {openIndex === 0 && (
+                  <div className="mt-3 pt-3 border-t border-gray-100">
+                    <p className="text-gray-600 leading-relaxed font-manrope text-sm">
+                      {faqs[0].answer}
                     </p>
                   </div>
-                </div>
-              )}
+                )}
+              </div>
             </div>
-          ))}
+
+            {/* Left side questions */}
+            <div className="absolute left-0 top-1/2 transform -translate-y-1/2 w-72 space-y-4">
+              {[1, 2].map((index) => (
+                <div key={index} className="bg-white rounded-2xl shadow-lg p-4 animate-fade-in-up" style={{ animationDelay: `${index * 0.1}s` }}>
+                  <button
+                    onClick={() => toggleFAQ(index)}
+                    className="w-full text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200"
+                  >
+                    <h3 className="text-lg font-semibold text-graphite font-montserrat">
+                      {faqs[index].question}
+                    </h3>
+                    {openIndex === index ? (
+                      <ChevronUp className="w-5 h-5 text-coral-500 flex-shrink-0" />
+                    ) : (
+                      <ChevronDown className="w-5 h-5 text-gray-400 flex-shrink-0" />
+                    )}
+                  </button>
+                  {openIndex === index && (
+                    <div className="mt-3 pt-3 border-t border-gray-100">
+                      <p className="text-gray-600 leading-relaxed font-manrope text-sm">
+                        {faqs[index].answer}
+                      </p>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            {/* Right side questions */}
+            <div className="absolute right-0 top-1/2 transform -translate-y-1/2 w-72 space-y-4">
+              {[3, 4].map((index) => (
+                <div key={index} className="bg-white rounded-2xl shadow-lg p-4 animate-fade-in-up" style={{ animationDelay: `${index * 0.1}s` }}>
+                  <button
+                    onClick={() => toggleFAQ(index)}
+                    className="w-full text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200"
+                  >
+                    <h3 className="text-lg font-semibold text-graphite font-montserrat">
+                      {faqs[index].question}
+                    </h3>
+                    {openIndex === index ? (
+                      <ChevronUp className="w-5 h-5 text-coral-500 flex-shrink-0" />
+                    ) : (
+                      <ChevronDown className="w-5 h-5 text-gray-400 flex-shrink-0" />
+                    )}
+                  </button>
+                  {openIndex === index && (
+                    <div className="mt-3 pt-3 border-t border-gray-100">
+                      <p className="text-gray-600 leading-relaxed font-manrope text-sm">
+                        {faqs[index].answer}
+                      </p>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            {/* Bottom questions */}
+            <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-80 space-y-4">
+              {[5, 6].map((index) => (
+                <div key={index} className="bg-white rounded-2xl shadow-lg p-4 animate-fade-in-up" style={{ animationDelay: `${index * 0.1}s` }}>
+                  <button
+                    onClick={() => toggleFAQ(index)}
+                    className="w-full text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200"
+                  >
+                    <h3 className="text-lg font-semibold text-graphite font-montserrat">
+                      {faqs[index].question}
+                    </h3>
+                    {openIndex === index ? (
+                      <ChevronUp className="w-5 h-5 text-coral-500 flex-shrink-0" />
+                    ) : (
+                      <ChevronDown className="w-5 h-5 text-gray-400 flex-shrink-0" />
+                    )}
+                  </button>
+                  {openIndex === index && (
+                    <div className="mt-3 pt-3 border-t border-gray-100">
+                      <p className="text-gray-600 leading-relaxed font-manrope text-sm">
+                        {faqs[index].answer}
+                      </p>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
 
         <div className="text-center mt-12">
