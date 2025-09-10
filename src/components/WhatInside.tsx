@@ -94,7 +94,7 @@ const WhatInside = () => {
         {/* Header */}
         <div ref={headerRef} className="text-center mb-16 animate-on-scroll">
           <h2 className="text-4xl lg:text-5xl font-bold text-graphite mb-6 font-montserrat">
-            ЧТО В КАНАЛЕ
+            Что внутри канала
           </h2>
         </div>
 
