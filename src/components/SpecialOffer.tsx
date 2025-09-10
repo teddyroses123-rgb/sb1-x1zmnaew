@@ -30,7 +30,7 @@ const SpecialOffer = () => {
             {/* Left Side - Photo */}
             <div className="relative -ml-12">
               <img 
-                src="https://i.ibb.co/Kx1NKC7h/Airbrush-Image-Enhancer-1757529179747.jpg"
+                src="https://i.ibb.co/TxSw9PQV/Airbrush-Image-Enhancer-1757529179747.png"
                 alt="Ася - автор рецептов"
                 className="w-full h-auto max-w-xl mx-auto"
                 style={{ height: '600px', objectFit: 'contain' }}
