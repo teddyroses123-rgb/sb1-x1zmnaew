@@ -45,7 +45,7 @@ const WhyItWorks = () => {
   ];
 
   return (
-    <section className="py-8 bg-gradient-to-br from-orange-500 to-red-500 relative overflow-hidden">
+    <section id="why-it-works" className="py-8 bg-gradient-to-br from-orange-500 to-red-500 relative overflow-hidden">
 
       <div className="container mx-auto px-4 relative z-10">
         {/* Main Trigger Block */}

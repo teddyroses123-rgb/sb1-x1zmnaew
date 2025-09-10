@@ -2,8 +2,8 @@ import React from 'react';
 import Hero from './components/Hero';
 import WhatInside from './components/WhatInside';
 import ForWhom from './components/ForWhom';
-import WhyItWorks from './components/WhyItWorks';
 import SpecialOffer from './components/SpecialOffer';
+import WhyItWorks from './components/WhyItWorks';
 import Reviews from './components/Reviews';
 import FAQ from './components/FAQ';
 import FinalBlock from './components/FinalBlock';
@@ -14,8 +14,8 @@ function App() {
       <Hero />
       <WhatInside />
       <ForWhom />
-      <WhyItWorks />
       <SpecialOffer />
+      <WhyItWorks />
       <Reviews />
       <FAQ />
       <FinalBlock />

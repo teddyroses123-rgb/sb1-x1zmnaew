@@ -63,16 +63,6 @@ const Hero = () => {
             Что внутри
           </a>
           <a 
-            href="#for-whom" 
-            className="text-graphite-700 hover:text-coral-500 transition-colors font-medium font-manrope cursor-pointer"
-            onClick={(e) => {
-              e.preventDefault();
-              document.querySelector('#for-whom')?.scrollIntoView({ behavior: 'smooth' });
-            }}
-          >
-            Для кого
-          </a>
-          <a 
             href="#about-author" 
             className="text-graphite-700 hover:text-coral-500 transition-colors font-medium font-manrope cursor-pointer"
             onClick={(e) => {
@@ -81,6 +71,16 @@ const Hero = () => {
             }}
           >
             Об авторе
+          </a>
+          <a 
+            href="#for-whom" 
+            className="text-graphite-700 hover:text-coral-500 transition-colors font-medium font-manrope cursor-pointer"
+            onClick={(e) => {
+              e.preventDefault();
+              document.querySelector('#for-whom')?.scrollIntoView({ behavior: 'smooth' });
+            }}
+          >
+            Для кого
           </a>
           <a 
             href="#reviews" 
