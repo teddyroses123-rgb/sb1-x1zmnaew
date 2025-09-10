@@ -1,82 +1,123 @@
 import React from 'react';
-import { Check, X, Smile, Frown } from 'lucide-react';
+import { Target, Clock, Heart, Users, DollarSign, X, Brain, Zap, Utensils, Ban } from 'lucide-react';
 
 const ForWhom = () => {
   const forWhom = [
-    "Тем, кто хочет питаться вкусно и полезно без сложных диет",
-    "Занятым людям, которым нужны быстрые и здоровые рецепты",
-    "Тем, кто хочет похудеть без голодания и ограничений",
-    "Людям, которые устали от однообразного питания",
-    "Тем, кто заботится о здоровье семьи и детей"
+    {
+      icon: Target,
+      text: "Тем, кто хочет похудеть без стрессовых диет"
+    },
+    {
+      icon: Clock,
+      text: "Занятым людям, которые ценят быстрые и здоровые рецепты"
+    },
+    {
+      icon: Heart,
+      text: "Тем, кто хочет питаться вкусно без ограничений"
+    },
+    {
+      icon: Users,
+      text: "Людям, которые устали от однообразного питания"
+    },
+    {
+      icon: DollarSign,
+      text: "Тем, кто заботится о здоровье семьи и детей"
+    }
   ];
 
   const notForWhom = [
-    "Тем, кто ищет волшебную таблетку для похудения",
-    "Людям, которые не готовы тратить время на готовку",
-    "Тем, кто хочет есть только фастфуд и сладости",
-    "Людям, которые не верят в силу правильного питания",
-    "Тем, кто не готов менять пищевые привычки"
+    {
+      icon: Brain,
+      text: "Тем, кто ищет волшебную таблетку для похудения"
+    },
+    {
+      icon: Ban,
+      text: "Людям, которые не готовы тратить время на готовку"
+    },
+    {
+      icon: Utensils,
+      text: "Тем, кто хочет есть только фастфуд и сладости"
+    },
+    {
+      icon: Zap,
+      text: "Людям, которые не верят в силу правильного питания"
+    },
+    {
+      icon: X,
+      text: "Тем, кто не готов менять пищевые привычки"
+    }
   ];
 
   return (
-    <section className="py-20">
+    <section className="py-20 bg-gradient-to-b from-cream-50 to-vanilla-100">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-graphite mb-6 font-montserrat">
-            Для кого этот рецептбук
+            Для кого этот рецептбук?
           </h2>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8">
-          {/* Для кого */}
-          <div className="bg-gradient-to-br from-mint-50 to-lime-50 rounded-3xl p-8">
-            <div className="flex items-center gap-4 mb-8">
-              <div className="w-16 h-16 bg-gradient-to-br from-mint-400 to-lime-400 rounded-full flex items-center justify-center">
-                <Smile className="w-8 h-8 text-white" />
+        <div className="max-w-5xl mx-auto">
+          {/* Header Tabs */}
+          <div className="flex justify-center mb-12">
+            <div className="flex bg-white rounded-full shadow-lg overflow-hidden">
+              <div className="bg-green-500 text-white px-8 py-4 font-bold text-lg font-montserrat flex items-center gap-2">
+                <div className="w-8 h-8 bg-orange-400 rounded-full flex items-center justify-center">
+                  <span className="text-white font-bold">?</span>
+                </div>
+                ПОДХОДИТ
               </div>
-              <h3 className="text-2xl font-bold text-graphite font-montserrat">Рецептбук подходит</h3>
+              <div className="bg-red-500 text-white px-8 py-4 font-bold text-lg font-montserrat">
+                НЕ ПОДХОДИТ
+              </div>
             </div>
+          </div>
 
-            <ul className="space-y-4">
+          {/* Content Grid */}
+          <div className="grid lg:grid-cols-2 gap-8">
+            {/* Подходит */}
+            <div className="space-y-6">
               {forWhom.map((item, index) => (
-                <li 
-                  key={index} 
-                  className="flex items-start gap-4 animate-fade-in-right"
+                <div 
+                  key={index}
+                  className="flex items-center gap-4 animate-fade-in-right"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  <div className="w-6 h-6 bg-mint-400 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <Check className="w-4 h-4 text-white" />
+                  <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
+                    <item.icon className="w-8 h-8 text-white" />
                   </div>
-                  <span className="text-graphite leading-relaxed font-manrope">{item}</span>
-                </li>
+                  <p className="text-graphite-800 font-medium text-lg leading-relaxed font-manrope">
+                    {item.text}
+                  </p>
+                </div>
               ))}
-            </ul>
-          </div>
-
-          {/* Не для кого */}
-          <div className="bg-gradient-to-br from-powder-50 to-sage-50 rounded-3xl p-8">
-            <div className="flex items-center gap-4 mb-8">
-              <div className="w-16 h-16 bg-gradient-to-br from-sage-400 to-graphite-400 rounded-full flex items-center justify-center">
-                <Frown className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-graphite font-montserrat">Рецептбук НЕ подходит</h3>
             </div>
 
-            <ul className="space-y-4">
+            {/* Разделительная линия */}
+            <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-orange-200 via-orange-400 to-orange-200 transform -translate-x-1/2"></div>
+
+            {/* Не подходит */}
+            <div className="space-y-6">
               {notForWhom.map((item, index) => (
-                <li 
-                  key={index} 
-                  className="flex items-start gap-4 animate-fade-in-left"
+                <div 
+                  key={index}
+                  className="flex items-center gap-4 animate-fade-in-left"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  <div className="w-6 h-6 bg-sage-400 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <X className="w-4 h-4 text-white" />
+                  <div className="w-16 h-16 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0">
+                    <item.icon className="w-8 h-8 text-white" />
                   </div>
-                  <span className="text-graphite leading-relaxed font-manrope">{item}</span>
-                </li>
+                  <p className="text-graphite-800 font-medium text-lg leading-relaxed font-manrope">
+                    {item.text}
+                  </p>
+                </div>
               ))}
-            </ul>
+            </div>
           </div>
+
+          {/* Decorative Elements */}
+          <div className="absolute top-20 left-10 w-12 h-12 bg-green-200 rounded-full opacity-30 animate-float"></div>
+          <div className="absolute bottom-20 right-10 w-8 h-8 bg-red-200 rounded-full opacity-40 animate-float-delayed"></div>
         </div>
       </div>
     </section>
