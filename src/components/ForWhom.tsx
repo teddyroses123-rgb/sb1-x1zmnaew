@@ -1,7 +1,12 @@
 import React from 'react';
 import { Target, Clock, Heart, Users, DollarSign, X, Brain, Zap, Utensils, Ban } from 'lucide-react';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const ForWhom = () => {
+  const headerRef = useScrollAnimation();
+  const tabsRef = useScrollAnimation();
+  const contentRef = useScrollAnimation();
+
   const forWhom = [
     {
       icon: Target,
@@ -51,7 +56,7 @@ const ForWhom = () => {
   return (
     <section className="py-20 bg-gradient-to-b from-cream-50 to-vanilla-100">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
+        <div ref={headerRef} className="text-center mb-16 animate-on-scroll">
           <h2 className="text-4xl lg:text-5xl font-bold text-graphite mb-6 font-montserrat">
             Для кого этот рецептбук?
           </h2>
@@ -59,7 +64,7 @@ const ForWhom = () => {
 
         <div className="max-w-5xl mx-auto">
           {/* Header Tabs */}
-          <div className="flex justify-center mb-12">
+          <div ref={tabsRef} className="flex justify-center mb-12 animate-on-scroll">
             <div className="flex bg-white rounded-full shadow-lg overflow-hidden">
               <div className="bg-green-500 text-white px-8 py-4 font-bold text-lg font-montserrat flex items-center gap-2">
                 <div className="w-8 h-8 bg-orange-400 rounded-full flex items-center justify-center">
@@ -74,13 +79,13 @@ const ForWhom = () => {
           </div>
 
           {/* Content Grid */}
-          <div className="grid lg:grid-cols-2 gap-8">
+          <div ref={contentRef} className="grid lg:grid-cols-2 gap-8 animate-on-scroll">
             {/* Подходит */}
             <div className="space-y-6">
               {forWhom.map((item, index) => (
                 <div 
                   key={index}
-                  className="flex items-center gap-4 animate-fade-in-right"
+                  className="flex items-center gap-4 animate-fade-in-up"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
@@ -101,7 +106,7 @@ const ForWhom = () => {
               {notForWhom.map((item, index) => (
                 <div 
                   key={index}
-                  className="flex items-center gap-4 animate-fade-in-left"
+                  className="flex items-center gap-4 animate-fade-in-up"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   <div className="w-16 h-16 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0">
