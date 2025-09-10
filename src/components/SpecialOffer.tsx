@@ -140,20 +140,23 @@ const SpecialOffer = () => {
             <div className="lg:justify-self-end animate-on-scroll-right">
               <div className="relative">
                 <img 
-                  src="https://i.ibb.co/60S5Z2FK/removebg-preview.png" 
+                  src="https://i.ibb.co/60S5Z2FK/removebg-preview.png"
                   alt="Ася - фитнес-тренер"
-                  className="w-full max-w-lg h-[800px] object-contain object-center rounded-3xl shadow-2xl bg-gradient-to-b from-cream-100 to-vanilla-200"
-                  onError={(e) => {
-                    console.log('Image failed to load:', e.target.src);
-                    e.target.style.display = 'block';
-                    e.target.style.backgroundColor = '#f0f0f0';
+                  className="w-full max-w-lg h-[700px] object-cover rounded-3xl shadow-2xl"
+                  style={{ 
+                    display: 'block',
+                    backgroundColor: '#f8f9fa'
                   }}
-                  onLoad={() => console.log('Image loaded successfully')}
                 />
                 
                 {/* Badge */}
                 <div className="absolute top-6 left-6 bg-gradient-to-r from-coral-500 to-terracotta-400 text-white px-4 py-2 rounded-full font-bold text-sm font-montserrat shadow-lg">
                   Фитнес-тренер
+                </div>
+                
+                {/* Fallback if image doesn't load */}
+                <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-b from-coral-100 to-terracotta-100 rounded-3xl opacity-20">
+                  <span className="text-coral-600 font-bold text-2xl font-montserrat">ФОТО АВТОРА</span>
                 </div>
               </div>
             </div>
