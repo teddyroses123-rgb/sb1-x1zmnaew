@@ -9,7 +9,14 @@ const SpecialOffer = () => {
   return (
     <section className="py-20 relative overflow-hidden min-h-screen">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-cream-50 to-vanilla-100"></div>
+      <div className="absolute inset-0">
+        <img 
+          src="https://i.ibb.co/zWfZWLfH/image.png" 
+          alt="Background"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-white/40"></div>
+      </div>
       
       {/* Decorative leaves */}
       <div className="absolute top-20 left-10 w-8 h-8 text-lime-400 transform rotate-45 opacity-60">🍃</div>
