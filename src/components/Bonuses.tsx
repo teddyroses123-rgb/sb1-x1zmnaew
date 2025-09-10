@@ -4,28 +4,36 @@ import { Gift, Sparkles, Clock, Star } from 'lucide-react';
 const Bonuses = () => {
   const bonuses = [
     {
-      icon: Gift,
+      icon: "https://i.ibb.co/zhKrsd6r/image.png",
       title: "30 рецептов смузи",
       description: "Детокс-смузи для очищения организма и ускорения метаболизма",
-      value: "БОНУС"
+      value: "БОНУС",
+      bgColor: "from-yellow-100 to-yellow-200",
+      textColor: "text-yellow-800"
     },
     {
-      icon: Sparkles,
+      icon: "https://i.ibb.co/ymcJmS3B/image.png",
       title: "Гид по суперфудам",
       description: "Полный справочник полезных продуктов и их свойств",
-      value: "БОНУС"
+      value: "БОНУС",
+      bgColor: "from-blue-100 to-blue-200",
+      textColor: "text-blue-800"
     },
     {
-      icon: Clock,
+      icon: "https://i.ibb.co/CsbS6DYM/image.png",
       title: "Планы питания на неделю",
       description: "Готовые меню на 7 дней с рецептами и списками покупок",
-      value: "БОНУС"
+      value: "БОНУС",
+      bgColor: "from-green-100 to-green-200",
+      textColor: "text-green-800"
     },
     {
-      icon: Star,
+      icon: "https://i.ibb.co/XhNmmLM/image.png",
       title: "Рецепты для особых случаев",
       description: "Праздничные блюда, которые не навредят фигуре",
-      value: "БОНУС"
+      value: "БОНУС",
+      bgColor: "from-purple-100 to-purple-200",
+      textColor: "text-purple-800"
     }
   ];
 
@@ -45,17 +53,21 @@ const Bonuses = () => {
           {bonuses.map((bonus, index) => (
             <div 
               key={index}
-              className="bg-white rounded-3xl p-8 shadow-xl border-2 border-transparent hover:border-coral-300 transition-all duration-300 hover:-translate-y-1 animate-fade-in-up group"
+              className={`bg-gradient-to-br ${bonus.bgColor} rounded-3xl p-8 shadow-xl border-2 border-transparent hover:border-coral-300 transition-all duration-300 hover:-translate-y-1 animate-fade-in-up group`}
               style={{ animationDelay: `${index * 0.15}s` }}
             >
               <div className="flex items-start gap-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-coral-400 to-terracotta-400 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <bonus.icon className="w-8 h-8 text-white" />
+                <div className="w-16 h-16 bg-white/80 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 p-2">
+                  <img 
+                    src={bonus.icon} 
+                    alt={bonus.title}
+                    className="w-full h-full object-contain"
+                  />
                 </div>
                 
                 <div className="flex-1">
                   <div className="flex justify-between items-start mb-3">
-                    <h3 className="text-xl font-bold text-graphite group-hover:text-coral-500 transition-colors font-montserrat">
+                    <h3 className={`text-xl font-bold ${bonus.textColor} group-hover:text-coral-500 transition-colors font-montserrat`}>
                       {bonus.title}
                     </h3>
                     <span className="text-coral-500 font-bold text-sm bg-coral-100 px-3 py-1 rounded-full font-montserrat">
@@ -63,7 +75,7 @@ const Bonuses = () => {
                     </span>
                   </div>
                   
-                  <p className="text-sage leading-relaxed font-manrope">
+                  <p className={`${bonus.textColor} opacity-80 leading-relaxed font-manrope`}>
                     {bonus.description}
                   </p>
                 </div>
