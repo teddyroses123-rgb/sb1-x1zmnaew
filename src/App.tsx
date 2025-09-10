@@ -5,7 +5,6 @@ import ForWhom from './components/ForWhom';
 import WhyItWorks from './components/WhyItWorks';
 import SpecialOffer from './components/SpecialOffer';
 import Reviews from './components/Reviews';
-import PriceConditions from './components/PriceConditions';
 import FAQ from './components/FAQ';
 import FinalBlock from './components/FinalBlock';
 
@@ -18,7 +17,6 @@ function App() {
       <WhyItWorks />
       <SpecialOffer />
       <Reviews />
-      <PriceConditions />
       <FAQ />
       <FinalBlock />
     </div>
