@@ -142,7 +142,13 @@ const SpecialOffer = () => {
                 <img 
                   src="https://i.ibb.co/60S5Z2FK/removebg-preview.png" 
                   alt="Ася - фитнес-тренер"
-                  className="w-full max-w-lg h-[800px] object-cover object-center rounded-3xl shadow-2xl"
+                  className="w-full max-w-lg h-[800px] object-contain object-center rounded-3xl shadow-2xl bg-gradient-to-b from-cream-100 to-vanilla-200"
+                  onError={(e) => {
+                    console.log('Image failed to load:', e.target.src);
+                    e.target.style.display = 'block';
+                    e.target.style.backgroundColor = '#f0f0f0';
+                  }}
+                  onLoad={() => console.log('Image loaded successfully')}
                 />
                 
                 {/* Badge */}
