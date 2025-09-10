@@ -148,17 +148,6 @@ const SpecialOffer = () => {
           </div>
         </div>
 
-        {/* Bottom CTA */}
-        <div className="text-center mt-20">
-          <div className="relative max-w-4xl mx-auto">
-            <div className="absolute inset-0 bg-gradient-to-r from-lime-400 to-green-500 rounded-3xl blur-2xl opacity-20 animate-pulse"></div>
-            <div className="relative bg-gradient-to-r from-lime-400 to-green-500 text-white rounded-3xl p-8 shadow-2xl transform hover:scale-105 transition-all duration-300">
-              <h3 className="text-3xl lg:text-4xl font-bold font-montserrat leading-tight">
-                Начни свой путь к здоровому питанию уже сегодня!
-              </h3>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );
