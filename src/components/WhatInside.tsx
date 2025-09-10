@@ -54,7 +54,7 @@ const WhatInside = () => {
       description: "Наглядная схема баланса БЖУ и порций"
     },
     {
-      icon: "https://i.ibb.co/Q1LSCHC/image.png",
+      icon: "https://i.ibb.co/R4T0DYTX/image.png",
       title: "Рекомендации по уходу за кожей",
       description: "Секреты красоты и здоровья"
     },
@@ -64,7 +64,7 @@ const WhatInside = () => {
       description: "Миофасциальный релиз для расслабления и восстановления"
     },
     {
-      icon: "https://i.ibb.co/R4T0DYTX/image.png",
+      icon: "https://i.ibb.co/Q1LSCHC/image.png",
       title: "Индивидуальный подсчёт КБЖУ",
       description: "Для первых участников канала"
     }
