@@ -1,7 +1,6 @@
 import React from 'react';
 import Hero from './components/Hero';
 import WhatInside from './components/WhatInside';
-import Bonuses from './components/Bonuses';
 import ForWhom from './components/ForWhom';
 import WhyItWorks from './components/WhyItWorks';
 import SpecialOffer from './components/SpecialOffer';
