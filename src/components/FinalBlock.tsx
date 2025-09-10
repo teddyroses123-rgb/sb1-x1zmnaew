@@ -116,25 +116,6 @@ const FinalBlock = () => {
         </div>
       </div>
 
-      {/* Контакты/подвал */}
-      <footer className="mt-20 pt-8 border-t border-gray-700 text-center">
-        <div className="mb-6">
-          <p className="text-gray-400 text-sm mb-2 font-manrope">Нужна помощь? Свяжитесь с нами:</p>
-          <div className="flex justify-center gap-6 text-xs text-gray-500">
-            <a href="mailto:support@eatfit.com" className="hover:text-coral-400 transition-colors font-manrope">
-              support@eatfit.com
-            </a>
-            <a href="#" className="hover:text-coral-400 transition-colors font-manrope">
-              Telegram поддержка
-            </a>
-          </div>
-        </div>
-        
-        <p className="text-gray-500 text-xs mb-2 font-manrope">&copy; 2024 РЕЦЕПТБУК EAT&FIT. Все права защищены.</p>
-        <p className="mt-2 font-manrope">
-          <a href="#" className="hover:text-coral-400 transition-colors text-xs">Политика конфиденциальности</a>
-          {' • '}
-          <a href="#" className="hover:text-coral-400 transition-colors text-xs">Условия использования</a>
           {' • '}
           <a href="#" className="hover:text-coral-400 transition-colors text-xs">Публичная оферта</a>
         </p>
