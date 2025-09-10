@@ -45,12 +45,17 @@ const SpecialOffer = () => {
               
               {/* Caption under photo */}
               <div className="mt-6 text-center max-w-lg mx-auto">
-                <h3 className="text-2xl font-bold text-graphite mb-4 font-montserrat">
-                  Начни питаться правильно уже сегодня!
-                </h3>
-                <p className="text-lg text-sage font-manrope">
-                  Присоединяйся к тысячам людей, которые уже изменили свою жизнь с помощью моих рецептов
-                </p>
+                <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-lg">
+                  <h3 className="text-2xl font-bold text-graphite mb-4 font-montserrat">
+                    Не диета. Система: баланс, вкус и результат
+                  </h3>
+                  <p className="text-lg text-sage font-manrope">
+                    Начни питаться правильно уже сегодня!
+                  </p>
+                  <p className="text-base text-sage font-manrope mt-2">
+                    Присоединяйся к тысячам людей, которые уже изменили свою жизнь с помощью моих рецептов
+                  </p>
+                </div>
               </div>
             </div>
 
