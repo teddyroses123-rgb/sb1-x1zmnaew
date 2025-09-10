@@ -57,34 +57,44 @@ const SpecialOffer = () => {
             {/* Right Side - About Me Text Block */}
             <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-xl min-h-[600px] flex flex-col justify-center">
               <h2 className="text-3xl font-bold text-graphite mb-6 font-montserrat">
-                ОБО МНЕ
+                ОБ АВТОРЕ
               </h2>
               
               <div className="space-y-4 text-graphite leading-relaxed font-manrope">
                 <p>
-                  Привет! Меня зовут <strong>Ася</strong>, и я сертифицированный фитнес-тренер, 
-                  который активно изучает нутрициологию. Готовлюсь к соревнованиям по фитнес-бикини, 
-                  тренируюсь сама и помогаю другим достигать своих целей.
+                  <strong>Ася</strong> — сертифицированный фитнес-тренер, в процессе активного 
+                  обучения на нутрициолога.
                 </p>
                 
                 <p>
-                  Мой личный результат — <strong className="text-coral-500">минус 20 кг</strong>, 
-                  Мой личный результат — <strong className="text-lime-500">минус 20 кг</strong>, 
-                  подтянутое тело, красивый пресс и, самое главное, огромная любовь к вкусной 
-                  и полезной еде без ограничений и запретов.
+                  Готовится к фитнес-бикини, тренируется сама и тренирует людей. Из личного опыта: 
+                  <strong className="text-lime-500">–20 кг</strong>, + подтянутое тело, +пресс + 
+                  уверенность в себе и большая любовь к вкусной еде.
                 </p>
                 
                 <p>
-                  Моя миссия — показать вам по-новому, без страха и строгих диет, 
-                  что такое настоящее сбалансированное питание. Я верю, что здоровый 
-                  образ жизни должен приносить радость, а не стресс.
+                  Зачем она создала канал: чтобы по-новому, без страха и запретов показать, 
+                  что такое сбалансированное ПП.
                 </p>
                 
-                <p>
-                  В этом рецептбуке я собрала все свои любимые рецепты, которые помогли 
-                  мне и тысячам моих подписчиков обрести стройность и энергию. 
-                  Каждое блюдо проверено лично мной!
-                </p>
+                <div className="bg-lime-50 rounded-2xl p-6 mt-6">
+                  <h3 className="text-xl font-bold text-graphite mb-4 font-montserrat">Цена и условия</h3>
+                  <ul className="space-y-2 text-graphite">
+                    <li>• Цена запуска — <strong className="text-lime-600">12 €</strong> (первые дни), потом 19 €.</li>
+                    <li>• Доступ — навсегда.</li>
+                    <li>• Гарантия вкуса и пользы: ты будешь есть вкусно и двигаться к цели без демонизации продуктов.</li>
+                  </ul>
+                </div>
+
+                <div className="bg-green-50 rounded-2xl p-6 mt-4">
+                  <h3 className="text-xl font-bold text-graphite mb-4 font-montserrat">Как это работает:</h3>
+                  <ol className="space-y-2 text-graphite">
+                    <li>1. Нажимаешь «Купить доступ» и оплачиваешь.</li>
+                    <li>2. Попадаешь внутрь закрытого канала</li>
+                    <li>3. Начинаешь челлендж «7 дней завтраков» и выбираешь рецепты под свой день.</li>
+                    <li>4. Ловишь бонусы запуска; первым участникам — индивидуальный подсчёт КБЖУ.</li>
+                  </ol>
+                </div>
               </div>
 
               {/* Social proof */}
@@ -110,7 +120,7 @@ const SpecialOffer = () => {
                 </div>
                 
                 <div className="flex items-center gap-2">
-                  <div className="w-10 h-10 bg-gradient-to-br from-pink-400 to-rose-400 rounded-full flex items-center justify-center">
+                  <div className="w-10 h-10 bg-gradient-to-br from-green-400 to-green-500 rounded-full flex items-center justify-center">
                     <Award className="w-5 h-5 text-white" />
                   </div>
                   <div>
@@ -123,7 +133,7 @@ const SpecialOffer = () => {
               {/* CTA Button */}
               <div className="mt-8">
                 <button className="w-full bg-gradient-to-r from-lime-400 to-green-500 text-white py-4 rounded-2xl font-bold text-xl hover:from-lime-500 hover:to-green-600 transition-all duration-300 hover:scale-105 hover:shadow-xl font-montserrat flex items-center justify-center gap-2">
-                  ПОЛУЧИТЬ РЕЦЕПТЫ АСИ
+                  КУПИТЬ ДОСТУП
                   <ArrowRight className="w-6 h-6" />
                 </button>
                 
@@ -144,7 +154,7 @@ const SpecialOffer = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-lime-400 to-green-500 rounded-3xl blur-2xl opacity-20 animate-pulse"></div>
             <div className="relative bg-gradient-to-r from-lime-400 to-green-500 text-white rounded-3xl p-8 shadow-2xl transform hover:scale-105 transition-all duration-300">
               <h3 className="text-3xl lg:text-4xl font-bold font-montserrat leading-tight">
-                Получи доступ к здоровому питанию!
+                Начни свой путь к здоровому питанию уже сегодня!
               </h3>
             </div>
           </div>
