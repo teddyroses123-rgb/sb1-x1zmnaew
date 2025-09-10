@@ -62,19 +62,19 @@ const SpecialOffer = () => {
               
               <div className="space-y-4 text-graphite leading-relaxed font-manrope">
                 <p>
-                  <strong>Ася</strong> — сертифицированный фитнес-тренер, в процессе активного 
-                  обучения на нутрициолога.
+                  Меня зовут <strong>Ася</strong> — я сертифицированный фитнес-тренер и сейчас 
+                  прохожу активное обучение на нутрициолога.
                 </p>
                 
                 <p>
-                  Готовится к фитнес-бикини, тренируется сама и тренирует людей. Из личного опыта: 
-                  <strong className="text-lime-500">–20 кг</strong>, + подтянутое тело, +пресс + 
-                  уверенность в себе и большая любовь к вкусной еде.
+                  Готовлюсь к соревнованиям по фитнес-бикини, тренируюсь сама и тренирую людей. 
+                  Из личного опыта: минус <strong className="text-lime-500">20 кг</strong>, плюс 
+                  подтянутое тело, пресс, уверенность в себе и огромная любовь к вкусной еде.
                 </p>
                 
                 <p>
-                  Зачем она создала канал: чтобы по-новому, без страха и запретов показать, 
-                  что такое сбалансированное ПП.
+                  Зачем я создала этот канал? Чтобы показать по-новому, без страха и запретов, 
+                  что такое сбалансированное правильное питание.
                 </p>
                 
                 <div className="bg-lime-50 rounded-2xl p-6 mt-6">
@@ -97,38 +97,6 @@ const SpecialOffer = () => {
                 </div>
               </div>
 
-              {/* Social proof */}
-              <div className="mt-8 flex items-center gap-4">
-                <div className="flex items-center gap-2">
-                  <div className="w-10 h-10 bg-gradient-to-br from-lime-400 to-green-500 rounded-full flex items-center justify-center">
-                    <User className="w-5 h-5 text-white" />
-                  </div>
-                  <div>
-                    <div className="font-bold text-graphite font-montserrat">5000+</div>
-                    <div className="text-sm text-sage font-manrope">подписчиков</div>
-                  </div>
-                </div>
-                
-                <div className="flex items-center gap-2">
-                  <div className="w-10 h-10 bg-gradient-to-br from-lime-400 to-green-400 rounded-full flex items-center justify-center">
-                    <Target className="w-5 h-5 text-white" />
-                  </div>
-                  <div>
-                    <div className="font-bold text-graphite font-montserrat">-20 кг</div>
-                    <div className="text-sm text-sage font-manrope">результат</div>
-                  </div>
-                </div>
-                
-                <div className="flex items-center gap-2">
-                  <div className="w-10 h-10 bg-gradient-to-br from-green-400 to-green-500 rounded-full flex items-center justify-center">
-                    <Award className="w-5 h-5 text-white" />
-                  </div>
-                  <div>
-                    <div className="font-bold text-graphite font-montserrat">7 лет</div>
-                    <div className="text-sm text-sage font-manrope">опыта</div>
-                  </div>
-                </div>
-              </div>
 
               {/* CTA Button */}
               <div className="mt-8">
