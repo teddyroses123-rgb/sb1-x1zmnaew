@@ -55,14 +55,15 @@ const FAQ = () => {
             Собрали самые популярные вопросы от наших покупателей
           </p>
           
-          {/* Декоративное изображение */}
-          <div className="flex justify-center mt-8 mb-8">
-            <img 
-              src="https://i.ibb.co/MDnPRNFr/image.png" 
-              alt="Декоративный элемент"
-              className="w-32 h-32 object-contain opacity-80"
-            />
-          </div>
+        </div>
+
+        {/* Декоративное фоновое изображение */}
+        <div className="absolute top-0 right-0 w-1/2 h-full opacity-10 pointer-events-none overflow-hidden">
+          <img 
+            src="https://i.ibb.co/MDnPRNFr/image.png" 
+            alt="Декоративный элемент"
+            className="w-full h-full object-contain transform scale-150 translate-x-1/4"
+          />
         </div>
 
         <div className="max-w-3xl mx-auto space-y-4">
