@@ -28,14 +28,12 @@ const SpecialOffer = () => {
         <div className="max-w-6xl mx-auto">
           <div ref={contentRef} className="grid lg:grid-cols-2 gap-12 items-center animate-on-scroll">
             {/* Left Side - Photo */}
-            <div className="relative -ml-8">
+            <div className="relative -ml-12">
               <img 
                 src="https://i.ibb.co/60S5Z2FK/removebg-preview.png"
                 alt="Ася - автор рецептов"
-                className="w-full h-auto max-w-lg mx-auto"
-                style={{ minHeight: '500px', objectFit: 'contain' }}
-                style={{ minHeight: '500px', objectFit: 'contain' }}
-                style={{ maxHeight: '600px', objectFit: 'contain' }}
+                className="w-full h-auto max-w-xl mx-auto"
+                style={{ minHeight: '600px', objectFit: 'contain' }}
               />
             </div>
 
