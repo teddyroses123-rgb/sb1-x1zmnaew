@@ -38,7 +38,7 @@ const SpecialOffer = () => {
             </div>
 
             {/* Right Side - About Me Text Block */}
-            <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-xl min-h-[600px] flex flex-col justify-center">
+            <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-xl h-[600px] flex flex-col justify-center">
               <h2 className="text-3xl font-bold text-graphite mb-6 font-montserrat">
                 ОБО МНЕ
               </h2>
