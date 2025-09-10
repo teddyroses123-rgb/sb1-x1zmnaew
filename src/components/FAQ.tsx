@@ -54,72 +54,23 @@ const FAQ = () => {
           </h2>
         </div>
 
-        {/* Layout inspired by the reference image */}
-        <div className="relative max-w-7xl mx-auto">
-          {/* Central Bowl Image */}
-          <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] z-10">
-            <img 
-              src="https://i.ibb.co/MDnPRNFr/image.png" 
-              alt="Здоровая еда"
-              className="w-full h-full object-contain"
-            />
-          </div>
-
-          {/* FAQ Items positioned around the bowl */}
-          <div className="relative min-h-[1000px]">
-            {/* Top questions */}
-            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-80">
-              <div className={`rounded-2xl shadow-lg p-6 mb-4 animate-fade-in-up ${faqs[0].color}`}>
-                <h3 className="text-lg font-bold mb-3 font-montserrat">
-                  {faqs[0].question}
+        {/* FAQ Cards Grid */}
+        <div className="max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {faqs.map((faq, index) => (
+              <div 
+                key={index}
+                className={`rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 animate-fade-in-up ${faq.color}`}
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <h3 className="text-lg font-bold mb-4 font-montserrat">
+                  {faq.question}
                 </h3>
                 <p className="leading-relaxed font-manrope text-sm opacity-90">
-                  {faqs[0].answer}
+                  {faq.answer}
                 </p>
               </div>
-            </div>
-
-            {/* Left side questions */}
-            <div className="absolute left-0 top-1/2 transform -translate-y-1/2 w-80 space-y-6">
-              {[1, 2].map((index) => (
-                <div key={index} className={`rounded-2xl shadow-lg p-6 animate-fade-in-up ${faqs[index].color}`} style={{ animationDelay: `${index * 0.1}s` }}>
-                  <h3 className="text-lg font-bold mb-3 font-montserrat">
-                    {faqs[index].question}
-                  </h3>
-                  <p className="leading-relaxed font-manrope text-sm opacity-90">
-                    {faqs[index].answer}
-                  </p>
-                </div>
-              ))}
-            </div>
-
-            {/* Right side questions */}
-            <div className="absolute right-0 top-1/2 transform -translate-y-1/2 w-80 space-y-6">
-              {[3, 4].map((index) => (
-                <div key={index} className={`rounded-2xl shadow-lg p-6 animate-fade-in-up ${faqs[index].color}`} style={{ animationDelay: `${index * 0.1}s` }}>
-                  <h3 className="text-lg font-bold mb-3 font-montserrat">
-                    {faqs[index].question}
-                  </h3>
-                  <p className="leading-relaxed font-manrope text-sm opacity-90">
-                    {faqs[index].answer}
-                  </p>
-                </div>
-              ))}
-            </div>
-
-            {/* Bottom questions */}
-            <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-80 space-y-6">
-              {[5, 6].map((index) => (
-                <div key={index} className={`rounded-2xl shadow-lg p-6 animate-fade-in-up ${faqs[index].color}`} style={{ animationDelay: `${index * 0.1}s` }}>
-                  <h3 className="text-lg font-bold mb-3 font-montserrat">
-                    {faqs[index].question}
-                  </h3>
-                  <p className="leading-relaxed font-manrope text-sm opacity-90">
-                    {faqs[index].answer}
-                  </p>
-                </div>
-              ))}
-            </div>
+            ))}
           </div>
         </div>
 
