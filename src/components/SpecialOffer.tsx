@@ -7,7 +7,7 @@ const SpecialOffer = () => {
   const contentRef = useScrollAnimation();
 
   return (
-    <section className="py-20 relative overflow-hidden min-h-screen">
+    <section id="about-author" className="py-20 relative overflow-hidden min-h-screen">
       {/* Background */}
       <div className="absolute inset-0">
         <img 

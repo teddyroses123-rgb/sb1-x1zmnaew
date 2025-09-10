@@ -79,7 +79,7 @@ const WhatInside = () => {
   ];
 
   return (
-    <section className="py-20 relative overflow-hidden">
+    <section id="what-inside" className="py-20 relative overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
         <img 

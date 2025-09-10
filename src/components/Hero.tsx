@@ -52,11 +52,56 @@ const Hero = () => {
       {/* Navigation */}
       <nav className="relative z-20 flex items-center justify-between px-6 py-4">
         <div className="flex items-center space-x-8">
-          <a href="#" className="text-graphite-700 hover:text-coral-500 transition-colors font-medium font-manrope">Что внутри</a>
-          <a href="#" className="text-graphite-700 hover:text-coral-500 transition-colors font-medium font-manrope">Для кого</a>
-          <a href="#" className="text-graphite-700 hover:text-coral-500 transition-colors font-medium font-manrope">Об авторе</a>
-          <a href="#" className="text-graphite-700 hover:text-coral-500 transition-colors font-medium font-manrope">Отзывы</a>
-          <a href="#" className="text-graphite-700 hover:text-coral-500 transition-colors font-medium font-manrope">Вопросы</a>
+          <a 
+            href="#what-inside" 
+            className="text-graphite-700 hover:text-coral-500 transition-colors font-medium font-manrope cursor-pointer"
+            onClick={(e) => {
+              e.preventDefault();
+              document.querySelector('#what-inside')?.scrollIntoView({ behavior: 'smooth' });
+            }}
+          >
+            Что внутри
+          </a>
+          <a 
+            href="#for-whom" 
+            className="text-graphite-700 hover:text-coral-500 transition-colors font-medium font-manrope cursor-pointer"
+            onClick={(e) => {
+              e.preventDefault();
+              document.querySelector('#for-whom')?.scrollIntoView({ behavior: 'smooth' });
+            }}
+          >
+            Для кого
+          </a>
+          <a 
+            href="#about-author" 
+            className="text-graphite-700 hover:text-coral-500 transition-colors font-medium font-manrope cursor-pointer"
+            onClick={(e) => {
+              e.preventDefault();
+              document.querySelector('#about-author')?.scrollIntoView({ behavior: 'smooth' });
+            }}
+          >
+            Об авторе
+          </a>
+          <a 
+            href="#reviews" 
+            className="text-graphite-700 hover:text-coral-500 transition-colors font-medium font-manrope cursor-pointer"
+            onClick={(e) => {
+              e.preventDefault();
+              document.querySelector('#reviews')?.scrollIntoView({ behavior: 'smooth' });
+            }}
+          >
+            Отзывы
+          </a>
+          <a 
+            href="#faq" 
+            className="text-graphite-700 hover:text-coral-500 transition-colors font-medium font-manrope cursor-pointer"
+            onClick={(e) => {
+              e.preventDefault();
+              document.querySelector('#faq')?.scrollIntoView({ behavior: 'smooth' });
+            }}
+          >
+            Вопросы
+          </a>
         </div>
         
         <div className="flex items-center space-x-4">

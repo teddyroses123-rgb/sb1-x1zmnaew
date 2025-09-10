@@ -41,7 +41,7 @@ const FAQ = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-gray-50 to-gray-100 relative overflow-hidden">
+    <section id="faq" className="py-20 bg-gradient-to-b from-gray-50 to-gray-100 relative overflow-hidden">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 bg-white px-6 py-3 rounded-full shadow-lg mb-6">

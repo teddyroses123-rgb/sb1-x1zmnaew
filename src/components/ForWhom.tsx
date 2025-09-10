@@ -54,7 +54,7 @@ const ForWhom = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-cream-50 to-vanilla-100">
+    <section id="for-whom" className="py-20 bg-gradient-to-b from-cream-50 to-vanilla-100">
       <div className="container mx-auto px-6">
         <div ref={headerRef} className="text-center mb-16 animate-on-scroll">
           <h2 className="text-4xl lg:text-5xl font-bold text-graphite mb-6 font-montserrat">
