@@ -4,21 +4,21 @@ import { Gift, Sparkles } from 'lucide-react';
 const Bonuses = () => {
   const bonuses = [
     {
-      icon: "https://i.ibb.co/R4T0DYTX/image.png",
+      icon: "https://i.ibb.co/p6jKNLy1/image.png",
       title: "«Правильная тарелка»",
       description: "Наглядная схема баланса БЖУ и порций",
       bgColor: "from-yellow-200 to-yellow-300",
       textColor: "text-yellow-800"
     },
     {
-      icon: "https://i.ibb.co/Q1LSCHC/image.png",
+      icon: "https://i.ibb.co/R4T0DYTX/image.png",
       title: "Рекомендации по уходу за кожей",
       description: "Секреты красоты и здоровья",
       bgColor: "from-blue-200 to-blue-300",
       textColor: "text-blue-800"
     },
     {
-      icon: "https://i.ibb.co/p6jKNLy1/image.png",
+      icon: "https://i.ibb.co/Q1LSCHC/image.png",
       title: "Видео МФР",
       description: "Миофасциальный релиз для расслабления и восстановления",
       bgColor: "from-green-200 to-green-300",
