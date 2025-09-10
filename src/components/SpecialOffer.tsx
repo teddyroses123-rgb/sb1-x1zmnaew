@@ -145,7 +145,6 @@ const SpecialOffer = () => {
                 />
               </div>
             </div>
-          </div>
         </div>
 
         {/* Slogan */}
