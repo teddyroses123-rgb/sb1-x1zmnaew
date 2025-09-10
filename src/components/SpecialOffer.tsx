@@ -23,16 +23,8 @@ const SpecialOffer = () => {
 
   return (
     <section className="py-20 relative overflow-hidden min-h-screen">
-      {/* Background Image */}
-      <div className="absolute inset-0">
-        <img 
-          src="https://i.ibb.co/60S5Z2FK/removebg-preview.png" 
-          alt="Background"
-          className="w-full h-full object-cover object-center"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 to-white/60"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-cream-50/80 to-vanilla-100/80"></div>
-      </div>
+      {/* Background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-cream-50 to-vanilla-100"></div>
       
       <div className="container mx-auto px-6">
         {/* Header */}
@@ -42,102 +34,120 @@ const SpecialOffer = () => {
           </div>
         </div>
 
-        <div className="max-w-4xl mx-auto relative z-10">
-          {/* Left Side - Author Info (no photo) */}
-          <div ref={leftContentRef} className="animate-on-scroll max-w-2xl">
-            <div className="bg-white/95 backdrop-blur-sm rounded-3xl p-8 shadow-2xl">
-              {/* Author Info without photo */}
-              <div className="mb-8">
-                <h3 className="text-4xl font-bold text-graphite mb-3 font-montserrat">Ася</h3>
-                <p className="text-coral-600 font-semibold text-xl font-manrope">Сертифицированный фитнес-тренер</p>
-              </div>
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left Side - Author Info */}
+            <div ref={leftContentRef} className="animate-on-scroll">
+              <div className="bg-white/95 backdrop-blur-sm rounded-3xl p-8 shadow-2xl">
+                {/* Author Info without photo */}
+                <div className="mb-8">
+                  <h3 className="text-4xl font-bold text-graphite mb-3 font-montserrat">Ася</h3>
+                  <p className="text-coral-600 font-semibold text-xl font-manrope">Сертифицированный фитнес-тренер</p>
+                </div>
 
-              {/* About Text */}
-              <div className="mb-8">
-                <p className="text-graphite leading-relaxed font-manrope mb-4 text-lg">
-                  <strong>Ася</strong> — сертифицированный фитнес-тренер, в процессе активного обучения на нутрициолога.
-                </p>
-                <p className="text-graphite leading-relaxed font-manrope mb-6 text-lg">
-                  Готовится к фитнес-бикини, тренируется сама и тренирует людей. Из личного опыта: –20 кг, + подтянутое тело, +пресс + уверенность в себе и большая любовь к вкусной еде.
-                </p>
-                
-                <div className="bg-gradient-to-r from-coral-100 to-terracotta-100 rounded-2xl p-6">
-                  <p className="text-graphite font-medium italic font-manrope text-lg">
-                    <strong>Зачем я создала канал:</strong> чтобы по-новому, без страха и запретов показать, что такое сбалансированное ПП.
+                {/* About Text */}
+                <div className="mb-8">
+                  <p className="text-graphite leading-relaxed font-manrope mb-4 text-lg">
+                    <strong>Ася</strong> — сертифицированный фитнес-тренер, в процессе активного обучения на нутрициолога.
                   </p>
-                </div>
-              </div>
-
-              {/* Achievements Grid */}
-              <div className="grid grid-cols-2 gap-4 mb-8">
-                {achievements.map((achievement, index) => (
-                  <div 
-                    key={index}
-                    className="flex items-center gap-3 animate-fade-in-up"
-                    style={{ animationDelay: `${index * 0.1}s` }}
-                  >
-                    <div className={`w-12 h-12 bg-gradient-to-br ${achievement.color} rounded-xl flex items-center justify-center shadow-lg`}>
-                      <achievement.icon className="w-6 h-6 text-white" />
-                    </div>
-                    <span className="text-graphite font-medium font-manrope">{achievement.text}</span>
+                  <p className="text-graphite leading-relaxed font-manrope mb-6 text-lg">
+                    Готовится к фитнес-бикини, тренируется сама и тренирует людей. Из личного опыта: –20 кг, + подтянутое тело, +пресс + уверенность в себе и большая любовь к вкусной еде.
+                  </p>
+                  
+                  <div className="bg-gradient-to-r from-coral-100 to-terracotta-100 rounded-2xl p-6">
+                    <p className="text-graphite font-medium italic font-manrope text-lg">
+                      <strong>Зачем я создала канал:</strong> чтобы по-новому, без страха и запретов показать, что такое сбалансированное ПП.
+                    </p>
                   </div>
-                ))}
-              </div>
-
-              {/* Price and Conditions */}
-              <div className="grid grid-cols-2 gap-4 mb-8">
-                {/* Price */}
-                <div className="bg-gradient-to-br from-coral-100 to-terracotta-100 rounded-2xl p-4 text-center">
-                  <h4 className="text-lg font-bold text-graphite mb-2 font-montserrat flex items-center justify-center gap-2">
-                    <Euro className="w-5 h-5 text-coral-500" />
-                    Цена
-                  </h4>
-                  <div className="flex items-center justify-center gap-2 mb-2">
-                    <span className="text-lg text-sage line-through font-montserrat">19 €</span>
-                    <span className="text-2xl font-bold text-coral-500 font-montserrat">12 €</span>
-                  </div>
-                  <div className="bg-coral-400 text-white px-2 py-1 rounded-full font-bold text-xs font-montserrat">-37%</div>
                 </div>
 
-                {/* Access */}
-                <div className="bg-gradient-to-br from-mint-100 to-teal-100 rounded-2xl p-4 text-center">
-                  <h4 className="text-lg font-bold text-graphite mb-2 font-montserrat flex items-center justify-center gap-2">
-                    <Shield className="w-5 h-5 text-mint-500" />
-                    Доступ
-                  </h4>
-                  <div className="text-2xl font-bold text-mint-500 mb-2 font-montserrat">∞</div>
-                  <p className="text-sage text-sm font-manrope">Навсегда</p>
-                </div>
-              </div>
-
-              {/* How it Works */}
-              <div className="mb-8">
-                <h3 className="text-xl font-bold text-graphite mb-6 font-montserrat">Как это работает:</h3>
-                
-                <div className="space-y-4 mb-8">
-                  {howItWorks.map((step, index) => (
+                {/* Achievements Grid */}
+                <div className="grid grid-cols-2 gap-4 mb-8">
+                  {achievements.map((achievement, index) => (
                     <div 
                       key={index}
-                      className="flex items-start gap-4"
+                      className="flex items-center gap-3 animate-fade-in-up"
+                      style={{ animationDelay: `${index * 0.1}s` }}
                     >
-                      <div className="w-8 h-8 bg-gradient-to-br from-coral-400 to-terracotta-400 rounded-full flex items-center justify-center text-white font-bold text-sm font-montserrat flex-shrink-0">
-                        {index + 1}
+                      <div className={`w-12 h-12 bg-gradient-to-br ${achievement.color} rounded-xl flex items-center justify-center shadow-lg`}>
+                        <achievement.icon className="w-6 h-6 text-white" />
                       </div>
-                      <span className="text-graphite font-manrope pt-1">{step}</span>
+                      <span className="text-graphite font-medium font-manrope">{achievement.text}</span>
                     </div>
                   ))}
                 </div>
 
-                <button className="w-full bg-gradient-to-r from-coral-500 to-terracotta-400 text-white py-4 rounded-2xl font-bold text-xl hover:from-coral-600 hover:to-terracotta-500 transition-all duration-300 hover:scale-105 hover:shadow-xl mb-4 font-montserrat flex items-center justify-center gap-2">
-                  КУПИТЬ ДОСТУП
-                  <ArrowRight className="w-6 h-6" />
-                </button>
-
-                <div className="text-center">
-                  <div className="flex items-center justify-center gap-2">
-                    <Shield className="w-5 h-5 text-mint-500" />
-                    <span className="text-graphite font-medium font-manrope">Безопасная оплата</span>
+                {/* Price and Conditions */}
+                <div className="grid grid-cols-2 gap-4 mb-8">
+                  {/* Price */}
+                  <div className="bg-gradient-to-br from-coral-100 to-terracotta-100 rounded-2xl p-4 text-center">
+                    <h4 className="text-lg font-bold text-graphite mb-2 font-montserrat flex items-center justify-center gap-2">
+                      <Euro className="w-5 h-5 text-coral-500" />
+                      Цена
+                    </h4>
+                    <div className="flex items-center justify-center gap-2 mb-2">
+                      <span className="text-lg text-sage line-through font-montserrat">19 €</span>
+                      <span className="text-2xl font-bold text-coral-500 font-montserrat">12 €</span>
+                    </div>
+                    <div className="bg-coral-400 text-white px-2 py-1 rounded-full font-bold text-xs font-montserrat">-37%</div>
                   </div>
+
+                  {/* Access */}
+                  <div className="bg-gradient-to-br from-mint-100 to-teal-100 rounded-2xl p-4 text-center">
+                    <h4 className="text-lg font-bold text-graphite mb-2 font-montserrat flex items-center justify-center gap-2">
+                      <Shield className="w-5 h-5 text-mint-500" />
+                      Доступ
+                    </h4>
+                    <div className="text-2xl font-bold text-mint-500 mb-2 font-montserrat">∞</div>
+                    <p className="text-sage text-sm font-manrope">Навсегда</p>
+                  </div>
+                </div>
+
+                {/* How it Works */}
+                <div className="mb-8">
+                  <h3 className="text-xl font-bold text-graphite mb-6 font-montserrat">Как это работает:</h3>
+                  
+                  <div className="space-y-4 mb-8">
+                    {howItWorks.map((step, index) => (
+                      <div 
+                        key={index}
+                        className="flex items-start gap-4"
+                      >
+                        <div className="w-8 h-8 bg-gradient-to-br from-coral-400 to-terracotta-400 rounded-full flex items-center justify-center text-white font-bold text-sm font-montserrat flex-shrink-0">
+                          {index + 1}
+                        </div>
+                        <span className="text-graphite font-manrope pt-1">{step}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <button className="w-full bg-gradient-to-r from-coral-500 to-terracotta-400 text-white py-4 rounded-2xl font-bold text-xl hover:from-coral-600 hover:to-terracotta-500 transition-all duration-300 hover:scale-105 hover:shadow-xl mb-4 font-montserrat flex items-center justify-center gap-2">
+                    КУПИТЬ ДОСТУП
+                    <ArrowRight className="w-6 h-6" />
+                  </button>
+
+                  <div className="text-center">
+                    <div className="flex items-center justify-center gap-2">
+                      <Shield className="w-5 h-5 text-mint-500" />
+                      <span className="text-graphite font-medium font-manrope">Безопасная оплата</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Side - Full Height Photo */}
+            <div className="lg:justify-self-end animate-on-scroll-right">
+              <div className="relative">
+                <img 
+                  src="https://i.ibb.co/60S5Z2FK/removebg-preview.png" 
+                  alt="Ася - фитнес-тренер"
+                  className="w-full max-w-lg h-[800px] object-cover object-center rounded-3xl shadow-2xl"
+                />
+                
+                {/* Badge */}
+                <div className="absolute top-6 left-6 bg-gradient-to-r from-coral-500 to-terracotta-400 text-white px-4 py-2 rounded-full font-bold text-sm font-montserrat shadow-lg">
+                  Фитнес-тренер
                 </div>
               </div>
             </div>
