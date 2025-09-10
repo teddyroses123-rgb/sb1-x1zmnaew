@@ -47,6 +47,13 @@
   transform: scale(1);
 }
 
+/* Hide Bolt platform watermark */
+[data-bolt-watermark],
+.bolt-watermark,
+*[class*="bolt"]:not([class*="bolt-"]):not(.boltAction):not(.boltArtifact) {
+  display: none !important;
+}
+
 @keyframes shimmer {
   0% {
     transform: translateX(-100%) skewX(-12deg);
