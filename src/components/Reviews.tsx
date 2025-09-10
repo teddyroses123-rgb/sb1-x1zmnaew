@@ -8,7 +8,7 @@ const Reviews = () => {
       age: "29 лет",
       text: "За 2 месяца похудела на 8 кг, готовя по этим рецептам! Еда вкусная, сытная, а главное - полезная. Семья в восторге!",
       rating: 5,
-      image: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
+      image: "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
     },
     {
       name: "Мария Сидорова",
@@ -73,22 +73,6 @@ const Reviews = () => {
           ))}
         </div>
 
-        <div className="text-center mt-16">
-          <div className="inline-flex items-center gap-6 bg-white rounded-2xl px-8 py-6 shadow-lg">
-            <div className="flex items-center gap-2">
-              <div className="flex">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-6 h-6 text-yellow-400 fill-current" />
-                ))}
-              </div>
-              <span className="text-2xl font-bold text-graphite font-montserrat">4.9</span>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-coral-500 font-montserrat">5247+</div>
-              <div className="text-sage font-manrope">довольных покупателей</div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

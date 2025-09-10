@@ -54,6 +54,15 @@ const FAQ = () => {
           <p className="text-xl text-sage max-w-3xl mx-auto font-manrope">
             Собрали самые популярные вопросы от наших покупателей
           </p>
+          
+          {/* Декоративное изображение */}
+          <div className="flex justify-center mt-8 mb-8">
+            <img 
+              src="https://i.ibb.co/MDnPRNFr/image.png" 
+              alt="Декоративный элемент"
+              className="w-32 h-32 object-contain opacity-80"
+            />
+          </div>
         </div>
 
         <div className="max-w-3xl mx-auto space-y-4">
