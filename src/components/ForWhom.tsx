@@ -1,13 +1,8 @@
 import React from 'react';
 import { Target, Clock, Heart, Users, DollarSign, X, Brain, Zap, Utensils, Ban } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
-import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const ForWhom = () => {
-  const headerRef = useScrollAnimation();
-  const tabsRef = useScrollAnimation();
-  const contentRef = useScrollAnimation();
-
   const headerRef = useScrollAnimation();
   const tabsRef = useScrollAnimation();
   const contentRef = useScrollAnimation();
