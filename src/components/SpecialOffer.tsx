@@ -15,7 +15,7 @@ const SpecialOffer = () => {
           alt="Background"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-white/40"></div>
+        <div className="absolute inset-0 bg-white/60"></div>
       </div>
       
       {/* Decorative leaves */}
@@ -27,7 +27,7 @@ const SpecialOffer = () => {
       <div className="container mx-auto px-6 relative z-10">
         {/* Header */}
         <div ref={headerRef} className="text-center mb-16 animate-on-scroll">
-          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-coral-500 to-terracotta-500 text-white px-8 py-3 rounded-full shadow-lg mb-6">
+          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-lime-400 to-green-500 text-white px-8 py-3 rounded-full shadow-lg mb-6">
             <span className="font-bold text-lg font-montserrat">ОБ АВТОРЕ / ЭКСПЕРТЕ</span>
           </div>
         </div>
@@ -42,6 +42,16 @@ const SpecialOffer = () => {
                 className="w-full h-auto max-w-xl mx-auto"
                 style={{ height: '600px', objectFit: 'contain' }}
               />
+              
+              {/* Caption under photo */}
+              <div className="mt-6 text-center max-w-lg mx-auto">
+                <h3 className="text-2xl font-bold text-graphite mb-4 font-montserrat">
+                  Начни питаться правильно уже сегодня!
+                </h3>
+                <p className="text-lg text-sage font-manrope">
+                  Присоединяйся к тысячам людей, которые уже изменили свою жизнь с помощью моих рецептов
+                </p>
+              </div>
             </div>
 
             {/* Right Side - About Me Text Block */}
@@ -59,6 +69,7 @@ const SpecialOffer = () => {
                 
                 <p>
                   Мой личный результат — <strong className="text-coral-500">минус 20 кг</strong>, 
+                  Мой личный результат — <strong className="text-lime-500">минус 20 кг</strong>, 
                   подтянутое тело, красивый пресс и, самое главное, огромная любовь к вкусной 
                   и полезной еде без ограничений и запретов.
                 </p>
@@ -79,7 +90,7 @@ const SpecialOffer = () => {
               {/* Social proof */}
               <div className="mt-8 flex items-center gap-4">
                 <div className="flex items-center gap-2">
-                  <div className="w-10 h-10 bg-gradient-to-br from-coral-400 to-terracotta-400 rounded-full flex items-center justify-center">
+                  <div className="w-10 h-10 bg-gradient-to-br from-lime-400 to-green-500 rounded-full flex items-center justify-center">
                     <User className="w-5 h-5 text-white" />
                   </div>
                   <div>
@@ -111,7 +122,7 @@ const SpecialOffer = () => {
 
               {/* CTA Button */}
               <div className="mt-8">
-                <button className="w-full bg-gradient-to-r from-coral-500 to-terracotta-400 text-white py-4 rounded-2xl font-bold text-xl hover:from-coral-600 hover:to-terracotta-500 transition-all duration-300 hover:scale-105 hover:shadow-xl font-montserrat flex items-center justify-center gap-2">
+                <button className="w-full bg-gradient-to-r from-lime-400 to-green-500 text-white py-4 rounded-2xl font-bold text-xl hover:from-lime-500 hover:to-green-600 transition-all duration-300 hover:scale-105 hover:shadow-xl font-montserrat flex items-center justify-center gap-2">
                   ПОЛУЧИТЬ РЕЦЕПТЫ АСИ
                   <ArrowRight className="w-6 h-6" />
                 </button>
@@ -130,14 +141,11 @@ const SpecialOffer = () => {
         {/* Bottom CTA */}
         <div className="text-center mt-20">
           <div className="relative max-w-4xl mx-auto">
-            <div className="absolute inset-0 bg-gradient-to-r from-coral-400 to-terracotta-400 rounded-3xl blur-2xl opacity-20 animate-pulse"></div>
-            <div className="relative bg-gradient-to-r from-coral-500 to-terracotta-400 text-white rounded-3xl p-8 shadow-2xl transform hover:scale-105 transition-all duration-300">
-              <h3 className="text-3xl lg:text-4xl font-bold font-montserrat leading-tight mb-4">
-                Начни питаться правильно уже сегодня!
+            <div className="absolute inset-0 bg-gradient-to-r from-lime-400 to-green-500 rounded-3xl blur-2xl opacity-20 animate-pulse"></div>
+            <div className="relative bg-gradient-to-r from-lime-400 to-green-500 text-white rounded-3xl p-8 shadow-2xl transform hover:scale-105 transition-all duration-300">
+              <h3 className="text-3xl lg:text-4xl font-bold font-montserrat leading-tight">
+                Получи доступ к здоровому питанию!
               </h3>
-              <p className="text-xl opacity-90 font-manrope">
-                Присоединяйся к тысячам людей, которые уже изменили свою жизнь с помощью моих рецептов
-              </p>
             </div>
           </div>
         </div>
