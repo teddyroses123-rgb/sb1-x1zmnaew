@@ -137,36 +137,24 @@ const SpecialOffer = () => {
             </div>
 
             {/* Right Side - Full Height Photo */}
-            <div className="lg:justify-self-end animate-on-scroll-right">
-              <div className="relative">
-                <div className="w-full max-w-lg h-[700px] bg-gradient-to-b from-coral-100 to-terracotta-100 rounded-3xl shadow-2xl relative overflow-hidden">
-                  <img 
-                    src="https://images.pexels.com/photos/3768911/pexels-photo-3768911.jpeg?auto=compress&cs=tinysrgb&w=600&h=800&fit=crop"
-                    alt="Ася - фитнес-тренер"
-                    className="w-full h-full object-cover"
-                    onError={(e) => {
-                      console.log('Image failed to load');
-                      e.currentTarget.style.display = 'none';
-                    }}
-                    onLoad={() => console.log('Image loaded successfully')}
-                  />
-                  
-                  {/* Fallback content */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="w-32 h-32 bg-coral-400 rounded-full mx-auto mb-4 flex items-center justify-center">
-                        <span className="text-white text-4xl font-bold">А</span>
-                      </div>
-                      <h4 className="text-2xl font-bold text-coral-600 font-montserrat">Ася</h4>
-                      <p className="text-coral-500 font-manrope">Фитнес-тренер</p>
-                    </div>
-                  </div>
-                </div>
+            {/* Right Side - Photo */}
+            <div className="flex justify-center lg:justify-end">
+              <div className="relative w-full max-w-md">
+                {/* Main Photo */}
+                <img 
+                  src="https://i.ibb.co/60S5Z2FK/removebg-preview.png"
+                  alt="Ася - фитнес-тренер"
+                  className="w-full h-[600px] object-contain rounded-3xl shadow-2xl bg-gradient-to-b from-coral-50 to-terracotta-50"
+                />
                 
                 {/* Badge */}
-                <div className="absolute top-6 left-6 bg-gradient-to-r from-coral-500 to-terracotta-400 text-white px-4 py-2 rounded-full font-bold text-sm font-montserrat shadow-lg">
+                <div className="absolute top-4 left-4 bg-gradient-to-r from-coral-500 to-terracotta-400 text-white px-4 py-2 rounded-full font-bold text-sm font-montserrat shadow-lg z-10">
                   Фитнес-тренер
                 </div>
+                
+                {/* Decorative elements */}
+                <div className="absolute -top-4 -right-4 w-8 h-8 bg-lime-400 rounded-full animate-bounce-subtle"></div>
+                <div className="absolute bottom-10 -left-4 w-6 h-6 bg-coral-400 rounded-full animate-float"></div>
               </div>
             </div>
           </div>
