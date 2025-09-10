@@ -33,7 +33,7 @@ const SpecialOffer = () => {
                 src="https://i.ibb.co/60S5Z2FK/removebg-preview.png"
                 alt="Ася - автор рецептов"
                 className="w-full h-auto max-w-xl mx-auto"
-                style={{ minHeight: '600px', objectFit: 'contain' }}
+                style={{ height: '600px', objectFit: 'contain' }}
               />
             </div>
 
