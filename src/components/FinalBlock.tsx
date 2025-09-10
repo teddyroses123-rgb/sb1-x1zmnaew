@@ -116,8 +116,16 @@ const FinalBlock = () => {
         </div>
       </div>
 
+      {/* Footer */}
+      <footer className="text-center mt-12">
+        <p className="text-gray-400 text-xs font-manrope">
+          © 2024 Здоровое питание. Все права защищены.
           {' • '}
-          <a href="#" className="hover:text-coral-400 transition-colors text-xs">Публичная оферта</a>
+          <a href="#" className="hover:text-coral-400 transition-colors">Политика конфиденциальности</a>
+          {' • '}
+          <a href="#" className="hover:text-coral-400 transition-colors">Условия использования</a>
+          {' • '}
+          <a href="#" className="hover:text-coral-400 transition-colors">Публичная оферта</a>
         </p>
       </footer>
 
