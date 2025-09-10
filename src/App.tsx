@@ -16,7 +16,6 @@ function App() {
     <div className="min-h-screen">
       <Hero />
       <WhatInside />
-      <Bonuses />
       <ForWhom />
       <WhyItWorks />
       <SpecialOffer />

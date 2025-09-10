@@ -49,24 +49,24 @@ const WhatInside = () => {
 
   const bonuses = [
     {
+      icon: "https://i.ibb.co/XhNmmLM/image.png",
       title: "«Правильная тарелка»",
-      description: "Наглядная схема баланса БЖУ и порций",
-      icon: "🍽️"
+      description: "Наглядная схема баланса БЖУ и порций"
     },
     {
+      icon: "https://i.ibb.co/Q1LSCHC/image.png",
       title: "Рекомендации по уходу за кожей",
-      description: "Секреты красоты и здоровья",
-      icon: "✨"
+      description: "Секреты красоты и здоровья"
     },
     {
+      icon: "https://i.ibb.co/p6jKNLy1/image.png",
       title: "Видео МФР",
-      description: "Миофасциальный релиз для расслабления и восстановления",
-      icon: "🧘‍♀️"
+      description: "Миофасциальный релиз для расслабления и восстановления"
     },
     {
+      icon: "https://i.ibb.co/R4T0DYTX/image.png",
       title: "Индивидуальный подсчёт КБЖУ",
-      description: "Для первых участников канала",
-      icon: "📊"
+      description: "Для первых участников канала"
     }
   ];
 
@@ -94,7 +94,7 @@ const WhatInside = () => {
         {/* Header */}
         <div ref={headerRef} className="text-center mb-16 animate-on-scroll">
           <h2 className="text-4xl lg:text-5xl font-bold text-graphite mb-6 font-montserrat">
-            О КУРСЕ
+            ЧТО В КАНАЛЕ
           </h2>
         </div>
 
@@ -159,57 +159,45 @@ const WhatInside = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12 max-w-6xl mx-auto">
             {bonuses.map((bonus, index) => {
               const bonusRef = useScrollAnimation();
+              // Цвета для карточек - первая карточка более темная для лучшей читаемости
+              const cardColors = [
+                'bg-gradient-to-br from-orange-200 to-orange-300', // Изменили с желтого на оранжевый
+                'bg-gradient-to-br from-blue-100 to-blue-200',
+                'bg-gradient-to-br from-green-100 to-green-200',
+                'bg-gradient-to-br from-purple-100 to-purple-200'
+              ];
+              const textColors = [
+                'text-orange-800', // Изменили с желтого на оранжевый
+                'text-blue-800',
+                'text-green-800',
+                'text-purple-800'
+              ];
               return (
                 <div 
                   key={index}
                   ref={bonusRef}
-                  className={`rounded-3xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 animate-on-scroll ${
-                    index === 0 ? 'bg-gradient-to-br from-yellow-100 to-yellow-200' :
-                    index === 1 ? 'bg-gradient-to-br from-blue-100 to-blue-200' :
-                    index === 2 ? 'bg-gradient-to-br from-green-100 to-green-200' :
-                    'bg-gradient-to-br from-purple-100 to-purple-200'
-                  }`}
+                  className={`rounded-3xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 animate-on-scroll ${cardColors[index]}`}
                 >
-                  {/* Графические элементы */}
-                  <div className="absolute top-4 right-4 opacity-20">
-                    {index === 0 && (
-                      <div className="w-12 h-12 border-4 border-yellow-400 rounded-full relative">
-                        <div className="absolute inset-2 bg-yellow-400 rounded-full"></div>
-                      </div>
-                    )}
-                    {index === 1 && (
-                      <div className="w-12 h-12 relative">
-                        <div className="absolute inset-0 bg-blue-400 rounded-lg transform rotate-45"></div>
-                        <div className="absolute inset-2 bg-blue-300 rounded-lg transform rotate-45"></div>
-                      </div>
-                    )}
-                    {index === 2 && (
-                      <div className="w-12 h-12 relative">
-                        <div className="w-12 h-12 bg-green-400 rounded-full"></div>
-                        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-6 h-6 bg-green-300 rounded-full"></div>
-                      </div>
-                    )}
-                    {index === 3 && (
-                      <div className="w-12 h-12 relative">
-                        <div className="w-3 h-8 bg-purple-400 rounded-full absolute left-1"></div>
-                        <div className="w-3 h-6 bg-purple-400 rounded-full absolute left-4 top-2"></div>
-                        <div className="w-3 h-10 bg-purple-400 rounded-full absolute right-1 -top-1"></div>
-                      </div>
-                    )}
+                  {/* Иконка сверху */}
+                  <div className="flex justify-center mb-6">
+                    <div className="w-24 h-24 flex items-center justify-center">
+                      <img 
+                        src={bonus.icon} 
+                        alt={bonus.title}
+                        className="w-20 h-20 object-contain"
+                      />
+                    </div>
                   </div>
                   
-                  <h4 className={`font-bold mb-3 text-xl font-montserrat ${
-                    index === 0 ? 'text-yellow-800' :
-                    index === 1 ? 'text-blue-800' :
-                    index === 2 ? 'text-green-800' :
-                    'text-purple-800'
-                  } min-h-[3rem] flex items-center justify-center`}>{bonus.title}</h4>
-                  <p className={`text-sm leading-relaxed font-manrope ${
-                    index === 0 ? 'text-yellow-700' :
-                    index === 1 ? 'text-blue-700' :
-                    index === 2 ? 'text-green-700' :
-                    'text-purple-700'
-                  }`}>{bonus.description}</p>
+                  {/* Заголовок */}
+                  <h4 className={`font-bold mb-3 text-xl font-montserrat ${textColors[index]} min-h-[3rem] flex items-center justify-center`}>
+                    {bonus.title}
+                  </h4>
+                  
+                  {/* Описание */}
+                  <p className={`text-sm leading-relaxed font-manrope ${textColors[index]} opacity-80`}>
+                    {bonus.description}
+                  </p>
                 </div>
               );
             })}
