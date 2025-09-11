@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Send, Instagram, Clock } from 'lucide-react';
+import { Music, Instagram, Clock, Zap } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const Hero = () => {
@@ -40,11 +40,13 @@ const Hero = () => {
       {/* Background */}
       <div className="absolute inset-0">
         <img 
-          src="https://i.ibb.co/PvN7wXY7/image.png" 
+          src="https://i.ibb.co/V0gMw7fn/E6-DCA96-B-AF56-4-CA1-BAB1-3-C95196837-D0-no-bg-preview-carve-photos.png" 
           alt="Kitchen background"
           className="w-full h-full object-cover"
+          loading="eager"
+          decoding="async"
         />
-        <div className="absolute inset-0 bg-white/30"></div>
+        <div className="absolute inset-0 bg-white/20"></div>
       </div>
 
       {/* Navigation */}
@@ -100,10 +102,14 @@ const Hero = () => {
           >
             Вопросы
           </a>
-        </div>
-        
+            href="https://www.tiktok.com/@artassya?fbclid=PAZXh0bgNhZW0CMTEAAafhvh5g57hgbaHZPf2kwlgnm9etZ0Khwb53SOGkoUF1cxS8wsN8Cljh54b59w_aem_t_N-afXVkUhjh_7fiNOdwg" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="w-8 h-8 bg-black rounded flex items-center justify-center hover:bg-gray-800 transition-colors"
           <a href="#" className="w-8 h-8 bg-blue-500 rounded flex items-center justify-center hover:bg-blue-600 transition-colors">
-            <Send className="w-4 h-4 text-white" />
+            href="https://www.instagram.com/artassya?igsh=MXM3NGNxMDFtd3Vt" 
+            target="_blank" 
+            rel="noopener noreferrer"
           </a>
           <a href="#" className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded flex items-center justify-center hover:from-purple-600 hover:to-pink-600 transition-colors">
             <Instagram className="w-4 h-4 text-white" />
