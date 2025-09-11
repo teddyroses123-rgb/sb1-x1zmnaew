@@ -102,7 +102,6 @@ const Hero = () => {
           <a href="#" className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded flex items-center justify-center hover:from-purple-600 hover:to-pink-600 transition-colors">
             <Instagram className="w-4 h-4 text-white" />
           </a>
-        </div>
       </nav>
 
       <div className="relative z-10 container mx-auto px-6 py-12">
