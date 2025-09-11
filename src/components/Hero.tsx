@@ -2,6 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { Send, Instagram, Clock } from 'lucide-react';
 
 const Hero = () => {
+  const titleRef = useScrollAnimation();
+  const descriptionRef = useScrollAnimation();
+  const offerRef = useScrollAnimation();
+  const imageRef = useScrollAnimation();
+
   const [timeLeft, setTimeLeft] = useState({
     days: 2,
     hours: 23,
