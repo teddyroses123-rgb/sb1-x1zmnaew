@@ -89,6 +89,11 @@ const Hero = () => {
               <span className="text-lime-500">EAT&FIT</span>
             </h1>
 
+            {/* Subtitle */}
+            <p className="text-base md:text-lg lg:text-xl text-graphite-700 max-w-2xl leading-relaxed font-manrope">
+              Закрытый Telegram-канал с полезными рецептами, секретами ухода за телом и поддерживающим сообществом 24/7 — всё в одном канале
+            </p>
+
             {/* Special Offer Card */}
             <div className="bg-white/95 backdrop-blur-sm rounded-3xl p-6 lg:p-8 shadow-2xl max-w-lg border border-lime-200">
               <div className="flex items-center gap-2 mb-4">
