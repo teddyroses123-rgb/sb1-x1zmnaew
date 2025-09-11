@@ -47,12 +47,12 @@ const FAQ = () => {
           {faqItems.map((item, index) => (
             <div 
               key={index}
-              className={`${item.bgColor} rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2`}
+              className={`${item.bgColor} rounded-3xl p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2`}
             >
-              <h3 className={`text-xl font-bold mb-4 font-montserrat ${item.textColor}`}>
+              <h3 className={`text-lg lg:text-xl font-bold mb-4 font-montserrat ${item.textColor}`}>
                 {item.question}
               </h3>
-              <p className={`leading-relaxed font-manrope ${item.textColor} opacity-90`}>
+              <p className={`text-sm lg:text-base leading-relaxed font-manrope ${item.textColor} opacity-90`}>
                 {item.answer}
               </p>
             </div>
@@ -60,14 +60,14 @@ const FAQ = () => {
         </div>
 
         <div className="text-center">
-          <p className="text-graphite-600 text-lg mb-6 font-manrope">
+          <p className="text-graphite-600 text-base lg:text-lg mb-6 font-manrope">
             Не нашли ответ на свой вопрос?
           </p>
           <a 
             href="https://www.instagram.com/artassya?igsh=MXM3NGNxMDFtd3Vt" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="bg-gradient-to-r from-mint-400 to-green-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:from-mint-500 hover:to-green-600 transition-all duration-300 hover:scale-105 hover:shadow-xl font-montserrat inline-block"
+            className="bg-gradient-to-r from-mint-400 to-green-500 text-white px-6 lg:px-8 py-3 lg:py-4 rounded-full font-bold text-base lg:text-lg hover:from-mint-500 hover:to-green-600 transition-all duration-300 hover:scale-105 hover:shadow-xl font-montserrat inline-block"
           >
             Спроси у меня
           </a>

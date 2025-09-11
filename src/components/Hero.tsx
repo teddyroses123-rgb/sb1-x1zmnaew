@@ -108,70 +108,79 @@ const Hero = () => {
       <div className="relative z-10 container mx-auto px-6 py-12">
         <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
           {/* Left Content */}
-          <div className="space-y-8">
+          <div className="space-y-6 lg:space-y-8 animate-fade-in-up order-2 lg:order-1">
             {/* Leaf icon */}
             <div className="w-16 h-16 text-lime-500 mb-4">
               🍃
             </div>
 
-            <h1 className="text-6xl lg:text-7xl font-bold text-graphite-800 leading-tight font-montserrat">
+            <h1 ref={titleRef} className="text-4xl md:text-6xl lg:text-8xl font-bold text-graphite-800 leading-tight font-montserrat animate-on-scroll text-center lg:text-left">
               РЕЦЕПТБУК<br />
               <span className="text-lime-500">EAT&FIT</span>
             </h1>
+            
+            <p ref={descriptionRef} className="text-base lg:text-lg text-graphite-600 leading-relaxed max-w-2xl font-manrope animate-on-scroll text-center lg:text-left">
+            </p>
 
             {/* Special Offer Card */}
-            <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-lg max-w-lg border border-lime-200">
-              <div className="flex items-center gap-2 mb-4">
+            <div ref={offerRef} className="bg-white/90 backdrop-blur-sm rounded-2xl p-4 lg:p-6 shadow-lg max-w-2xl border border-lime-200 animate-on-scroll">
+              <div className="flex items-center gap-2 mb-3">
                 <div className="w-2 h-2 bg-lime-400 rounded-full"></div>
-                <span className="text-lime-600 font-bold text-sm font-montserrat">АКЦИЯ СЕГОДНЯ</span>
+                <span className="text-lime-600 font-bold text-xs lg:text-sm font-montserrat">АКЦИЯ СЕГОДНЯ</span>
               </div>
               
-              <div className="mb-4">
-                <div className="flex items-center gap-3 mb-2">
-                  <span className="line-through text-lg text-gray-500 font-manrope">19 €</span>
-                  <span className="font-bold text-3xl font-montserrat text-lime-600">12 €</span>
-                </div>
-              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6 items-center">
+                <div>
+                  <div className="text-graphite-800 mb-4">
+                    <div className="flex items-center gap-3">
+                      <span className="line-through text-base lg:text-lg text-gray-500">19 €</span>
+                      <span className="font-bold text-2xl lg:text-3xl font-montserrat text-lime-600">12 €</span>
+                    </div>
+                  </div>
 
-              <div className="flex items-center gap-2 mb-6">
-                <Clock className="w-4 h-4 text-gray-600" />
-                <span className="text-gray-600 text-sm font-manrope">До конца акции:</span>
-                <span className="text-lime-600 font-bold text-sm font-montserrat">37% скидка</span>
-              </div>
+                  <div className="flex items-center gap-2 mb-4">
+                    <Clock className="w-4 h-4 text-gray-600" />
+                    <span className="text-gray-600 text-xs lg:text-sm font-manrope">До конца акции:</span>
+                    <span className="text-lime-600 font-bold text-xs lg:text-sm font-montserrat">37% скидка</span>
+                  </div>
+                  
+                  <button className="w-full bg-lime-400 hover:bg-lime-500 text-white py-2 lg:py-3 rounded-full font-bold text-sm lg:text-lg transition-all duration-300 hover:scale-105 font-montserrat animate-pulse-gentle animate-glow-soft relative overflow-hidden">
+                    КУПИТЬ СО СКИДКОЙ
+                    <div className="absolute inset-0 bg-gradient-to-r from-yellow-300/10 to-lime-300/10 animate-shimmer-slow"></div>
+                  </button>
+                </div>
 
-              {/* Timer */}
-              <div className="grid grid-cols-4 gap-2 text-center mb-6">
-                <div className="bg-lime-100 rounded-lg px-3 py-2">
-                  <div className="text-lg font-bold text-graphite-800 font-montserrat">{String(timeLeft.days).padStart(2, '0')}</div>
-                  <div className="text-xs text-gray-600 font-manrope">дней</div>
-                </div>
-                <div className="bg-lime-100 rounded-lg px-3 py-2">
-                  <div className="text-lg font-bold text-graphite-800 font-montserrat">{String(timeLeft.hours).padStart(2, '0')}</div>
-                  <div className="text-xs text-gray-600 font-manrope">часов</div>
-                </div>
-                <div className="bg-lime-100 rounded-lg px-3 py-2">
-                  <div className="text-lg font-bold text-graphite-800 font-montserrat">{String(timeLeft.minutes).padStart(2, '0')}</div>
-                  <div className="text-xs text-gray-600 font-manrope">минут</div>
-                </div>
-                <div className="bg-lime-100 rounded-lg px-3 py-2">
-                  <div className="text-lg font-bold text-graphite-800 font-montserrat">{String(timeLeft.seconds).padStart(2, '0')}</div>
-                  <div className="text-xs text-gray-600 font-manrope">секунд</div>
+                <div>
+                  <div className="grid grid-cols-4 gap-1 lg:gap-2 text-center">
+                    <div className="bg-lime-100 rounded-lg px-2 lg:px-3 py-1 lg:py-2">
+                      <div className="text-sm lg:text-lg font-bold text-graphite-800 font-montserrat">{String(timeLeft.days).padStart(2, '0')}</div>
+                      <div className="text-xs text-gray-600 font-manrope">дней</div>
+                    </div>
+                    <div className="bg-lime-100 rounded-lg px-2 lg:px-3 py-1 lg:py-2">
+                      <div className="text-sm lg:text-lg font-bold text-graphite-800 font-montserrat">{String(timeLeft.hours).padStart(2, '0')}</div>
+                      <div className="text-xs text-gray-600 font-manrope">часов</div>
+                    </div>
+                    <div className="bg-lime-100 rounded-lg px-2 lg:px-3 py-1 lg:py-2">
+                      <div className="text-sm lg:text-lg font-bold text-graphite-800 font-montserrat">{String(timeLeft.minutes).padStart(2, '0')}</div>
+                      <div className="text-xs text-gray-600 font-manrope">минут</div>
+                    </div>
+                    <div className="bg-lime-100 rounded-lg px-2 lg:px-3 py-1 lg:py-2">
+                      <div className="text-sm lg:text-lg font-bold text-graphite-800 font-montserrat">{String(timeLeft.seconds).padStart(2, '0')}</div>
+                      <div className="text-xs text-gray-600 font-manrope">секунд</div>
+                    </div>
+                  </div>
                 </div>
               </div>
-              
-              <button className="w-full bg-lime-400 hover:bg-lime-500 text-white py-3 rounded-full font-bold text-lg transition-all duration-300 hover:scale-105 font-montserrat">
-                КУПИТЬ СО СКИДКОЙ
-              </button>
             </div>
           </div>
 
           {/* Right Image */}
-          <div className="lg:justify-self-end relative">
+          <div ref={imageRef} className="lg:justify-self-end animate-on-scroll-right order-1 lg:order-2">
             <div className="relative">
               <img 
-                src="https://i.ibb.co/V0gMw7fn/E6-DCA96-B-AF56-4-CA1-BAB1-3-C95196837-D0-no-bg-preview-carve-photos.png" 
-                alt="Девушка"
-                className="w-full max-w-lg rounded-3xl"
+                src="https://i.ibb.co/yBNY8xw5/b6e2d342-b675-4b7f-894a-5e94597a5d8c-Photoroom-1.png" 
+                alt="Девушка с яблоком"
+                className="w-full max-w-sm lg:max-w-lg mx-auto rounded-3xl shadow-2xl"
               />
               
               {/* Floating food icons */}
