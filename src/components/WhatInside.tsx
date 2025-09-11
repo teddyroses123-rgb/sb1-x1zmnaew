@@ -11,7 +11,7 @@ const WhatInside = () => {
   const mainFeatures = [
     {
       number: "01",
-      title: "55 рецептов на каждый день",
+      title: "60+ рецептов на каждый день",
       description: "Завтраки/обеды/ужины/перекусы, у каждого — КБЖУ",
       icon: Utensils
     },
@@ -71,11 +71,14 @@ const WhatInside = () => {
   ];
 
   const stats = [
-    { number: "ЗАВТРАКИ", label: "ЗАВТРАКИ" },
-    { number: "ОБЕДЫ", label: "ОБЕДЫ" },
-    { number: "УЖИНЫ", label: "УЖИНЫ" },
-    { number: "ПЕРЕКУСЫ", label: "ПЕРЕКУСЫ" },
-    { number: "ДЕСЕРТЫ", label: "ДЕСЕРТЫ" }
+    { number: "Завтраки", label: "Завтраки" },
+    { number: "Обеды", label: "Обеды" },
+    { number: "Ужины", label: "Ужины" },
+    { number: "Перекусы", label: "Перекусы" },
+    { number: "Десерты", label: "Десерты" },
+    { number: "В дорогу", label: "В дорогу" },
+    { number: "Смузи", label: "Смузи" },
+    { number: "Для компании", label: "Для компании" }
   ];
 
   return (
