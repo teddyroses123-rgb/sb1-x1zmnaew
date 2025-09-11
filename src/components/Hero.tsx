@@ -20,7 +20,7 @@ const FAQ = () => {
       bgColor: "bg-gradient-to-br from-green-400 to-green-500",
       textColor: "text-white"
     },
-            <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-4 lg:p-6 shadow-lg max-w-sm lg:max-w-lg mx-auto lg:mx-0 border border-lime-200">
+    {
       question: "Нужны ли кухонные весы и супер-ингредиенты?",
       answer: "Нет. Все рецепты максимально из магазина у дома. Весы помогают точности, но не обязательны.",
       bgColor: "bg-gradient-to-br from-purple-400 to-purple-500",
