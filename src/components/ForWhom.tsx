@@ -1,139 +1,128 @@
 import React from 'react';
-import { CheckCircle, Users, Heart, Target, Clock, Star } from 'lucide-react';
+import { Target, Clock, Heart, Users, DollarSign, X, Brain, Zap, Utensils, Ban } from 'lucide-react';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const ForWhom = () => {
-  const targetAudience = [
-    {
-      icon: Users,
-      title: "Мамы в декрете",
-      description: "Которые хотят быстро готовить полезную еду для всей семьи",
-      color: "from-coral-400 to-red-400"
-    },
-    {
-      icon: Heart,
-      title: "Девушки, следящие за фигурой",
-      description: "Желающие питаться вкусно и при этом оставаться стройными",
-      color: "from-pink-400 to-rose-400"
-    },
+  const headerRef = useScrollAnimation();
+  const tabsRef = useScrollAnimation();
+  const contentRef = useScrollAnimation();
+
+  const forWhom = [
     {
       icon: Target,
-      title: "Новички в ПП",
-      description: "Кто только начинает путь к здоровому образу жизни",
-      color: "from-lime-400 to-green-400"
+      text: "Тем, кто хочет похудеть без стрессовых диет"
     },
     {
       icon: Clock,
-      title: "Занятые люди",
-      description: "У кого мало времени на готовку, но есть желание питаться правильно",
-      color: "from-blue-400 to-indigo-400"
+      text: "Занятым людям, которые ценят быстрые и здоровые рецепты"
+    },
+    {
+      icon: Heart,
+      text: "Тем, кто хочет питаться вкусно без ограничений"
+    },
+    {
+      icon: Users,
+      text: "Людям, которые устали от однообразного питания"
+    },
+    {
+      icon: DollarSign,
+      text: "Тем, кто заботится о здоровье семьи и детей"
     }
   ];
 
-  const suitabilityItems = [
+  const notForWhom = [
     {
-      category: "ПОДХОДИТ",
-      items: [
-        "Новичкам в ПП",
-        "Мамам в декрете", 
-        "Работающим девушкам",
-        "Студентам",
-        "Всем, кто хочет питаться вкусно и полезно"
-      ],
-      bgColor: "bg-gradient-to-br from-mint-400 to-green-500",
-      textColor: "text-white"
+      icon: Brain,
+      text: "Тем, кто ищет волшебную таблетку для похудения"
     },
     {
-      category: "НЕ ПОДХОДИТ",
-      items: [
-        "Тем, кто ищет волшебную таблетку",
-        "Кто не готов менять привычки",
-        "Ожидающим результат без усилий",
-        "Тем, кто против здорового питания"
-      ],
-      bgColor: "bg-gradient-to-br from-coral-400 to-red-400", 
-      textColor: "text-white"
+      icon: Ban,
+      text: "Людям, которые не готовы тратить время на готовку"
+    },
+    {
+      icon: Utensils,
+      text: "Тем, кто хочет есть только фастфуд и сладости"
+    },
+    {
+      icon: Zap,
+      text: "Людям, которые не верят в силу правильного питания"
+    },
+    {
+      icon: X,
+      text: "Тем, кто не готов менять пищевые привычки"
     }
   ];
 
   return (
-    <section id="for-whom" className="py-20 bg-gradient-to-b from-vanilla-50 to-cream-100">
+    <section id="for-whom" className="py-20 bg-gradient-to-b from-cream-50 to-vanilla-100">
       <div className="container mx-auto px-6">
-        {/* Header */}
-        <div className="text-center mb-16">
+        <div ref={headerRef} className="text-center mb-16 animate-on-scroll">
           <h2 className="text-4xl lg:text-5xl font-bold text-graphite mb-6 font-montserrat">
-            Для кого этот рецептбук
+            Для кого этот рецептбук?
           </h2>
-          <p className="text-xl text-sage max-w-3xl mx-auto font-manrope">
-            Идеально подойдет тем, кто ценит свое время и здоровье
-          </p>
         </div>
 
-        {/* Target Audience Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
-          {targetAudience.map((audience, index) => (
-            <div 
-              key={index}
-              className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 text-center animate-fade-in-up"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <div className={`w-16 h-16 bg-gradient-to-br ${audience.color} rounded-2xl mx-auto mb-6 flex items-center justify-center`}>
-                <audience.icon className="w-8 h-8 text-white" />
+        <div className="max-w-5xl mx-auto">
+          {/* Header Tabs */}
+          <div ref={tabsRef} className="flex justify-center mb-12 animate-on-scroll">
+            <div className="flex bg-white rounded-full shadow-lg overflow-hidden">
+              <div className="bg-green-500 text-white px-8 py-4 font-bold text-lg font-montserrat flex items-center gap-2">
+                <div className="w-8 h-8 bg-orange-400 rounded-full flex items-center justify-center">
+                  <span className="text-white font-bold">?</span>
+                </div>
+                ПОДХОДИТ
               </div>
-              
-              <h3 className="text-xl font-bold text-graphite mb-4 font-montserrat">
-                {audience.title}
-              </h3>
-              
-              <p className="text-sage leading-relaxed font-manrope">
-                {audience.description}
-              </p>
-            </div>
-          ))}
-        </div>
-
-        {/* Suitability Section */}
-        <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {suitabilityItems.map((section, index) => (
-            <div 
-              key={index}
-              className={`${section.bgColor} rounded-3xl p-8 shadow-xl animate-fade-in-up`}
-              style={{ animationDelay: `${index * 0.2}s` }}
-            >
-              <div className="flex items-center gap-3 mb-6">
-                <Star className={`w-6 h-6 ${section.textColor}`} />
-                <h3 className={`text-2xl font-bold font-montserrat ${section.textColor}`}>
-                  {section.category}
-                </h3>
+              <div className="bg-red-500 text-white px-8 py-4 font-bold text-lg font-montserrat">
+                НЕ ПОДХОДИТ
               </div>
-              
-              <ul className="space-y-3">
-                {section.items.map((item, itemIndex) => (
-                  <li 
-                    key={itemIndex}
-                    className={`flex items-start gap-3 ${section.textColor} opacity-90`}
-                  >
-                    <CheckCircle className="w-5 h-5 flex-shrink-0 mt-0.5" />
-                    <span className="font-manrope leading-relaxed">{item}</span>
-                  </li>
-                ))}
-              </ul>
             </div>
-          ))}
-        </div>
-
-        {/* Bottom CTA */}
-        <div className="text-center mt-16">
-          <div className="bg-white rounded-2xl p-8 max-w-2xl mx-auto shadow-lg">
-            <h3 className="text-2xl font-bold text-graphite mb-4 font-montserrat">
-              Узнали себя?
-            </h3>
-            <p className="text-sage text-lg mb-6 font-manrope">
-              Тогда этот рецептбук создан специально для вас!
-            </p>
-            <button className="bg-gradient-to-r from-coral-500 to-terracotta-400 text-white px-8 py-4 rounded-full font-bold text-lg hover:from-coral-600 hover:to-terracotta-500 transition-all duration-300 hover:scale-105 hover:shadow-xl font-montserrat">
-              ПОЛУЧИТЬ РЕЦЕПТЫ
-            </button>
           </div>
+
+          {/* Content Grid */}
+          <div ref={contentRef} className="grid lg:grid-cols-2 gap-8 animate-on-scroll">
+            {/* Подходит */}
+            <div className="space-y-6">
+              {forWhom.map((item, index) => (
+                <div 
+                  key={index}
+                  className="flex items-center gap-4 animate-fade-in-up"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
+                    <item.icon className="w-8 h-8 text-white" />
+                  </div>
+                  <p className="text-graphite-800 font-medium text-lg leading-relaxed font-manrope">
+                    {item.text}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            {/* Разделительная линия */}
+            <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-orange-200 via-orange-400 to-orange-200 transform -translate-x-1/2"></div>
+
+            {/* Не подходит */}
+            <div className="space-y-6">
+              {notForWhom.map((item, index) => (
+                <div 
+                  key={index}
+                  className="flex items-center gap-4 animate-fade-in-up"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  <div className="w-16 h-16 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0">
+                    <item.icon className="w-8 h-8 text-white" />
+                  </div>
+                  <p className="text-graphite-800 font-medium text-lg leading-relaxed font-manrope">
+                    {item.text}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Decorative Elements */}
+          <div className="absolute top-20 left-10 w-12 h-12 bg-green-200 rounded-full opacity-30 animate-float"></div>
+          <div className="absolute bottom-20 right-10 w-8 h-8 bg-red-200 rounded-full opacity-40 animate-float-delayed"></div>
         </div>
       </div>
     </section>
