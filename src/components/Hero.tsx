@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Music, Instagram, Clock, Zap } from 'lucide-react';
+import { Send, Instagram, Clock } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const Hero = () => {
@@ -231,3 +231,5 @@ const Hero = () => {
 };
 
 export default Hero;
+  )
+}
