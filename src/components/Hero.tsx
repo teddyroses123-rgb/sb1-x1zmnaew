@@ -40,7 +40,7 @@ const Hero = () => {
       {/* Background */}
       <div className="absolute inset-0">
         <img 
-          src="https://i.ibb.co/V0gMw7fn/E6-DCA96-B-AF56-4-CA1-BAB1-3-C95196837-D0-no-bg-preview-carve-photos.png" 
+          src="https://i.ibb.co/PvN7wXY7/image.png" 
           alt="Kitchen background"
           className="w-full h-full object-cover"
           loading="eager"
