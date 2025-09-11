@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Send, Instagram, Clock } from 'lucide-react';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const Hero = () => {
   const titleRef = useScrollAnimation();
