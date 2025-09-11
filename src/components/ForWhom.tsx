@@ -1,85 +1,143 @@
 import React from 'react';
+import { CheckCircle, Users, Heart, Target, Clock, Star } from 'lucide-react';
 
-const FAQ = () => {
-  const faqItems = [
+const ForWhom = () => {
+  const targetAudience = [
     {
-      question: "Дорого",
-      answer: "Нет 😊 Вы берёте не файл, а живой канал + комьюнити + бонусы + мою поддержку и готовые решения + что готовить сегодня. Экономия времени и денег: меньше заказов доставки, меньше «пустых» покупок — Поэтому это выгоднее, чем развозная книга.",
-      bgColor: "bg-gradient-to-br from-coral-400 to-red-400",
+      icon: Users,
+      title: "Мамы в декрете",
+      description: "Которые хотят быстро готовить полезную еду для всей семьи",
+      color: "from-coral-400 to-red-400"
+    },
+    {
+      icon: Heart,
+      title: "Девушки, следящие за фигурой",
+      description: "Желающие питаться вкусно и при этом оставаться стройными",
+      color: "from-pink-400 to-rose-400"
+    },
+    {
+      icon: Target,
+      title: "Новички в ПП",
+      description: "Кто только начинает путь к здоровому образу жизни",
+      color: "from-lime-400 to-green-400"
+    },
+    {
+      icon: Clock,
+      title: "Занятые люди",
+      description: "У кого мало времени на готовку, но есть желание питаться правильно",
+      color: "from-blue-400 to-indigo-400"
+    }
+  ];
+
+  const suitabilityItems = [
+    {
+      category: "ПОДХОДИТ",
+      items: [
+        "Новичкам в ПП",
+        "Мамам в декрете", 
+        "Работающим девушкам",
+        "Студентам",
+        "Всем, кто хочет питаться вкусно и полезно"
+      ],
+      bgColor: "bg-gradient-to-br from-mint-400 to-green-500",
       textColor: "text-white"
     },
     {
-      question: "Я — вегетарианка/у меня ограничения",
-      answer: "У меня в канале тегн и простые замены в каждом рецепте. Если укажете свой профиль, помогу подобрать подборку под вас.",
-      bgColor: "bg-gradient-to-br from-blue-400 to-blue-500",
-      textColor: "text-white"
-    },
-    {
-      question: "А если я на ГВ?",
-      answer: "Канал — про общие идеи сбалансированного питания. На ГВ всё индивидуально — рекомендую консультацию с нутрициологом или врачом для персональности и рекомендаций именно вашего педиатра.",
-      bgColor: "bg-gradient-to-br from-green-400 to-green-500",
-      textColor: "text-white"
-    },
-    {
-      question: "Нужны ли кухонные весы и супер-ингредиенты?",
-      answer: "Нет. Все рецепты максимально из магазина у дома. Весы помогают точности, но не обязательны.",
-      bgColor: "bg-gradient-to-br from-purple-400 to-purple-500",
-      textColor: "text-white"
-    },
-    {
-      question: "Почему канал, а не PDF?",
-      answer: "Потому что живой формат: удобный поиск по тегам, обсуждения, постоянные обновления. Это не файл, который «лежит мёртвым».",
-      bgColor: "bg-gradient-to-br from-orange-400 to-orange-500",
-      textColor: "text-white"
-    },
-    {
-      question: "Что за бонусы?",
-      answer: "Я не выкладываю их в открытый доступ, потому что это мой личный «секретный раздел». Быстрые схемы, мини-гутаны и проверенные решения. Зайдёте в канал — получите доступ к закрытому набору, который я всё время пополняю. Именно ради него девочки остаются надолго. 💜",
-      bgColor: "bg-gradient-to-br from-pink-400 to-pink-500",
+      category: "НЕ ПОДХОДИТ",
+      items: [
+        "Тем, кто ищет волшебную таблетку",
+        "Кто не готов менять привычки",
+        "Ожидающим результат без усилий",
+        "Тем, кто против здорового питания"
+      ],
+      bgColor: "bg-gradient-to-br from-coral-400 to-red-400", 
       textColor: "text-white"
     }
   ];
 
   return (
-    <section id="faq" className="py-20 bg-gradient-to-b from-gray-50 to-white">
+    <section id="for-whom" className="py-20 bg-gradient-to-b from-vanilla-50 to-cream-100">
       <div className="container mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-graphite-800 mb-6 font-montserrat">
-            Ответы на ваши вопросы
+          <h2 className="text-4xl lg:text-5xl font-bold text-graphite mb-6 font-montserrat">
+            Для кого этот рецептбук
           </h2>
+          <p className="text-xl text-sage max-w-3xl mx-auto font-manrope">
+            Идеально подойдет тем, кто ценит свое время и здоровье
+          </p>
         </div>
 
-        {/* FAQ Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto mb-12">
-          {faqItems.map((item, index) => (
+        {/* Target Audience Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+          {targetAudience.map((audience, index) => (
             <div 
               key={index}
-              className={`${item.bgColor} rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 animate-fade-in-up`}
+              className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 text-center animate-fade-in-up"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <h3 className={`text-xl font-bold mb-4 font-montserrat ${item.textColor}`}>
-                {item.question}
+              <div className={`w-16 h-16 bg-gradient-to-br ${audience.color} rounded-2xl mx-auto mb-6 flex items-center justify-center`}>
+                <audience.icon className="w-8 h-8 text-white" />
+              </div>
+              
+              <h3 className="text-xl font-bold text-graphite mb-4 font-montserrat">
+                {audience.title}
               </h3>
-              <p className={`leading-relaxed font-manrope ${item.textColor} opacity-90`}>
-                {item.answer}
+              
+              <p className="text-sage leading-relaxed font-manrope">
+                {audience.description}
               </p>
             </div>
           ))}
         </div>
 
+        {/* Suitability Section */}
+        <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          {suitabilityItems.map((section, index) => (
+            <div 
+              key={index}
+              className={`${section.bgColor} rounded-3xl p-8 shadow-xl animate-fade-in-up`}
+              style={{ animationDelay: `${index * 0.2}s` }}
+            >
+              <div className="flex items-center gap-3 mb-6">
+                <Star className={`w-6 h-6 ${section.textColor}`} />
+                <h3 className={`text-2xl font-bold font-montserrat ${section.textColor}`}>
+                  {section.category}
+                </h3>
+              </div>
+              
+              <ul className="space-y-3">
+                {section.items.map((item, itemIndex) => (
+                  <li 
+                    key={itemIndex}
+                    className={`flex items-start gap-3 ${section.textColor} opacity-90`}
+                  >
+                    <CheckCircle className="w-5 h-5 flex-shrink-0 mt-0.5" />
+                    <span className="font-manrope leading-relaxed">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
         {/* Bottom CTA */}
-        <div className="text-center">
-          <p className="text-graphite-600 text-lg mb-6 font-manrope">
-            Не нашли ответ на свой вопрос?
-          </p>
-          <button className="bg-gradient-to-r from-mint-400 to-green-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:from-mint-500 hover:to-green-600 transition-all duration-300 hover:scale-105 hover:shadow-xl font-montserrat">
-            Написать в поддержку
-          </button>
+        <div className="text-center mt-16">
+          <div className="bg-white rounded-2xl p-8 max-w-2xl mx-auto shadow-lg">
+            <h3 className="text-2xl font-bold text-graphite mb-4 font-montserrat">
+              Узнали себя?
+            </h3>
+            <p className="text-sage text-lg mb-6 font-manrope">
+              Тогда этот рецептбук создан специально для вас!
+            </p>
+            <button className="bg-gradient-to-r from-coral-500 to-terracotta-400 text-white px-8 py-4 rounded-full font-bold text-lg hover:from-coral-600 hover:to-terracotta-500 transition-all duration-300 hover:scale-105 hover:shadow-xl font-montserrat">
+              ПОЛУЧИТЬ РЕЦЕПТЫ
+            </button>
+          </div>
         </div>
       </div>
     </section>
   );
 };
 
-export default FAQ;
+export default ForWhom;
