@@ -64,31 +64,31 @@ const ForWhom = () => {
 
         <div className="max-w-5xl mx-auto">
           {/* Header Tabs */}
-          <div ref={tabsRef} className="flex justify-center mb-12 animate-on-scroll">
+          <div ref={tabsRef} className="flex justify-center mb-8 lg:mb-12 animate-on-scroll">
             <div className="flex bg-white rounded-full shadow-lg overflow-hidden">
-              <div className="bg-green-500 text-white px-8 py-4 font-bold text-lg font-montserrat">
+              <div className="bg-green-500 text-white px-4 py-2 lg:px-8 lg:py-4 font-bold text-sm lg:text-lg font-montserrat">
                 ПОДХОДИТ
               </div>
-              <div className="bg-red-500 text-white px-8 py-4 font-bold text-lg font-montserrat">
+              <div className="bg-red-500 text-white px-4 py-2 lg:px-8 lg:py-4 font-bold text-sm lg:text-lg font-montserrat">
                 НЕ ПОДХОДИТ
               </div>
             </div>
           </div>
 
           {/* Content Grid */}
-          <div ref={contentRef} className="grid lg:grid-cols-2 gap-8 animate-on-scroll">
+          <div ref={contentRef} className="grid lg:grid-cols-2 gap-6 lg:gap-8 animate-on-scroll">
             {/* Подходит */}
-            <div className="space-y-6">
+            <div className="space-y-4 lg:space-y-6">
               {forWhom.map((item, index) => (
                 <div 
                   key={index}
-                  className="flex items-center gap-4 animate-fade-in-up"
+                  className="flex items-center gap-3 lg:gap-4 animate-fade-in-up"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
-                    <item.icon className="w-8 h-8 text-white" />
+                  <div className="w-12 h-12 lg:w-16 lg:h-16 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
+                    <item.icon className="w-6 h-6 lg:w-8 lg:h-8 text-white" />
                   </div>
-                  <p className="text-graphite-800 font-medium text-lg leading-relaxed font-manrope">
+                  <p className="text-graphite-800 font-medium text-sm lg:text-lg leading-relaxed font-manrope">
                     {item.text}
                   </p>
                 </div>
@@ -99,17 +99,17 @@ const ForWhom = () => {
             <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-orange-200 via-orange-400 to-orange-200 transform -translate-x-1/2"></div>
 
             {/* Не подходит */}
-            <div className="space-y-6">
+            <div className="space-y-4 lg:space-y-6">
               {notForWhom.map((item, index) => (
                 <div 
                   key={index}
-                  className="flex items-center gap-4 animate-fade-in-up"
+                  className="flex items-center gap-3 lg:gap-4 animate-fade-in-up"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  <div className="w-16 h-16 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0">
-                    <item.icon className="w-8 h-8 text-white" />
+                  <div className="w-12 h-12 lg:w-16 lg:h-16 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0">
+                    <item.icon className="w-6 h-6 lg:w-8 lg:h-8 text-white" />
                   </div>
-                  <p className="text-graphite-800 font-medium text-lg leading-relaxed font-manrope">
+                  <p className="text-graphite-800 font-medium text-sm lg:text-lg leading-relaxed font-manrope">
                     {item.text}
                   </p>
                 </div>
