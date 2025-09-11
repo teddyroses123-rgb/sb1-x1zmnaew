@@ -105,16 +105,19 @@ const Hero = () => {
         </div>
         
         <div className="flex items-center space-x-3">
+          <a
             href="https://www.tiktok.com/@artassya?fbclid=PAZXh0bgNhZW0CMTEAAafhvh5g57hgbaHZPf2kwlgnm9etZ0Khwb53SOGkoUF1cxS8wsN8Cljh54b59w_aem_t_N-afXVkUhjh_7fiNOdwg" 
             target="_blank" 
             rel="noopener noreferrer"
             className="w-8 h-8 bg-black rounded flex items-center justify-center hover:bg-gray-800 transition-colors"
-          <a href="#" className="w-8 h-8 bg-blue-500 rounded flex items-center justify-center hover:bg-blue-600 transition-colors">
+          >
+          </a>
+          <a 
             href="https://www.instagram.com/artassya?igsh=MXM3NGNxMDFtd3Vt" 
             target="_blank" 
             rel="noopener noreferrer"
-          </a>
-          <a href="#" className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded flex items-center justify-center hover:from-purple-600 hover:to-pink-600 transition-colors">
+            className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded flex items-center justify-center hover:from-purple-600 hover:to-pink-600 transition-colors"
+          >
             <Instagram className="w-4 h-4 text-white" />
           </a>
         </div>
@@ -235,5 +238,3 @@ const Hero = () => {
 };
 
 export default Hero;
-  )
-}
