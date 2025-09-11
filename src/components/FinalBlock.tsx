@@ -27,7 +27,7 @@ const FinalBlock = () => {
               <div className="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center mx-auto mb-4">
                 <CheckCircle className="w-6 h-6 text-white" />
               </div>
-              <h3 className="font-bold text-lg mb-2 font-montserrat">200+ рецептов</h3>
+              <h3 className="font-bold text-lg mb-2 font-montserrat">60+ рецептов</h3>
               <p className="text-gray-300 text-sm font-manrope">60+ рецептов с постоянным обновлением</p>
             </div>
             
