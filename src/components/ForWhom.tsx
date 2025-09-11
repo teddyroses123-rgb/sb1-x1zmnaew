@@ -1,132 +1,85 @@
 import React from 'react';
-import { Target, Clock, Heart, Users, DollarSign, X, Brain, Zap, Utensils, Ban } from 'lucide-react';
-import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
-const ForWhom = () => {
-  const headerRef = useScrollAnimation();
-  const tabsRef = useScrollAnimation();
-  const contentRef = useScrollAnimation();
-
-  const forWhom = [
+const FAQ = () => {
+  const faqItems = [
     {
-      icon: Target,
-      text: "Тем, кто хочет похудеть без стрессовых диет"
+      question: "Дорого",
+      answer: "Нет 😊 Вы берёте не файл, а живой канал + комьюнити + бонусы + мою поддержку и готовые решения + что готовить сегодня. Экономия времени и денег: меньше заказов доставки, меньше «пустых» покупок — Поэтому это выгоднее, чем развозная книга.",
+      bgColor: "bg-gradient-to-br from-coral-400 to-red-400",
+      textColor: "text-white"
     },
     {
-      icon: Clock,
-      text: "Занятым людям, которые ценят быстрые и здоровые рецепты"
+      question: "Я — вегетарианка/у меня ограничения",
+      answer: "У меня в канале тегн и простые замены в каждом рецепте. Если укажете свой профиль, помогу подобрать подборку под вас.",
+      bgColor: "bg-gradient-to-br from-blue-400 to-blue-500",
+      textColor: "text-white"
     },
     {
-      icon: Heart,
-      text: "Тем, кто хочет питаться вкусно без ограничений"
+      question: "А если я на ГВ?",
+      answer: "Канал — про общие идеи сбалансированного питания. На ГВ всё индивидуально — рекомендую консультацию с нутрициологом или врачом для персональности и рекомендаций именно вашего педиатра.",
+      bgColor: "bg-gradient-to-br from-green-400 to-green-500",
+      textColor: "text-white"
     },
     {
-      icon: Users,
-      text: "Людям, которые устали от однообразного питания"
+      question: "Нужны ли кухонные весы и супер-ингредиенты?",
+      answer: "Нет. Все рецепты максимально из магазина у дома. Весы помогают точности, но не обязательны.",
+      bgColor: "bg-gradient-to-br from-purple-400 to-purple-500",
+      textColor: "text-white"
     },
     {
-      icon: DollarSign,
-      text: "Тем, кто заботится о здоровье семьи и детей"
-    }
-  ];
-
-  const notForWhom = [
-    {
-      icon: Brain,
-      text: "Тем, кто ищет волшебную таблетку для похудения"
+      question: "Почему канал, а не PDF?",
+      answer: "Потому что живой формат: удобный поиск по тегам, обсуждения, постоянные обновления. Это не файл, который «лежит мёртвым».",
+      bgColor: "bg-gradient-to-br from-orange-400 to-orange-500",
+      textColor: "text-white"
     },
     {
-      icon: Ban,
-      text: "Людям, которые не готовы тратить время на готовку"
-    },
-    {
-      icon: Utensils,
-      text: "Тем, кто хочет есть только фастфуд и сладости"
-    },
-    {
-      icon: Zap,
-      text: "Людям, которые не верят в силу правильного питания"
-    },
-    {
-      icon: X,
-      text: "Тем, кто не готов менять пищевые привычки"
+      question: "Что за бонусы?",
+      answer: "Я не выкладываю их в открытый доступ, потому что это мой личный «секретный раздел». Быстрые схемы, мини-гутаны и проверенные решения. Зайдёте в канал — получите доступ к закрытому набору, который я всё время пополняю. Именно ради него девочки остаются надолго. 💜",
+      bgColor: "bg-gradient-to-br from-pink-400 to-pink-500",
+      textColor: "text-white"
     }
   ];
 
   return (
-    <section id="for-whom" className="py-20 bg-gradient-to-b from-cream-50 to-vanilla-100">
+    <section id="faq" className="py-20 bg-gradient-to-b from-gray-50 to-white">
       <div className="container mx-auto px-6">
-        <div ref={headerRef} className="text-center mb-16 animate-on-scroll">
-          <h2 className="text-4xl lg:text-5xl font-bold text-graphite mb-6 font-montserrat">
-            Для кого этот рецептбук?
+        {/* Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl lg:text-5xl font-bold text-graphite-800 mb-6 font-montserrat">
+            Ответы на ваши вопросы
           </h2>
         </div>
 
-        <div className="max-w-5xl mx-auto">
-          {/* Header Tabs */}
-          <div ref={tabsRef} className="flex justify-center mb-12 animate-on-scroll">
-            <div className="flex bg-white rounded-full shadow-lg overflow-hidden">
-              <div className="bg-green-500 text-white px-8 py-4 font-bold text-lg font-montserrat flex items-center gap-2">
-                <div className="w-8 h-8 bg-orange-400 rounded-full flex items-center justify-center">
-                  <span className="text-white font-bold">?</span>
-                </div>
-                ПОДХОДИТ
-              </div>
-              <div className="bg-red-500 text-white px-8 py-4 font-bold text-lg font-montserrat">
-                НЕ ПОДХОДИТ
-              </div>
+        {/* FAQ Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto mb-12">
+          {faqItems.map((item, index) => (
+            <div 
+              key={index}
+              className={`${item.bgColor} rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 animate-fade-in-up`}
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
+              <h3 className={`text-xl font-bold mb-4 font-montserrat ${item.textColor}`}>
+                {item.question}
+              </h3>
+              <p className={`leading-relaxed font-manrope ${item.textColor} opacity-90`}>
+                {item.answer}
+              </p>
             </div>
-          </div>
+          ))}
+        </div>
 
-          {/* Content Grid */}
-          <div ref={contentRef} className="grid lg:grid-cols-2 gap-8 animate-on-scroll">
-            {/* Подходит */}
-            <div className="space-y-6">
-              {forWhom.map((item, index) => (
-                <div 
-                  key={index}
-                  className="flex items-center gap-4 animate-fade-in-up"
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
-                    <item.icon className="w-8 h-8 text-white" />
-                  </div>
-                  <p className="text-graphite-800 font-medium text-lg leading-relaxed font-manrope">
-                    {item.text}
-                  </p>
-                </div>
-              ))}
-            </div>
-
-            {/* Разделительная линия */}
-            <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-orange-200 via-orange-400 to-orange-200 transform -translate-x-1/2"></div>
-
-            {/* Не подходит */}
-            <div className="space-y-6">
-              {notForWhom.map((item, index) => (
-                <div 
-                  key={index}
-                  className="flex items-center gap-4 animate-fade-in-up"
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  <div className="w-16 h-16 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0">
-                    <item.icon className="w-8 h-8 text-white" />
-                  </div>
-                  <p className="text-graphite-800 font-medium text-lg leading-relaxed font-manrope">
-                    {item.text}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Decorative Elements */}
-          <div className="absolute top-20 left-10 w-12 h-12 bg-green-200 rounded-full opacity-30 animate-float"></div>
-          <div className="absolute bottom-20 right-10 w-8 h-8 bg-red-200 rounded-full opacity-40 animate-float-delayed"></div>
+        {/* Bottom CTA */}
+        <div className="text-center">
+          <p className="text-graphite-600 text-lg mb-6 font-manrope">
+            Не нашли ответ на свой вопрос?
+          </p>
+          <button className="bg-gradient-to-r from-mint-400 to-green-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:from-mint-500 hover:to-green-600 transition-all duration-300 hover:scale-105 hover:shadow-xl font-montserrat">
+            Написать в поддержку
+          </button>
         </div>
       </div>
     </section>
   );
 };
 
-export default ForWhom;
+export default FAQ;

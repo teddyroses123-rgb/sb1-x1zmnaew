@@ -1,214 +1,79 @@
-import React, { useState, useEffect } from 'react';
-import { Send, Instagram, Clock } from 'lucide-react';
+import React from 'react';
 
-const Hero = () => {
-  const [timeLeft, setTimeLeft] = useState({
-    days: 2,
-    hours: 23,
-    minutes: 59,
-    seconds: 49
-  });
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setTimeLeft(prev => {
-        if (prev.seconds > 0) {
-          return { ...prev, seconds: prev.seconds - 1 };
-        } else if (prev.minutes > 0) {
-          return { ...prev, minutes: prev.minutes - 1, seconds: 59 };
-        } else if (prev.hours > 0) {
-          return { ...prev, hours: prev.hours - 1, minutes: 59, seconds: 59 };
-        } else if (prev.days > 0) {
-          return { ...prev, days: prev.days - 1, hours: 23, minutes: 59, seconds: 59 };
-        } else {
-          return { days: 2, hours: 23, minutes: 59, seconds: 49 };
-        }
-      });
-    }, 1000);
-
-    return () => clearInterval(timer);
-  }, []);
+const FAQ = () => {
+  const faqItems = [
+    {
+      question: "Дорого",
+      answer: "Нет 😊 Вы берёте не файл, а живой канал + комьюнити + бонусы + мою поддержку и готовые решения + что готовить сегодня. Экономия времени и денег: меньше заказов доставки, меньше «пустых» покупок — Поэтому это выгоднее, чем развозная книга.",
+      bgColor: "bg-gradient-to-br from-coral-400 to-red-400",
+      textColor: "text-white"
+    },
+    {
+      question: "Я — вегетарианка/у меня ограничения",
+      answer: "У меня в канале тегн и простые замены в каждом рецепте. Если укажете свой профиль, помогу подобрать подборку под вас.",
+      bgColor: "bg-gradient-to-br from-blue-400 to-blue-500",
+      textColor: "text-white"
+    },
+    {
+      question: "А если я на ГВ?",
+      answer: "Канал — про общие идеи сбалансированного питания. На ГВ всё индивидуально — рекомендую консультацию с нутрициологом или врачом для персональности и рекомендаций именно вашего педиатра.",
+      bgColor: "bg-gradient-to-br from-green-400 to-green-500",
+      textColor: "text-white"
+    },
+            <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-4 lg:p-6 shadow-lg max-w-sm lg:max-w-lg mx-auto lg:mx-0 border border-lime-200">
+      question: "Нужны ли кухонные весы и супер-ингредиенты?",
+      answer: "Нет. Все рецепты максимально из магазина у дома. Весы помогают точности, но не обязательны.",
+      bgColor: "bg-gradient-to-br from-purple-400 to-purple-500",
+      textColor: "text-white"
+    },
+    {
+      question: "Почему канал, а не PDF?",
+      answer: "Потому что живой формат: удобный поиск по тегам, обсуждения, постоянные обновления. Это не файл, который «лежит мёртвым».",
+      bgColor: "bg-gradient-to-br from-orange-400 to-orange-500",
+      textColor: "text-white"
+    }
+  ];
 
   return (
-    <section className="relative min-h-screen overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0">
-        <img 
-          src="https://i.ibb.co/PvN7wXY7/image.png" 
-          alt="Kitchen background"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-white/30"></div>
-      </div>
-
-      {/* Navigation */}
-      <nav className="relative z-20 flex items-center justify-between px-6 py-4">
-        <div className="flex items-center space-x-8">
-          <a 
-            href="#what-inside" 
-            className="text-graphite-700 hover:text-coral-500 transition-colors font-medium font-manrope cursor-pointer"
-            onClick={(e) => {
-              e.preventDefault();
-              document.querySelector('#what-inside')?.scrollIntoView({ behavior: 'smooth' });
-            }}
-          >
-            Что внутри
-          </a>
-          <a 
-            href="#about-author" 
-            className="text-graphite-700 hover:text-coral-500 transition-colors font-medium font-manrope cursor-pointer"
-            onClick={(e) => {
-              e.preventDefault();
-              document.querySelector('#about-author')?.scrollIntoView({ behavior: 'smooth' });
-            }}
-          >
-            Об авторе
-          </a>
-          <a 
-            href="#for-whom" 
-            className="text-graphite-700 hover:text-coral-500 transition-colors font-medium font-manrope cursor-pointer"
-            onClick={(e) => {
-              e.preventDefault();
-              document.querySelector('#for-whom')?.scrollIntoView({ behavior: 'smooth' });
-            }}
-          >
-            Для кого
-          </a>
-          <a 
-            href="#reviews" 
-            className="text-graphite-700 hover:text-coral-500 transition-colors font-medium font-manrope cursor-pointer"
-            onClick={(e) => {
-              e.preventDefault();
-              document.querySelector('#reviews')?.scrollIntoView({ behavior: 'smooth' });
-            }}
-          >
-            Отзывы
-          </a>
-          <a 
-            href="#faq" 
-            className="text-graphite-700 hover:text-coral-500 transition-colors font-medium font-manrope cursor-pointer"
-            onClick={(e) => {
-              e.preventDefault();
-              document.querySelector('#faq')?.scrollIntoView({ behavior: 'smooth' });
-            }}
-          >
-            Вопросы
-          </a>
+    <section id="faq" className="py-20 bg-gradient-to-b from-gray-50 to-white">
+      <div className="container mx-auto px-6">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl lg:text-5xl font-bold text-graphite-800 mb-6 font-montserrat">
+            Ответы на ваши вопросы
+          </h2>
         </div>
-        
-        <div className="flex items-center space-x-4">
-          <a href="#" className="w-8 h-8 bg-blue-500 rounded flex items-center justify-center hover:bg-blue-600 transition-colors">
-            <Send className="w-4 h-4 text-white" />
-          </a>
-          <a href="#" className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded flex items-center justify-center hover:from-purple-600 hover:to-pink-600 transition-colors">
-            <Instagram className="w-4 h-4 text-white" />
-          </a>
+
+        {/* FAQ Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto mb-12">
+          {faqItems.map((item, index) => (
+            <div 
+              key={index}
+              className={`${item.bgColor} rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 animate-fade-in-up`}
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
+              <h3 className={`text-xl font-bold mb-4 font-montserrat ${item.textColor}`}>
+                {item.question}
+              </h3>
+              <p className={`leading-relaxed font-manrope ${item.textColor} opacity-90`}>
+                {item.answer}
+              </p>
+            </div>
+          ))}
         </div>
-      </nav>
 
-      <div className="relative z-10 container mx-auto px-6 py-12">
-        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
-          {/* Left Content */}
-          <div className="space-y-8">
-            {/* Leaf icon */}
-            <div className="w-16 h-16 text-lime-500 mb-4">
-              🍃
-            </div>
-
-            <h1 className="text-6xl lg:text-7xl font-bold text-graphite-800 leading-tight font-montserrat">
-              РЕЦЕПТБУК<br />
-              <span className="text-lime-500">EAT&FIT</span>
-            </h1>
-
-            {/* Special Offer Card */}
-            <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-lg max-w-lg border border-lime-200">
-              <div className="flex items-center gap-2 mb-4">
-                <div className="w-2 h-2 bg-lime-400 rounded-full"></div>
-                <span className="text-lime-600 font-bold text-sm font-montserrat">АКЦИЯ СЕГОДНЯ</span>
-              </div>
-              
-              <div className="mb-4">
-                <div className="flex items-center gap-3 mb-2">
-                  <span className="line-through text-lg text-gray-500 font-manrope">19 €</span>
-                  <span className="font-bold text-3xl font-montserrat text-lime-600">12 €</span>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-2 mb-6">
-                <Clock className="w-4 h-4 text-gray-600" />
-                <span className="text-gray-600 text-sm font-manrope">До конца акции:</span>
-                <span className="text-lime-600 font-bold text-sm font-montserrat">37% скидка</span>
-              </div>
-
-              {/* Timer */}
-              <div className="grid grid-cols-4 gap-2 text-center mb-6">
-                <div className="bg-lime-100 rounded-lg px-3 py-2">
-                  <div className="text-lg font-bold text-graphite-800 font-montserrat">{String(timeLeft.days).padStart(2, '0')}</div>
-                  <div className="text-xs text-gray-600 font-manrope">дней</div>
-                </div>
-                <div className="bg-lime-100 rounded-lg px-3 py-2">
-                  <div className="text-lg font-bold text-graphite-800 font-montserrat">{String(timeLeft.hours).padStart(2, '0')}</div>
-                  <div className="text-xs text-gray-600 font-manrope">часов</div>
-                </div>
-                <div className="bg-lime-100 rounded-lg px-3 py-2">
-                  <div className="text-lg font-bold text-graphite-800 font-montserrat">{String(timeLeft.minutes).padStart(2, '0')}</div>
-                  <div className="text-xs text-gray-600 font-manrope">минут</div>
-                </div>
-                <div className="bg-lime-100 rounded-lg px-3 py-2">
-                  <div className="text-lg font-bold text-graphite-800 font-montserrat">{String(timeLeft.seconds).padStart(2, '0')}</div>
-                  <div className="text-xs text-gray-600 font-manrope">секунд</div>
-                </div>
-              </div>
-              
-              <button className="w-full bg-lime-400 hover:bg-lime-500 text-white py-3 rounded-full font-bold text-lg transition-all duration-300 hover:scale-105 font-montserrat">
-                КУПИТЬ СО СКИДКОЙ
-              </button>
-            </div>
-          </div>
-
-          {/* Right Image */}
-          <div className="lg:justify-self-end relative">
-            <div className="relative">
-              <img 
-                src="https://i.ibb.co/V0gMw7fn/E6-DCA96-B-AF56-4-CA1-BAB1-3-C95196837-D0-no-bg-preview-carve-photos.png" 
-                alt="Девушка"
-                className="w-full max-w-lg rounded-3xl"
-              />
-              
-              {/* Floating food icons */}
-              <div className="absolute top-10 -left-6 animate-float">
-                <div className="w-12 h-12 bg-lime-400 rounded-full flex items-center justify-center shadow-lg">
-                  <span className="text-xl">🥑</span>
-                </div>
-              </div>
-              
-              <div className="absolute bottom-20 -right-6 animate-float-delayed">
-                <div className="w-12 h-12 bg-coral-400 rounded-full flex items-center justify-center shadow-lg">
-                  <span className="text-xl">🍓</span>
-                </div>
-              </div>
-
-              <div className="absolute top-1/2 -right-8 animate-bounce-gentle">
-                <div className="w-10 h-10 bg-mint-400 rounded-full flex items-center justify-center shadow-lg">
-                  <span className="text-lg">🥗</span>
-                </div>
-              </div>
-
-              {/* Author label */}
-              <div className="absolute bottom-4 right-4 bg-white/80 backdrop-blur-sm rounded-full px-4 py-2">
-                <span className="text-graphite-600 text-sm font-manrope">Автор: Asya</span>
-              </div>
-            </div>
-          </div>
+        {/* Bottom CTA */}
+        <div className="text-center">
+          <p className="text-graphite-600 text-lg mb-6 font-manrope">
+            Не нашли ответ на свой вопрос?
+          </p>
+          <button className="bg-gradient-to-r from-mint-400 to-green-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:from-mint-500 hover:to-green-600 transition-all duration-300 hover:scale-105 hover:shadow-xl font-montserrat">
+            Написать в поддержку
+          </button>
         </div>
       </div>
-
-      {/* Decorative elements */}
-      <div className="absolute top-20 left-20 w-8 h-8 bg-lime-300 rounded-full opacity-30 animate-float"></div>
-      <div className="absolute bottom-32 left-16 w-6 h-6 bg-coral-300 rounded-full opacity-40 animate-float-delayed"></div>
-      <div className="absolute top-1/3 right-20 w-4 h-4 bg-mint-300 rounded-full opacity-50 animate-bounce-gentle"></div>
     </section>
   );
 };
 
-export default Hero;
+export default FAQ;
