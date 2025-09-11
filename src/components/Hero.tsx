@@ -20,7 +20,7 @@ const FAQ = () => {
     },
     {
       question: "Нужны ли кухонные весы и супер-ингредиенты?",
-      answer: "Нет. Все рецепты максимально «из магазина у дома». Весы помогают точности, но не обязательны.",
+      answer: "Нет, все рецепты адаптированы под обычные продукты и простые способы измерения.",
       color: "bg-gradient-to-br from-purple-400 to-purple-500 text-white"
     },
     {
@@ -50,23 +50,21 @@ const FAQ = () => {
         </div>
 
         {/* FAQ Cards Grid */}
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {faqs.map((faq, index) => (
-              <div 
-                key={index}
-                className={`rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 animate-fade-in-up ${faq.color}`}
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <h3 className="text-lg font-bold mb-4 font-montserrat">
-                  {faq.question}
-                </h3>
-                <p className="leading-relaxed font-manrope text-sm opacity-90">
-                  {faq.answer}
-                </p>
-              </div>
-            ))}
-          </div>
+        <div className="grid gap-6 max-w-4xl mx-auto">
+          {faqs.map((faq, index) => (
+            <div 
+              key={index}
+              className={`${faq.color} p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 animate-fade-in-up`}
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
+              <h3 className="text-xl font-bold mb-4 font-montserrat">
+                {faq.question}
+              </h3>
+              <p className="leading-relaxed font-manrope text-sm opacity-90">
+                {faq.answer}
+              </p>
+            </div>
+          ))}
         </div>
 
         <div className="text-center mt-16">
