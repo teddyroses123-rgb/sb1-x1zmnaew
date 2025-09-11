@@ -40,7 +40,7 @@ const Hero = () => {
       {/* Background */}
       <div className="absolute inset-0">
         <img 
-          src="https://i.ibb.co/V0gMw7fn/E6-DCA96-B-AF56-4-CA1-BAB1-3-C95196837-D0-no-bg-preview-carve-photos.png" 
+          src="https://i.ibb.co/PvN7wXY7/image.png" 
           alt="Kitchen background"
           className="w-full h-full object-cover"
           loading="eager"
@@ -111,7 +111,11 @@ const Hero = () => {
             rel="noopener noreferrer"
             className="w-8 h-8 bg-black rounded flex items-center justify-center hover:bg-gray-800 transition-colors"
           >
-          </a>
+            <img 
+              src="https://i.ibb.co/jPTV0Pmk/free-icon-tiktok-3669950.png" 
+              alt="TikTok"
+              className="w-4 h-4"
+            />
           <a 
             href="https://www.instagram.com/artassya?igsh=MXM3NGNxMDFtd3Vt" 
             target="_blank" 
