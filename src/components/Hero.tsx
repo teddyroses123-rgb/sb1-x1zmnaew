@@ -50,14 +50,14 @@ const FAQ = () => {
         </div>
 
         {/* FAQ Cards Grid */}
-        <div className="grid gap-6 max-w-4xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
           {faqs.map((faq, index) => (
             <div 
               key={index}
               className={`${faq.color} p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 animate-fade-in-up`}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <h3 className="text-xl font-bold mb-4 font-montserrat">
+              <h3 className="font-bold text-lg mb-4 font-montserrat">
                 {faq.question}
               </h3>
               <p className="leading-relaxed font-manrope text-sm opacity-90">
