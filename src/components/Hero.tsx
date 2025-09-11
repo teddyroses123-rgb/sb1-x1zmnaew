@@ -182,7 +182,7 @@ const Hero = () => {
           <div ref={imageRef} className="lg:justify-self-end animate-on-scroll-right">
             <div className="relative">
               <img 
-                src="https://i.ibb.co/V0gMw7fn/E6-DCA96-B-AF56-4-CA1-BAB1-3-C95196837-D0-no-bg-preview-carve-photos.png" 
+                src="https://i.ibb.co/7dHTQgy9/0-L5-A9239-no-bg-preview-carve-photos.png" 
                 alt="Девушка с яблоком"
                 className="w-full max-w-lg rounded-3xl shadow-2xl"
               />
