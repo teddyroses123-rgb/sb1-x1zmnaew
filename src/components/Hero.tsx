@@ -116,6 +116,11 @@ const Hero = () => {
               alt="TikTok"
               className="w-4 h-4"
             />
+            <img 
+              src="https://i.ibb.co/jPTV0Pmk/free-icon-tiktok-3669950.png" 
+              alt="TikTok"
+              className="w-4 h-4"
+            />
           </a>
           <a 
             href="https://www.instagram.com/artassya?igsh=MXM3NGNxMDFtd3Vt" 
