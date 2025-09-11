@@ -89,10 +89,12 @@ const Hero = () => {
               <span className="text-lime-500">EAT&FIT</span>
             </h1>
 
-            {/* Subtitle */}
-            <p className="text-base md:text-lg lg:text-xl text-graphite-700 max-w-2xl leading-relaxed font-manrope">
-              Закрытый Telegram-канал с полезными рецептами, секретами ухода за телом и поддерживающим сообществом 24/7 — всё в одном канале
-            </p>
+            {/* Subtitle - более читаемый */}
+            <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-4 lg:p-6 max-w-2xl shadow-lg border border-lime-200">
+              <p className="text-base md:text-lg lg:text-xl text-graphite-800 leading-relaxed font-manrope font-medium">
+                Закрытый Telegram-канал с полезными рецептами, секретами ухода за телом и поддерживающим сообществом 24/7 — всё в одном канале
+              </p>
+            </div>
 
             {/* Special Offer Card */}
             <div className="bg-white/95 backdrop-blur-sm rounded-3xl p-6 lg:p-8 shadow-2xl max-w-lg border border-lime-200">
