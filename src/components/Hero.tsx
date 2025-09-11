@@ -42,11 +42,11 @@ const Hero = () => {
       </div>
 
       {/* Navigation */}
-      <nav className="relative z-20 flex items-center justify-between px-6 py-4">
-        <div className="flex items-center space-x-8">
+      <nav className="relative z-20 flex flex-col lg:flex-row items-center justify-between px-6 py-4 gap-4">
+        <div className="flex flex-wrap items-center justify-center lg:justify-start space-x-4 lg:space-x-8">
           <a 
             href="#what-inside" 
-            className="text-graphite-700 hover:text-coral-500 transition-colors font-medium font-manrope cursor-pointer"
+            className="text-graphite-700 hover:text-coral-500 transition-colors font-medium font-manrope cursor-pointer text-sm lg:text-base"
             onClick={(e) => {
               e.preventDefault();
               document.querySelector('#what-inside')?.scrollIntoView({ behavior: 'smooth' });
@@ -56,7 +56,7 @@ const Hero = () => {
           </a>
           <a 
             href="#about-author" 
-            className="text-graphite-700 hover:text-coral-500 transition-colors font-medium font-manrope cursor-pointer"
+            className="text-graphite-700 hover:text-coral-500 transition-colors font-medium font-manrope cursor-pointer text-sm lg:text-base"
             onClick={(e) => {
               e.preventDefault();
               document.querySelector('#about-author')?.scrollIntoView({ behavior: 'smooth' });
@@ -66,7 +66,7 @@ const Hero = () => {
           </a>
           <a 
             href="#for-whom" 
-            className="text-graphite-700 hover:text-coral-500 transition-colors font-medium font-manrope cursor-pointer"
+            className="text-graphite-700 hover:text-coral-500 transition-colors font-medium font-manrope cursor-pointer text-sm lg:text-base"
             onClick={(e) => {
               e.preventDefault();
               document.querySelector('#for-whom')?.scrollIntoView({ behavior: 'smooth' });
@@ -76,7 +76,7 @@ const Hero = () => {
           </a>
           <a 
             href="#reviews" 
-            className="text-graphite-700 hover:text-coral-500 transition-colors font-medium font-manrope cursor-pointer"
+            className="text-graphite-700 hover:text-coral-500 transition-colors font-medium font-manrope cursor-pointer text-sm lg:text-base"
             onClick={(e) => {
               e.preventDefault();
               document.querySelector('#reviews')?.scrollIntoView({ behavior: 'smooth' });
@@ -86,7 +86,7 @@ const Hero = () => {
           </a>
           <a 
             href="#faq" 
-            className="text-graphite-700 hover:text-coral-500 transition-colors font-medium font-manrope cursor-pointer"
+            className="text-graphite-700 hover:text-coral-500 transition-colors font-medium font-manrope cursor-pointer text-sm lg:text-base"
             onClick={(e) => {
               e.preventDefault();
               document.querySelector('#faq')?.scrollIntoView({ behavior: 'smooth' });
@@ -96,7 +96,6 @@ const Hero = () => {
           </a>
         </div>
         
-        <div className="flex items-center space-x-4">
           <a href="#" className="w-8 h-8 bg-blue-500 rounded flex items-center justify-center hover:bg-blue-600 transition-colors">
             <Send className="w-4 h-4 text-white" />
           </a>
