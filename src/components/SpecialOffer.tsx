@@ -35,32 +35,32 @@ const SpecialOffer = () => {
         <div className="max-w-6xl mx-auto">
           <div ref={contentRef} className="grid lg:grid-cols-2 gap-12 items-center animate-on-scroll">
             {/* Left Side - Photo */}
-            <div className="relative -ml-12">
+            <div className="relative lg:-ml-12 order-2 lg:order-1">
               <img 
                 src="https://i.ibb.co/cX898gTf/image.jpg"
                 alt="Ася - автор рецептов"
-                className="w-full h-auto max-w-xl mx-auto"
-                style={{ height: '600px', objectFit: 'contain' }}
+                className="w-full h-auto max-w-sm lg:max-w-xl mx-auto"
+                style={{ height: 'auto', maxHeight: '500px', objectFit: 'contain' }}
               />
               
               {/* Caption under photo */}
-              <div className="mt-6 text-center max-w-lg mx-auto">
-                <h3 className="text-2xl font-bold text-graphite mb-4 font-montserrat">
+              <div className="mt-4 lg:mt-6 text-center max-w-lg mx-auto">
+                <h3 className="text-xl lg:text-2xl font-bold text-graphite mb-2 lg:mb-4 font-montserrat">
                   Не диета. Система: баланс, вкус и результат
                 </h3>
-                <p className="text-lg text-sage font-manrope">
+                <p className="text-base lg:text-lg text-sage font-manrope">
                   Начни питаться правильно уже сегодня!
                 </p>
               </div>
             </div>
 
             {/* Right Side - About Me Text Block */}
-            <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-xl min-h-[600px] flex flex-col justify-center">
-              <h2 className="text-3xl font-bold text-graphite mb-6 font-montserrat">
+            <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-6 lg:p-8 shadow-xl min-h-[400px] lg:min-h-[600px] flex flex-col justify-center order-1 lg:order-2">
+              <h2 className="text-2xl lg:text-3xl font-bold text-graphite mb-4 lg:mb-6 font-montserrat">
                 ОБ АВТОРЕ
               </h2>
               
-              <div className="space-y-4 text-graphite leading-relaxed font-manrope">
+              <div className="space-y-3 lg:space-y-4 text-graphite leading-relaxed font-manrope text-sm lg:text-base">
                 <p>
                   Меня зовут <strong>Ася</strong> — я сертифицированный фитнес-тренер и сейчас 
                   прохожу активное обучение на нутрициолога.
@@ -77,18 +77,18 @@ const SpecialOffer = () => {
                   что такое сбалансированное правильное питание.
                 </p>
                 
-                <div className="bg-lime-50 rounded-2xl p-6 mt-6">
-                  <h3 className="text-xl font-bold text-graphite mb-4 font-montserrat">Цена доступа и условия</h3>
-                  <ul className="space-y-2 text-graphite">
+                <div className="bg-lime-50 rounded-2xl p-4 lg:p-6 mt-4 lg:mt-6">
+                  <h3 className="text-lg lg:text-xl font-bold text-graphite mb-3 lg:mb-4 font-montserrat">Цена доступа и условия</h3>
+                  <ul className="space-y-1 lg:space-y-2 text-graphite text-sm lg:text-base">
                     <li>• Цена доступа — <strong className="text-lime-600">12 €</strong> (первые дни), потом 19 €.</li>
                     <li>• Доступ — навсегда.</li>
                     <li>• Гарантия вкуса и пользы: ты будешь есть вкусно и двигаться к цели без демонизации продуктов.</li>
                   </ul>
                 </div>
 
-                <div className="bg-green-50 rounded-2xl p-6 mt-4">
-                  <h3 className="text-xl font-bold text-graphite mb-4 font-montserrat">Как это работает:</h3>
-                  <ol className="space-y-2 text-graphite">
+                <div className="bg-green-50 rounded-2xl p-4 lg:p-6 mt-3 lg:mt-4">
+                  <h3 className="text-lg lg:text-xl font-bold text-graphite mb-3 lg:mb-4 font-montserrat">Как это работает:</h3>
+                  <ol className="space-y-1 lg:space-y-2 text-graphite text-sm lg:text-base">
                     <li>1. Нажимаешь «Купить доступ» и оплачиваешь.</li>
                     <li>2. Попадаешь внутрь закрытого канала</li>
                     <li>3. Начинаешь челлендж «7 дней завтраков» и выбираешь рецепты под свой день.</li>
@@ -99,16 +99,16 @@ const SpecialOffer = () => {
 
 
               {/* CTA Button */}
-              <div className="mt-8">
-                <button className="w-full bg-gradient-to-r from-lime-400 to-green-500 text-white py-4 rounded-2xl font-bold text-xl hover:from-lime-500 hover:to-green-600 transition-all duration-300 hover:scale-105 hover:shadow-xl font-montserrat flex items-center justify-center gap-2">
+              <div className="mt-6 lg:mt-8">
+                <button className="w-full bg-gradient-to-r from-lime-400 to-green-500 text-white py-3 lg:py-4 rounded-2xl font-bold text-lg lg:text-xl hover:from-lime-500 hover:to-green-600 transition-all duration-300 hover:scale-105 hover:shadow-xl font-montserrat flex items-center justify-center gap-2">
                   КУПИТЬ ДОСТУП
                   <ArrowRight className="w-6 h-6" />
                 </button>
                 
-                <div className="text-center mt-4">
+                <div className="text-center mt-3 lg:mt-4">
                   <div className="flex items-center justify-center gap-2 text-sage">
                     <Shield className="w-5 h-5 text-mint-500" />
-                    <span className="font-medium font-manrope">Безопасная оплата • Мгновенный доступ</span>
+                    <span className="font-medium font-manrope text-sm lg:text-base">Безопасная оплата • Мгновенный доступ</span>
                   </div>
                 </div>
               </div>

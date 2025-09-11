@@ -93,17 +93,17 @@ const WhatInside = () => {
       <div className="container mx-auto px-6 relative z-10">
         {/* Header */}
         <div ref={headerRef} className="text-center mb-16 animate-on-scroll">
-          <h2 className="text-4xl lg:text-5xl font-bold text-graphite mb-6 font-montserrat">
+          <h2 className="text-3xl lg:text-5xl font-bold text-graphite mb-6 font-montserrat">
             Что внутри канала
           </h2>
         </div>
 
         {/* Stats Bar */}
-        <div ref={statsRef} className="flex flex-wrap justify-center gap-4 mb-16 animate-on-scroll">
+        <div ref={statsRef} className="flex flex-wrap justify-center gap-2 lg:gap-4 mb-12 lg:mb-16 animate-on-scroll">
           {stats.map((stat, index) => (
             <div 
               key={index}
-              className="bg-coral-100 text-coral-600 px-4 py-2 rounded-full text-sm font-semibold font-montserrat"
+              className="bg-coral-100 text-coral-600 px-3 lg:px-4 py-2 rounded-full text-xs lg:text-sm font-semibold font-montserrat"
             >
               {stat.number}
             </div>
@@ -111,35 +111,35 @@ const WhatInside = () => {
         </div>
 
         {/* Main Content Grid */}
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
           {/* Left Side - Numbered List */}
-          <div className="space-y-8">
+          <div className="space-y-6 lg:space-y-8">
             {mainFeatures.map((feature, index) => {
               const featureRef = useScrollAnimation();
               return (
                 <div 
                   key={index}
                   ref={featureRef}
-                  className="flex items-start gap-6 animate-on-scroll"
+                  className="flex items-start gap-4 lg:gap-6 animate-on-scroll"
                 >
                   {/* Number Circle */}
-                  <div className="w-12 h-12 bg-coral-500 text-white rounded-full flex items-center justify-center font-bold text-lg font-montserrat flex-shrink-0">
+                  <div className="w-10 h-10 lg:w-12 lg:h-12 bg-coral-500 text-white rounded-full flex items-center justify-center font-bold text-base lg:text-lg font-montserrat flex-shrink-0">
                     {feature.number}
                   </div>
                   
                   {/* Content */}
                   <div className="flex-1">
-                    <h3 className="text-xl font-bold text-graphite mb-2 font-montserrat">
+                    <h3 className="text-lg lg:text-xl font-bold text-graphite mb-2 font-montserrat">
                       {feature.title}
                     </h3>
-                    <p className="text-sage leading-relaxed font-manrope">
+                    <p className="text-sage leading-relaxed font-manrope text-sm lg:text-base">
                       {feature.description}
                     </p>
                   </div>
 
                   {/* Icon */}
-                  <div className="w-10 h-10 bg-lime-100 rounded-full flex items-center justify-center flex-shrink-0">
-                    <feature.icon className="w-5 h-5 text-lime-600" />
+                  <div className="w-8 h-8 lg:w-10 lg:h-10 bg-lime-100 rounded-full flex items-center justify-center flex-shrink-0">
+                    <feature.icon className="w-4 h-4 lg:w-5 lg:h-5 text-lime-600" />
                   </div>
                 </div>
               );
@@ -148,15 +148,15 @@ const WhatInside = () => {
         </div>
 
         {/* Bonuses Section */}
-        <div ref={bonusesRef} className="mt-20 animate-on-scroll">
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-coral-500 to-terracotta-500 text-white px-8 py-3 rounded-full mb-4 shadow-lg">
+        <div ref={bonusesRef} className="mt-12 lg:mt-20 animate-on-scroll">
+          <div className="text-center mb-8 lg:mb-12">
+            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-coral-500 to-terracotta-500 text-white px-6 lg:px-8 py-3 rounded-full mb-4 shadow-lg">
               <Gift className="w-5 h-5" />
-              <span className="font-bold text-lg font-montserrat">БОНУСЫ</span>
+              <span className="font-bold text-base lg:text-lg font-montserrat">БОНУСЫ</span>
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 mb-8 lg:mb-12 max-w-6xl mx-auto">
             {bonuses.map((bonus, index) => {
               const bonusRef = useScrollAnimation();
               // Цвета для карточек - первая карточка более темная для лучшей читаемости
@@ -176,26 +176,26 @@ const WhatInside = () => {
                 <div 
                   key={index}
                   ref={bonusRef}
-                  className={`rounded-3xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 animate-on-scroll ${cardColors[index]}`}
+                  className={`rounded-3xl p-6 lg:p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 animate-on-scroll ${cardColors[index]}`}
                 >
                   {/* Иконка сверху */}
-                  <div className="flex justify-center mb-6">
-                    <div className="w-24 h-24 flex items-center justify-center">
+                  <div className="flex justify-center mb-4 lg:mb-6">
+                    <div className="w-16 h-16 lg:w-24 lg:h-24 flex items-center justify-center">
                       <img 
                         src={bonus.icon} 
                         alt={bonus.title}
-                        className="w-20 h-20 object-contain"
+                        className="w-12 h-12 lg:w-20 lg:h-20 object-contain"
                       />
                     </div>
                   </div>
                   
                   {/* Заголовок */}
-                  <h4 className={`font-bold mb-3 text-xl font-montserrat ${textColors[index]} min-h-[3rem] flex items-center justify-center`}>
+                  <h4 className={`font-bold mb-2 lg:mb-3 text-lg lg:text-xl font-montserrat ${textColors[index]} min-h-[2.5rem] lg:min-h-[3rem] flex items-center justify-center`}>
                     {bonus.title}
                   </h4>
                   
                   {/* Описание */}
-                  <p className={`text-sm leading-relaxed font-manrope ${textColors[index]} opacity-80`}>
+                  <p className={`text-xs lg:text-sm leading-relaxed font-manrope ${textColors[index]} opacity-80`}>
                     {bonus.description}
                   </p>
                 </div>
@@ -206,7 +206,7 @@ const WhatInside = () => {
 
         {/* CTA Button */}
         <div ref={ctaRef} className="text-center animate-on-scroll">
-          <button className="group bg-gradient-to-r from-coral-500 to-terracotta-500 text-white px-12 py-4 rounded-full font-bold text-xl hover:from-coral-600 hover:to-terracotta-600 transition-all duration-300 hover:scale-105 hover:shadow-2xl font-montserrat relative overflow-hidden animate-pulse-gentle before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/30 before:to-transparent before:translate-x-[-100%] before:animate-[shimmer_2s_infinite] before:skew-x-12 shadow-lg">
+          <button className="group bg-gradient-to-r from-coral-500 to-terracotta-500 text-white px-8 lg:px-12 py-3 lg:py-4 rounded-full font-bold text-lg lg:text-xl hover:from-coral-600 hover:to-terracotta-600 transition-all duration-300 hover:scale-105 hover:shadow-2xl font-montserrat relative overflow-hidden animate-pulse-gentle before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/30 before:to-transparent before:translate-x-[-100%] before:animate-[shimmer_2s_infinite] before:skew-x-12 shadow-lg">
             <span className="relative z-10">ПОЛУЧИТЬ ДОСТУП</span>
           </button>
         </div>

@@ -44,24 +44,24 @@ const FAQ = () => {
     <section id="faq" className="py-20 bg-gradient-to-b from-gray-50 to-white">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-graphite-800 mb-6 font-montserrat">
+          <h2 className="text-3xl lg:text-5xl font-bold text-graphite-800 mb-4 lg:mb-6 font-montserrat">
             Ответы на ваши вопросы
           </h2>
-          <p className="text-xl text-graphite-600 max-w-3xl mx-auto font-manrope">
+          <p className="text-base lg:text-xl text-graphite-600 max-w-3xl mx-auto font-manrope">
             Здесь собраны самые частые вопросы от наших клиентов. Если не найдете ответ на свой вопрос, обязательно напишите нам!
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 max-w-7xl mx-auto mb-8 lg:mb-12">
           {faqItems.map((item, index) => (
             <div 
               key={index}
-              className={`${item.bgColor} rounded-3xl p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2`}
+              className={`${item.bgColor} rounded-3xl p-5 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2`}
             >
-              <h3 className={`text-lg lg:text-xl font-bold mb-4 font-montserrat ${item.textColor}`}>
+              <h3 className={`text-base lg:text-xl font-bold mb-3 lg:mb-4 font-montserrat ${item.textColor}`}>
                 {item.question}
               </h3>
-              <p className={`text-sm lg:text-base leading-relaxed font-manrope ${item.textColor} opacity-90`}>
+              <p className={`text-xs lg:text-base leading-relaxed font-manrope ${item.textColor} opacity-90`}>
                 {item.answer}
               </p>
             </div>
@@ -69,14 +69,14 @@ const FAQ = () => {
         </div>
 
         <div className="text-center">
-          <p className="text-graphite-600 text-base lg:text-lg mb-6 font-manrope">
+          <p className="text-graphite-600 text-sm lg:text-lg mb-4 lg:mb-6 font-manrope">
             Не нашли ответ на свой вопрос?
           </p>
           <a 
             href="https://www.instagram.com/artassya?igsh=MXM3NGNxMDFtd3Vt" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="bg-gradient-to-r from-mint-400 to-green-500 text-white px-6 lg:px-8 py-3 lg:py-4 rounded-full font-bold text-base lg:text-lg hover:from-mint-500 hover:to-green-600 transition-all duration-300 hover:scale-105 hover:shadow-xl font-montserrat inline-block"
+            className="bg-gradient-to-r from-mint-400 to-green-500 text-white px-6 lg:px-8 py-3 lg:py-4 rounded-full font-bold text-sm lg:text-lg hover:from-mint-500 hover:to-green-600 transition-all duration-300 hover:scale-105 hover:shadow-xl font-montserrat inline-block"
           >
             Спроси у меня
           </a>
