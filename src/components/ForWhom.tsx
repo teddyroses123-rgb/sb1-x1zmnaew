@@ -1,88 +1,132 @@
-import React, { useState } from 'react';
-import { HelpCircle } from 'lucide-react';
+import React from 'react';
+import { Target, Clock, Heart, Users, DollarSign, X, Brain, Zap, Utensils, Ban } from 'lucide-react';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
-const FAQ = () => {
-  const faqs = [
+const ForWhom = () => {
+  const headerRef = useScrollAnimation();
+  const tabsRef = useScrollAnimation();
+  const contentRef = useScrollAnimation();
+
+  const forWhom = [
     {
-      question: "Дорого",
-      answer: "Нет 🙂 Вы берёте не файл, а живой канал + комьюнити + бонусы + мою поддержку и готовые решения «что готовить сегодня». Экономия времени и денег: меньше заказов доставки, меньше «пустых» покупок → Поэтому это выгоднее, чем разовая книга.",
-      color: "bg-gradient-to-br from-coral-400 to-red-400 text-white"
+      icon: Target,
+      text: "Тем, кто хочет похудеть без стрессовых диет"
     },
     {
-      question: "Я — вегетарианка/у меня ограничения",
-      answer: "У меня в канале теги и простые замены в каждом рецепте. Если укажете свой профиль, помогу подобрать подборку под вас.",
-      color: "bg-gradient-to-br from-blue-400 to-blue-500 text-white"
+      icon: Clock,
+      text: "Занятым людям, которые ценят быстрые и здоровые рецепты"
     },
     {
-      question: "А если я на ГВ?",
-      answer: "Канал — про общие идеи сбалансированного питания. На ГВ всё индивидуально — ориентируемся на переносимость и рекомендации вашего педиатра.",
-      color: "bg-gradient-to-br from-green-400 to-green-500 text-white"
+      icon: Heart,
+      text: "Тем, кто хочет питаться вкусно без ограничений"
     },
     {
-      question: "Нужны ли кухонные весы и супер-ингредиенты?",
-      answer: "Нет. Все рецепты максимально «из магазина у дома». Весы помогают точности, но не обязательны.",
-      color: "bg-gradient-to-br from-purple-400 to-purple-500 text-white"
+      icon: Users,
+      text: "Людям, которые устали от однообразного питания"
     },
     {
-      question: "Почему канал, а не PDF?",
-      answer: "Потому что живой формат: удобный поиск по тегам, обсуждения, постоянные обновления. Это «с вами каждый день», а не файл, который «лежит мёртвым».",
-      color: "bg-gradient-to-br from-orange-400 to-orange-500 text-white"
+      icon: DollarSign,
+      text: "Тем, кто заботится о здоровье семьи и детей"
+    }
+  ];
+
+  const notForWhom = [
+    {
+      icon: Brain,
+      text: "Тем, кто ищет волшебную таблетку для похудения"
     },
     {
-      question: "Что за бонусы?",
-      answer: "Я не выкладываю их в открытый доступ, потому что это мой личный «секретный раздел»: быстрые схемы, мини-рутины и проверенные решения. Зайдёте в канал — получите доступ к закрытому набору, который я все время пополняю. Именно ради него девчонки остаются надолго. 💛",
-      color: "bg-gradient-to-br from-pink-400 to-pink-500 text-white"
+      icon: Ban,
+      text: "Людям, которые не готовы тратить время на готовку"
     },
     {
-      question: "Сколько действует доступ?",
-      answer: "Доступ дается навсегда. Вход один раз — польза надолго. ✨",
-      color: "bg-gradient-to-br from-teal-400 to-teal-500 text-white"
+      icon: Utensils,
+      text: "Тем, кто хочет есть только фастфуд и сладости"
+    },
+    {
+      icon: Zap,
+      text: "Людям, которые не верят в силу правильного питания"
+    },
+    {
+      icon: X,
+      text: "Тем, кто не готов менять пищевые привычки"
     }
   ];
 
   return (
-    <section id="faq" className="py-20 bg-gradient-to-b from-gray-50 to-gray-100 relative overflow-hidden">
+    <section id="for-whom" className="py-20 bg-gradient-to-b from-cream-50 to-vanilla-100">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-white px-6 py-3 rounded-full shadow-lg mb-6">
-            <HelpCircle className="w-6 h-6 text-coral-500" />
-            <span className="text-coral-600 font-semibold font-montserrat">Частые вопросы</span>
-          </div>
-          
+        <div ref={headerRef} className="text-center mb-16 animate-on-scroll">
           <h2 className="text-4xl lg:text-5xl font-bold text-graphite mb-6 font-montserrat">
-            Ответы на ваши вопросы
+            Для кого этот рецептбук?
           </h2>
         </div>
 
-        {/* FAQ Cards Grid */}
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {faqs.map((faq, index) => (
-              <div 
-                key={index}
-                className={`rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 animate-fade-in-up ${faq.color}`}
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <h3 className="text-lg font-bold mb-4 font-montserrat">
-                  {faq.question}
-                </h3>
-                <p className="leading-relaxed font-manrope text-sm opacity-90">
-                  {faq.answer}
-                </p>
+        <div className="max-w-5xl mx-auto">
+          {/* Header Tabs */}
+          <div ref={tabsRef} className="flex justify-center mb-12 animate-on-scroll">
+            <div className="flex bg-white rounded-full shadow-lg overflow-hidden">
+              <div className="bg-green-500 text-white px-8 py-4 font-bold text-lg font-montserrat flex items-center gap-2">
+                <div className="w-8 h-8 bg-orange-400 rounded-full flex items-center justify-center">
+                  <span className="text-white font-bold">?</span>
+                </div>
+                ПОДХОДИТ
               </div>
-            ))}
+              <div className="bg-red-500 text-white px-8 py-4 font-bold text-lg font-montserrat">
+                НЕ ПОДХОДИТ
+              </div>
+            </div>
           </div>
-        </div>
 
-        <div className="text-center mt-16">
-          <p className="text-sage mb-4 font-manrope">Не нашли ответ на свой вопрос?</p>
-          <button className="bg-gradient-to-r from-mint-400 to-teal-400 text-white px-8 py-3 rounded-full font-semibold hover:from-mint-500 hover:to-teal-500 transition-all duration-300 hover:scale-105 font-montserrat">
-            Написать в поддержку
-          </button>
+          {/* Content Grid */}
+          <div ref={contentRef} className="grid lg:grid-cols-2 gap-8 animate-on-scroll">
+            {/* Подходит */}
+            <div className="space-y-6">
+              {forWhom.map((item, index) => (
+                <div 
+                  key={index}
+                  className="flex items-center gap-4 animate-fade-in-up"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
+                    <item.icon className="w-8 h-8 text-white" />
+                  </div>
+                  <p className="text-graphite-800 font-medium text-lg leading-relaxed font-manrope">
+                    {item.text}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            {/* Разделительная линия */}
+            <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-orange-200 via-orange-400 to-orange-200 transform -translate-x-1/2"></div>
+
+            {/* Не подходит */}
+            <div className="space-y-6">
+              {notForWhom.map((item, index) => (
+                <div 
+                  key={index}
+                  className="flex items-center gap-4 animate-fade-in-up"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  <div className="w-16 h-16 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0">
+                    <item.icon className="w-8 h-8 text-white" />
+                  </div>
+                  <p className="text-graphite-800 font-medium text-lg leading-relaxed font-manrope">
+                    {item.text}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Decorative Elements */}
+          <div className="absolute top-20 left-10 w-12 h-12 bg-green-200 rounded-full opacity-30 animate-float"></div>
+          <div className="absolute bottom-20 right-10 w-8 h-8 bg-red-200 rounded-full opacity-40 animate-float-delayed"></div>
         </div>
       </div>
     </section>
   );
 };
 
-export default FAQ;
+export default ForWhom;
