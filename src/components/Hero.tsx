@@ -18,12 +18,6 @@ const FAQ = () => {
       question: "А если я на ГВ?",
       answer: "Канал — про общие идеи сбалансированного питания. На ГВ всё индивидуально — рекомендую консультацию с нутрициологом или врачом для персональности и рекомендаций именно вашего педиатра.",
       bgColor: "bg-gradient-to-br from-green-400 to-green-500",
-          <a 
-            href="https://www.instagram.com/artassya?igsh=MXM3NGNxMDFtd3Vt" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded flex items-center justify-center hover:from-purple-600 hover:to-pink-600 transition-colors"
-          >
       textColor: "text-white"
     },
     {
