@@ -1,83 +1,109 @@
-import React, { useState } from 'react';
-import { HelpCircle } from 'lucide-react';
+import React from 'react';
+import { Heart, Users, Clock, Target, CheckCircle, ArrowRight } from 'lucide-react';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
-const FAQ = () => {
-  const faqs = [
+const ForWhom = () => {
+  const headerRef = useScrollAnimation();
+  const cardsRef = useScrollAnimation();
+  const ctaRef = useScrollAnimation();
+
+  const targetAudience = [
     {
-      question: "Дорого",
-      answer: "Нет 🙂 Вы берёте не файл, а живой канал + комьюнити + бонусы + мою поддержку и готовые решения «что готовить сегодня». Экономия времени и денег: меньше заказов доставки, меньше «пустых» покупок → Поэтому это выгоднее, чем разовая книга.",
-      color: "bg-gradient-to-br from-coral-400 to-red-400 text-white"
+      icon: Heart,
+      title: "Мамам и женщинам",
+      description: "Которые хотят питаться правильно, но не знают с чего начать. Готовые решения для каждого дня.",
+      color: "from-coral-400 to-pink-400"
     },
     {
-      question: "Я — вегетарианка/у меня ограничения",
-      answer: "У меня в канале теги и простые замены в каждом рецепте. Если укажете свой профиль, помогу подобрать подборку под вас.",
-      color: "bg-gradient-to-br from-blue-400 to-blue-500 text-white"
+      icon: Users,
+      title: "Семьям",
+      description: "Рецепты, которые понравятся всем членам семьи. Никаких отдельных блюд - готовим одно на всех.",
+      color: "from-mint-400 to-teal-400"
     },
     {
-      question: "А если я на ГВ?",
-      answer: "Канал — про общие идеи сбалансированного питания. На ГВ всё индивидуально — ориентируемся на переносимость и рекомендации вашего педиатра.",
-      color: "bg-gradient-to-br from-green-400 to-green-500 text-white"
+      icon: Clock,
+      title: "Занятым людям",
+      description: "Быстрые и простые рецепты из доступных продуктов. Минимум времени - максимум пользы.",
+      color: "from-lime-400 to-green-400"
     },
     {
-      question: "Нужны ли кухонные весы и супер-ингредиенты?",
-      answer: "Нет. Все рецепты максимально «из магазина у дома». Весы помогают точности, но не обязательны.",
-      color: "bg-gradient-to-br from-purple-400 to-purple-500 text-white"
-    },
-    {
-      question: "Почему канал, а не PDF?",
-      answer: "Потому что живой формат: удобный поиск по тегам, обсуждения, постоянные обновления. Это «с вами каждый день», а не файл, который «лежит мёртвым».",
-      color: "bg-gradient-to-br from-orange-400 to-orange-500 text-white"
-    },
-    {
-      question: "Что за бонусы?",
-      answer: "Я не выкладываю их в открытый доступ, потому что это мой личный «секретный раздел»: быстрые схемы, мини-рутины и проверенные решения. Зайдёте в канал — получите доступ к закрытому набору, который я все время пополняю. Именно ради него девчонки остаются надолго. 💛",
-      color: "bg-gradient-to-br from-pink-400 to-pink-500 text-white"
-    },
-    {
-      question: "Сколько действует доступ?",
-      answer: "Доступ дается навсегда. Вход один раз — польза надолго. ✨",
-      color: "bg-gradient-to-br from-teal-400 to-teal-500 text-white"
+      icon: Target,
+      title: "Худеющим",
+      description: "Сбалансированные блюда с подсчитанным КБЖУ. Худейте вкусно и без стресса.",
+      color: "from-terracotta-400 to-coral-400"
     }
   ];
 
   return (
-    <section id="faq" className="py-20 bg-gradient-to-b from-gray-50 to-gray-100 relative overflow-hidden">
+    <section id="for-whom" className="py-20 bg-gradient-to-b from-white to-sage-50">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-white px-6 py-3 rounded-full shadow-lg mb-6">
-            <HelpCircle className="w-6 h-6 text-coral-500" />
-            <span className="text-coral-600 font-semibold font-montserrat">Частые вопросы</span>
-          </div>
-          
+        {/* Header */}
+        <div ref={headerRef} className="text-center mb-16 animate-on-scroll">
           <h2 className="text-4xl lg:text-5xl font-bold text-graphite mb-6 font-montserrat">
-            Ответы на ваши вопросы
+            Для кого этот рецептбук
           </h2>
+          <p className="text-xl text-sage max-w-3xl mx-auto font-manrope">
+            Если вы узнаете себя хотя бы в одном пункте - этот рецептбук точно для вас
+          </p>
         </div>
 
-        {/* FAQ Cards Grid */}
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {faqs.map((faq, index) => (
+        {/* Cards Grid */}
+        <div ref={cardsRef} className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16 animate-on-scroll">
+          {targetAudience.map((item, index) => (
+            <div 
+              key={index}
+              className="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 animate-fade-in-up"
+              style={{ animationDelay: `${index * 0.2}s` }}
+            >
+              <div className={`w-16 h-16 bg-gradient-to-br ${item.color} rounded-2xl mx-auto mb-6 flex items-center justify-center`}>
+                <item.icon className="w-8 h-8 text-white" />
+              </div>
+              
+              <h3 className="text-xl font-bold text-graphite mb-4 text-center font-montserrat">
+                {item.title}
+              </h3>
+              
+              <p className="text-sage leading-relaxed text-center font-manrope">
+                {item.description}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        {/* Benefits List */}
+        <div className="bg-gradient-to-r from-mint-100 to-sage-100 rounded-3xl p-8 mb-12 max-w-4xl mx-auto">
+          <h3 className="text-2xl font-bold text-graphite mb-6 text-center font-montserrat">
+            Почему выбирают наш рецептбук
+          </h3>
+          
+          <div className="grid md:grid-cols-2 gap-4">
+            {[
+              "Проверенные рецепты с точным КБЖУ",
+              "Простые ингредиенты из обычного магазина", 
+              "Подходит для всей семьи",
+              "Экономия времени на планировании меню",
+              "Поддержка сообщества единомышленников",
+              "Постоянные обновления и новые рецепты"
+            ].map((benefit, index) => (
               <div 
                 key={index}
-                className={`rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 animate-fade-in-up ${faq.color}`}
+                className="flex items-center gap-3 animate-fade-in-up"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <h3 className="text-lg font-bold mb-4 font-montserrat">
-                  {faq.question}
-                </h3>
-                <p className="leading-relaxed font-manrope text-sm opacity-90">
-                  {faq.answer}
-                </p>
+                <CheckCircle className="w-6 h-6 text-mint-500 flex-shrink-0" />
+                <span className="text-graphite font-medium font-manrope">{benefit}</span>
               </div>
             ))}
           </div>
         </div>
 
-        <div className="text-center mt-16">
-          <p className="text-sage mb-4 font-manrope">Не нашли ответ на свой вопрос?</p>
-          <button className="bg-gradient-to-r from-mint-400 to-teal-400 text-white px-8 py-3 rounded-full font-semibold hover:from-mint-500 hover:to-teal-500 transition-all duration-300 hover:scale-105 font-montserrat">
-            Написать в поддержку
+        {/* CTA */}
+        <div ref={ctaRef} className="text-center animate-on-scroll">
+          <button className="group bg-gradient-to-r from-coral-500 to-terracotta-500 text-white px-12 py-4 rounded-full font-bold text-xl hover:from-coral-600 hover:to-terracotta-600 transition-all duration-300 hover:scale-105 hover:shadow-2xl font-montserrat">
+            <span className="flex items-center justify-center gap-2">
+              ПОЛУЧИТЬ РЕЦЕПТЫ
+              <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
+            </span>
           </button>
         </div>
       </div>
@@ -85,4 +111,4 @@ const FAQ = () => {
   );
 };
 
-export default FAQ;
+export default ForWhom;

@@ -1,93 +1,141 @@
-import React, { useState } from 'react';
-import { HelpCircle } from 'lucide-react';
+import React from 'react';
+import { ArrowRight, Star, Users, CheckCircle, Instagram } from 'lucide-react';
 
-const FAQ = () => {
-  const faqs = [
-    {
-      question: "Дорого",
-      answer: "Нет 🙂 Вы берёте не файл, а живой канал + комьюнити + бонусы + мою поддержку и готовые решения «что готовить сегодня». Экономия времени и денег: меньше заказов доставки, меньше «пустых» покупок → Поэтому это выгоднее, чем разовая книга.",
-      color: "bg-gradient-to-br from-coral-400 to-red-400 text-white"
-    },
-    {
-      question: "Я — вегетарианка/у меня ограничения",
-      answer: "У меня в канале теги и простые замены в каждом рецепте. Если укажете свой профиль, помогу подобрать подборку под вас.",
-      color: "bg-gradient-to-br from-blue-400 to-blue-500 text-white"
-    },
-    {
-      question: "А если я на ГВ?",
-      answer: "Канал — про общие идеи сбалансированного питания. На ГВ всё индивидуально — ориентируемся на переносимость и рекомендации вашего педиатра.",
-      color: "bg-gradient-to-br from-green-400 to-green-500 text-white"
-    },
-    {
-      question: "Нужны ли кухонные весы и супер-ингредиенты?",
-      answer: "Нет. Все рецепты максимально «из магазина у дома». Весы помогают точности, но не обязательны.",
-      color: "bg-gradient-to-br from-purple-400 to-purple-500 text-white"
-    },
-    {
-      question: "Почему канал, а не PDF?",
-      answer: "Потому что живой формат: удобный поиск по тегам, обсуждения, постоянные обновления. Это «с вами каждый день», а не файл, который «лежит мёртвым».",
-      color: "bg-gradient-to-br from-orange-400 to-orange-500 text-white"
-    },
-    {
-      question: "Что за бонусы?",
-      answer: "Я не выкладываю их в открытый доступ, потому что это мой личный «секретный раздел»: быстрые схемы, мини-рутины и проверенные решения. Зайдёте в канал — получите доступ к закрытому набору, который я все время пополняю. Именно ради него девчонки остаются надолго. 💛",
-      color: "bg-gradient-to-br from-pink-400 to-pink-500 text-white"
-    },
-    {
-      question: "Сколько действует доступ?",
-      answer: "Доступ дается навсегда. Вход один раз — польза надолго. ✨",
-      color: "bg-gradient-to-br from-teal-400 to-teal-500 text-white"
-    }
-  ];
-
+const Hero = () => {
   return (
-    <section id="faq" className="py-20 bg-gradient-to-b from-gray-50 to-gray-100 relative overflow-hidden">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-white px-6 py-3 rounded-full shadow-lg mb-6">
-            <HelpCircle className="w-6 h-6 text-coral-500" />
-            <span className="text-coral-600 font-semibold font-montserrat">Частые вопросы</span>
+    <section className="min-h-screen bg-gradient-to-br from-lime-50 via-mint-50 to-sage-50 relative overflow-hidden">
+      {/* Background decorative elements */}
+      <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-lime-400/20 to-green-400/20 rounded-full blur-xl"></div>
+      <div className="absolute bottom-20 right-10 w-40 h-40 bg-gradient-to-br from-mint-400/20 to-teal-400/20 rounded-full blur-xl"></div>
+      
+      <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-12 relative z-10">
+        {/* Navigation */}
+        <nav className="hidden md:flex justify-between items-center mb-8 sm:mb-12">
+          <div className="flex items-center gap-2">
+            <div className="w-8 h-8 bg-gradient-to-br from-lime-400 to-green-500 rounded-lg flex items-center justify-center">
+              <span className="text-white font-bold text-sm">E&F</span>
+            </div>
+            <span className="font-bold text-graphite text-lg font-montserrat">EAT&FIT</span>
           </div>
           
-          <h2 className="text-4xl lg:text-5xl font-bold text-graphite mb-6 font-montserrat">
-            Ответы на ваши вопросы
-          </h2>
-        </div>
-
-        {/* FAQ Cards Grid */}
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {faqs.map((faq, index) => (
-              <div 
-                key={index}
-                className={`rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 animate-fade-in-up ${faq.color}`}
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <h3 className="text-lg font-bold mb-4 font-montserrat">
-                  {faq.question}
-                </h3>
-                <p className="leading-relaxed font-manrope text-sm opacity-90">
-                  {faq.answer}
-                </p>
-              </div>
-            ))}
+          <div className="flex items-center gap-4">
+            <a 
+              href="https://www.instagram.com/artassya?igsh=MXM3NGNxMDFtd3Vt" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
+            >
+              <Instagram className="w-5 h-5 text-pink-500" />
+            </a>
+            <a 
+              href="https://www.tiktok.com/@artassya?fbclid=PAZXh0bgNhZW0CMTEAAafhvh5g57hgbaHZPf2kwlgnm9etZ0Khwb53SOGkoUF1cxS8wsN8Cljh54b59w_aem_t_N-afXVkUhjh_7fiNOdwg" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
+            >
+              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+              </svg>
+            </a>
           </div>
-        </div>
+        </nav>
 
-        <div className="text-center mt-16">
-          <p className="text-sage mb-4 font-manrope">Не нашли ответ на свой вопрос?</p>
-          <a 
-            href="https://www.tiktok.com/@artassya?fbclid=PAZXh0bgNhZW0CMTEAAafhvh5g57hgbaHZPf2kwlgnm9etZ0Khwb53SOGkoUF1cxS8wsN8Cljh54b59w_aem_t_N-afXVkUhjh_7fiNOdwg" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="bg-gradient-to-r from-mint-400 to-teal-400 text-white px-8 py-3 rounded-full font-semibold hover:from-mint-500 hover:to-teal-500 transition-all duration-300 hover:scale-105 font-montserrat inline-block"
-          >
-            Спроси у меня
-          </a>
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[80vh]">
+          {/* Left Side - Content */}
+          <div className="order-2 lg:order-1 text-center lg:text-left">
+            <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm rounded-full px-4 sm:px-6 py-2 sm:py-3 mb-4 sm:mb-6 shadow-lg">
+              <Star className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-500" />
+              <span className="text-coral-600 font-semibold text-sm sm:text-base font-montserrat">РЕЦЕПТБУК EAT&FIT</span>
+            </div>
+            
+            <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-graphite mb-4 sm:mb-6 leading-tight font-montserrat">
+              Здоровые рецепты для 
+              <span className="block text-transparent bg-gradient-to-r from-lime-500 to-green-600 bg-clip-text">
+                стройности и энергии
+              </span>
+            </h1>
+            
+            <p className="text-lg sm:text-xl text-sage mb-6 sm:mb-8 leading-relaxed font-manrope max-w-2xl mx-auto lg:mx-0">
+              200+ проверенных рецептов с КБЖУ, которые помогут вам питаться вкусно, 
+              полезно и достигать желаемой формы без диет и ограничений
+            </p>
+
+            {/* Benefits */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-6 sm:mb-8 max-w-2xl mx-auto lg:mx-0">
+              {[
+                "Завтраки, обеды, ужины",
+                "КБЖУ для каждого блюда", 
+                "Простые ингредиенты",
+                "Подходит всей семье"
+              ].map((benefit, index) => (
+                <div key={index} className="flex items-center gap-3 animate-fade-in-up" style={{ animationDelay: `${index * 0.1}s` }}>
+                  <CheckCircle className="w-5 h-5 text-mint-500 flex-shrink-0" />
+                  <span className="text-graphite font-medium font-manrope text-sm sm:text-base">{benefit}</span>
+                </div>
+              ))}
+            </div>
+
+            {/* Price */}
+            <div className="mb-6 sm:mb-8">
+              <div className="inline-flex items-center gap-3 sm:gap-4 bg-white/90 backdrop-blur-sm rounded-2xl px-4 sm:px-6 py-3 sm:py-4 shadow-xl">
+                <span className="text-2xl sm:text-3xl text-sage line-through font-montserrat">19 €</span>
+                <span className="text-3xl sm:text-4xl font-bold text-coral-500 font-montserrat">12 €</span>
+                <div className="bg-lime-400 text-white px-2 sm:px-3 py-1 rounded-full font-bold text-sm font-montserrat">-37%</div>
+              </div>
+            </div>
+
+            {/* CTA Button */}
+            <button className="group bg-gradient-to-r from-coral-500 to-terracotta-500 text-white px-8 sm:px-12 py-4 sm:py-5 rounded-full font-bold text-lg sm:text-xl hover:from-coral-600 hover:to-terracotta-600 transition-all duration-300 hover:scale-105 hover:shadow-2xl mb-4 sm:mb-6 font-montserrat w-full sm:w-auto">
+              <span className="flex items-center justify-center gap-2">
+                ПОЛУЧИТЬ РЕЦЕПТЫ СЕЙЧАС
+                <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6 group-hover:translate-x-2 transition-transform" />
+              </span>
+            </button>
+
+            {/* Trust indicators */}
+            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 sm:gap-6 text-sage text-sm font-manrope">
+              <div className="flex items-center gap-2">
+                <Users className="w-4 h-4" />
+                <span>5000+ довольных покупателей</span>
+              </div>
+              <div className="flex items-center gap-1">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
+                ))}
+                <span className="ml-1">4.9/5</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Side - Image */}
+          <div className="order-1 lg:order-2 flex justify-center">
+            <div className="relative max-w-md sm:max-w-lg lg:max-w-xl w-full">
+              <img 
+                src="https://i.ibb.co/V0gMw7fn/E6-DCA96-B-AF56-4-CA1-BAB1-3-C95196837-D0-no-bg-preview-carve-photos.png"
+                alt="Здоровые рецепты EAT&FIT"
+                className="w-full h-auto animate-float"
+              />
+              
+              {/* Floating elements */}
+              <div className="absolute -top-4 -left-4 bg-white rounded-2xl p-3 sm:p-4 shadow-xl animate-bounce-subtle">
+                <div className="text-center">
+                  <div className="text-xl sm:text-2xl font-bold text-coral-500 font-montserrat">200+</div>
+                  <div className="text-xs sm:text-sm text-sage font-manrope">рецептов</div>
+                </div>
+              </div>
+              
+              <div className="absolute -bottom-4 -right-4 bg-gradient-to-br from-lime-400 to-green-500 text-white rounded-2xl p-3 sm:p-4 shadow-xl animate-pulse-gentle">
+                <div className="text-center">
+                  <div className="text-xl sm:text-2xl font-bold font-montserrat">КБЖУ</div>
+                  <div className="text-xs sm:text-sm opacity-90 font-manrope">для каждого</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
   );
 };
 
-export default FAQ;
+export default Hero;
