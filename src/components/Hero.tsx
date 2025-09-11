@@ -1,83 +1,190 @@
-import React, { useState } from 'react';
-import { HelpCircle } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Menu, X, Instagram, Play, Clock, Star, ArrowRight } from 'lucide-react';
 
-const FAQ = () => {
-  const faqs = [
-    {
-      question: "Дорого",
-      answer: "Нет 🙂 Вы берёте не файл, а живой канал + комьюнити + бонусы + мою поддержку и готовые решения «что готовить сегодня». Экономия времени и денег: меньше заказов доставки, меньше «пустых» покупок → Поэтому это выгоднее, чем разовая книга.",
-      color: "bg-gradient-to-br from-coral-400 to-red-400 text-white"
-    },
-    {
-      question: "Я — вегетарианка/у меня ограничения",
-      answer: "У меня в канале теги и простые замены в каждом рецепте. Если укажете свой профиль, помогу подобрать подборку под вас.",
-      color: "bg-gradient-to-br from-blue-400 to-blue-500 text-white"
-    },
-    {
-      question: "А если я на ГВ?",
-      answer: "Канал — про общие идеи сбалансированного питания. На ГВ всё индивидуально — ориентируемся на переносимость и рекомендации вашего педиатра.",
-      color: "bg-gradient-to-br from-green-400 to-green-500 text-white"
-    },
-    {
-      question: "Нужны ли кухонные весы и супер-ингредиенты?",
-      answer: "Нет. Все рецепты максимально «из магазина у дома». Весы помогают точности, но не обязательны.",
-      color: "bg-gradient-to-br from-purple-400 to-purple-500 text-white"
-    },
-    {
-      question: "Почему канал, а не PDF?",
-      answer: "Потому что живой формат: удобный поиск по тегам, обсуждения, постоянные обновления. Это «с вами каждый день», а не файл, который «лежит мёртвым».",
-      color: "bg-gradient-to-br from-orange-400 to-orange-500 text-white"
-    },
-    {
-      question: "Что за бонусы?",
-      answer: "Я не выкладываю их в открытый доступ, потому что это мой личный «секретный раздел»: быстрые схемы, мини-рутины и проверенные решения. Зайдёте в канал — получите доступ к закрытому набору, который я все время пополняю. Именно ради него девчонки остаются надолго. 💛",
-      color: "bg-gradient-to-br from-pink-400 to-pink-500 text-white"
-    }
-  ];
+const Hero = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [timeLeft, setTimeLeft] = useState({
+    days: 2,
+    hours: 23,
+    minutes: 59,
+    seconds: 59
+  });
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeLeft(prev => {
+        if (prev.seconds > 0) {
+          return { ...prev, seconds: prev.seconds - 1 };
+        } else if (prev.minutes > 0) {
+          return { ...prev, minutes: prev.minutes - 1, seconds: 59 };
+        } else if (prev.hours > 0) {
+          return { ...prev, hours: prev.hours - 1, minutes: 59, seconds: 59 };
+        } else if (prev.days > 0) {
+          return { ...prev, days: prev.days - 1, hours: 23, minutes: 59, seconds: 59 };
+        } else {
+          return { days: 2, hours: 23, minutes: 59, seconds: 59 };
+        }
+      });
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
 
   return (
-    <section id="faq" className="py-20 bg-gradient-to-b from-gray-50 to-gray-100 relative overflow-hidden">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-white px-6 py-3 rounded-full shadow-lg mb-6">
-            <HelpCircle className="w-6 h-6 text-coral-500" />
-            <span className="text-coral-600 font-semibold font-montserrat">Частые вопросы</span>
-          </div>
-          
-          <h2 className="text-4xl lg:text-5xl font-bold text-graphite mb-6 font-montserrat">
-            Ответы на ваши вопросы
-          </h2>
-        </div>
+    <section className="relative min-h-screen overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <img 
+          src="https://i.ibb.co/PvN7wXY7/image.png"
+          alt="Hero Background"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-white/10"></div>
+      </div>
 
-        {/* FAQ Cards Grid */}
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {faqs.map((faq, index) => (
-              <div 
-                key={index}
-                className={`rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 animate-fade-in-up ${faq.color}`}
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <h3 className="text-lg font-bold mb-4 font-montserrat">
-                  {faq.question}
-                </h3>
-                <p className="leading-relaxed font-manrope text-sm opacity-90">
-                  {faq.answer}
-                </p>
-              </div>
-            ))}
+      {/* Navigation - Hidden on mobile */}
+      <nav className="hidden lg:flex absolute top-0 left-0 right-0 z-50 justify-between items-center p-6">
+        <div className="flex items-center gap-8">
+          <div className="text-2xl font-bold text-graphite font-montserrat">
+            РЕЦЕПТБУК
+          </div>
+          <div className="flex gap-6">
+            <a href="#what-inside" className="text-graphite hover:text-coral-500 transition-colors font-manrope">Что внутри</a>
+            <a href="#for-whom" className="text-graphite hover:text-coral-500 transition-colors font-manrope">Для кого</a>
+            <a href="#reviews" className="text-graphite hover:text-coral-500 transition-colors font-manrope">Отзывы</a>
+            <a href="#faq" className="text-graphite hover:text-coral-500 transition-colors font-manrope">FAQ</a>
           </div>
         </div>
+        
+        <div className="flex items-center gap-4">
+          <a href="https://instagram.com" className="text-graphite hover:text-coral-500 transition-colors">
+            <Instagram className="w-6 h-6" />
+          </a>
+          <a href="https://tiktok.com" className="text-graphite hover:text-coral-500 transition-colors">
+            <Play className="w-6 h-6" />
+          </a>
+        </div>
+      </nav>
 
-        <div className="text-center mt-16">
-          <p className="text-sage mb-4 font-manrope">Не нашли ответ на свой вопрос?</p>
-          <button className="bg-gradient-to-r from-mint-400 to-teal-400 text-white px-8 py-3 rounded-full font-semibold hover:from-mint-500 hover:to-teal-500 transition-all duration-300 hover:scale-105 font-montserrat">
-            Написать в поддержку
+      {/* Mobile Navigation */}
+      <nav className="lg:hidden absolute top-0 left-0 right-0 z-50 p-4">
+        <div className="flex justify-between items-center">
+          <div className="text-xl font-bold text-graphite font-montserrat">
+            РЕЦЕПТБУК
+          </div>
+          <button 
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="text-graphite"
+          >
+            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
+
+        {isMenuOpen && (
+          <div className="absolute top-full left-0 right-0 bg-white shadow-lg rounded-b-2xl p-6">
+            <div className="flex flex-col gap-4">
+              <a href="#what-inside" className="text-graphite hover:text-coral-500 transition-colors font-manrope">Что внутри</a>
+              <a href="#for-whom" className="text-graphite hover:text-coral-500 transition-colors font-manrope">Для кого</a>
+              <a href="#reviews" className="text-graphite hover:text-coral-500 transition-colors font-manrope">Отзывы</a>
+              <a href="#faq" className="text-graphite hover:text-coral-500 transition-colors font-manrope">FAQ</a>
+              <div className="flex gap-4 pt-4 border-t">
+                <a href="https://instagram.com" className="text-graphite hover:text-coral-500 transition-colors">
+                  <Instagram className="w-6 h-6" />
+                </a>
+                <a href="https://tiktok.com" className="text-graphite hover:text-coral-500 transition-colors">
+                  <Play className="w-6 h-6" />
+                </a>
+              </div>
+            </div>
+          </div>
+        )}
+      </nav>
+
+      {/* Main Content */}
+      <div className="relative z-10 min-h-screen flex items-center">
+        <div className="container mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left Side - Content */}
+            <div className="animate-fade-in-up">
+              {/* Title */}
+              <h1 className="text-4xl lg:text-6xl font-bold text-graphite mb-6 font-montserrat leading-tight">
+                РЕЦЕПТБУК
+                <br />
+                <span className="text-lime-500">EAT&FIT</span>
+              </h1>
+
+              {/* Offer Card */}
+              <div className="bg-white/95 backdrop-blur-sm rounded-3xl p-8 shadow-2xl mb-8 max-w-lg">
+                {/* Discount Badge */}
+                <div className="flex items-center gap-2 mb-4">
+                  <Star className="w-5 h-5 text-lime-500" />
+                  <span className="text-lime-600 font-semibold font-montserrat">АКЦИЯ СЕГОДНЯ</span>
+                </div>
+
+                {/* Price */}
+                <div className="mb-6">
+                  <div className="flex items-baseline gap-3 mb-2">
+                    <span className="text-2xl text-sage line-through font-montserrat">19 €</span>
+                    <span className="text-4xl font-bold text-lime-500 font-montserrat">12 €</span>
+                  </div>
+                </div>
+
+                {/* Timer */}
+                <div className="mb-6">
+                  <div className="flex items-center gap-2 mb-3">
+                    <Clock className="w-5 h-5 text-sage" />
+                    <span className="text-sage font-medium font-manrope">До конца акции:</span>
+                    <span className="text-lime-600 font-bold font-montserrat">37% скидка</span>
+                  </div>
+                  
+                  <div className="grid grid-cols-4 gap-2">
+                    <div className="bg-lime-100 rounded-lg p-3 text-center">
+                      <div className="text-2xl font-bold text-lime-600 font-montserrat">{String(timeLeft.days).padStart(2, '0')}</div>
+                      <div className="text-xs text-sage font-manrope">дней</div>
+                    </div>
+                    <div className="bg-lime-100 rounded-lg p-3 text-center">
+                      <div className="text-2xl font-bold text-lime-600 font-montserrat">{String(timeLeft.hours).padStart(2, '0')}</div>
+                      <div className="text-xs text-sage font-manrope">часов</div>
+                    </div>
+                    <div className="bg-lime-100 rounded-lg p-3 text-center">
+                      <div className="text-2xl font-bold text-lime-600 font-montserrat">{String(timeLeft.minutes).padStart(2, '0')}</div>
+                      <div className="text-xs text-sage font-manrope">минут</div>
+                    </div>
+                    <div className="bg-lime-100 rounded-lg p-3 text-center">
+                      <div className="text-2xl font-bold text-lime-600 font-montserrat">{String(timeLeft.seconds).padStart(2, '0')}</div>
+                      <div className="text-xs text-sage font-manrope">секунд</div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* CTA Button */}
+                <button className="w-full bg-gradient-to-r from-lime-400 to-green-500 text-white py-4 rounded-2xl font-bold text-lg hover:from-lime-500 hover:to-green-600 transition-all duration-300 hover:scale-105 hover:shadow-xl font-montserrat flex items-center justify-center gap-2">
+                  КУПИТЬ СО СКИДКОЙ
+                  <ArrowRight className="w-5 h-5" />
+                </button>
+              </div>
+            </div>
+
+            {/* Right Side - Author Image */}
+            <div className="relative animate-fade-in-right lg:block hidden">
+              <div className="relative">
+                {/* Author credit */}
+                <div className="absolute bottom-4 right-4 bg-white/80 backdrop-blur-sm rounded-full px-4 py-2">
+                  <span className="text-sm text-graphite font-medium font-manrope">Автор: Asya</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+
+      {/* Decorative Elements */}
+      <div className="absolute top-20 right-20 w-4 h-4 bg-lime-400 rounded-full animate-pulse"></div>
+      <div className="absolute top-40 right-32 w-3 h-3 bg-coral-400 rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
+      <div className="absolute bottom-32 left-20 w-5 h-5 bg-mint-400 rounded-full animate-pulse" style={{ animationDelay: '2s' }}></div>
+      <div className="absolute bottom-20 right-16 w-4 h-4 bg-terracotta-400 rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
     </section>
   );
 };
 
-export default FAQ;
+export default Hero;
