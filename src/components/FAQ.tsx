@@ -19,9 +19,6 @@ const FAQ = () => {
       color: "bg-gradient-to-br from-green-400 to-green-500 text-white"
     },
     {
-          >
-            Спроси у меня
-          </a>
       question: "Нужны ли кухонные весы и супер-ингредиенты?",
       answer: "Нет. Все рецепты максимально «из магазина у дома». Весы помогают точности, но не обязательны.",
       color: "bg-gradient-to-br from-purple-400 to-purple-500 text-white"
@@ -35,11 +32,6 @@ const FAQ = () => {
       question: "Что за бонусы?",
       answer: "Я не выкладываю их в открытый доступ, потому что это мой личный «секретный раздел»: быстрые схемы, мини-рутины и проверенные решения. Зайдёте в канал — получите доступ к закрытому набору, который я все время пополняю. Именно ради него девчонки остаются надолго. 💛",
       color: "bg-gradient-to-br from-pink-400 to-pink-500 text-white"
-    },
-    {
-      question: "Сколько действует доступ?",
-      answer: "Доступ дается навсегда. Вход один раз — польза надолго. ✨",
-      color: "bg-gradient-to-br from-teal-400 to-teal-500 text-white"
     }
   ];
 
@@ -79,9 +71,14 @@ const FAQ = () => {
 
         <div className="text-center mt-16">
           <p className="text-sage mb-4 font-manrope">Не нашли ответ на свой вопрос?</p>
-          <button className="bg-gradient-to-r from-mint-400 to-teal-400 text-white px-8 py-3 rounded-full font-semibold hover:from-mint-500 hover:to-teal-500 transition-all duration-300 hover:scale-105 font-montserrat">
-            Написать в поддержку
-          </button>
+          <a 
+            href="https://www.instagram.com/artassya?igsh=MXM3NGNxMDFtd3Vt" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="bg-gradient-to-r from-mint-400 to-teal-400 text-white px-8 py-3 rounded-full font-semibold hover:from-mint-500 hover:to-teal-500 transition-all duration-300 hover:scale-105 font-montserrat inline-block"
+          >
+            Спроси у меня
+          </a>
         </div>
       </div>
     </section>
