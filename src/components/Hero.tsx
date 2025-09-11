@@ -111,6 +111,11 @@ const Hero = () => {
             rel="noopener noreferrer"
             className="w-8 h-8 bg-black rounded flex items-center justify-center hover:bg-gray-800 transition-colors"
           >
+            <img 
+              src="https://i.ibb.co/jPTV0Pmk/free-icon-tiktok-3669950.png" 
+              alt="TikTok"
+              className="w-4 h-4"
+            />
           </a>
           <a 
             href="https://www.instagram.com/artassya?igsh=MXM3NGNxMDFtd3Vt" 
