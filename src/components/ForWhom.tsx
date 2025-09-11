@@ -19,9 +19,6 @@ const FAQ = () => {
       color: "bg-gradient-to-br from-green-400 to-green-500 text-white"
     },
     {
-          >
-            Спроси у меня
-          </a>
       question: "Нужны ли кухонные весы и супер-ингредиенты?",
       answer: "Нет. Все рецепты максимально «из магазина у дома». Весы помогают точности, но не обязательны.",
       color: "bg-gradient-to-br from-purple-400 to-purple-500 text-white"
