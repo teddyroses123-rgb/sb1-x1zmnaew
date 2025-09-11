@@ -67,9 +67,6 @@ const ForWhom = () => {
           <div ref={tabsRef} className="flex justify-center mb-12 animate-on-scroll">
             <div className="flex bg-white rounded-full shadow-lg overflow-hidden">
               <div className="bg-green-500 text-white px-8 py-4 font-bold text-lg font-montserrat flex items-center gap-2">
-                <div className="w-8 h-8 bg-orange-400 rounded-full flex items-center justify-center">
-                  <span className="text-white font-bold">?</span>
-                </div>
                 ПОДХОДИТ
               </div>
               <div className="bg-red-500 text-white px-8 py-4 font-bold text-lg font-montserrat">
