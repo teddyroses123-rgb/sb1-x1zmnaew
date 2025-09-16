@@ -134,7 +134,6 @@ const Hero = () => {
                 </div>
               </div>
               
-              <button className="w-full bg-lime-400 hover:bg-lime-500 text-white py-3 lg:py-4 rounded-full font-bold text-base lg:text-lg transition-all duration-300 hover:scale-105 font-montserrat shadow-lg">
               <button 
                 onClick={handlePayment}
                 className="w-full bg-lime-400 hover:bg-lime-500 text-white py-3 lg:py-4 rounded-full font-bold text-base lg:text-lg transition-all duration-300 hover:scale-105 font-montserrat shadow-lg"
