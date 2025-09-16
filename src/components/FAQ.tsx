@@ -1,5 +1,4 @@
 import React from 'react';
-import { handlePaymentClick } from '../utils/payment';
 
 const FAQ = () => {
   const faqItems = [
@@ -77,16 +76,10 @@ const FAQ = () => {
             href="https://www.instagram.com/artassya?igsh=MXM3NGNxMDFtd3Vt" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="bg-gradient-to-r from-mint-400 to-green-500 text-white px-6 lg:px-8 py-3 lg:py-4 rounded-full font-bold text-sm lg:text-lg hover:from-mint-500 hover:to-green-600 transition-all duration-300 hover:scale-105 hover:shadow-xl font-montserrat inline-block mr-4"
+            className="bg-gradient-to-r from-mint-400 to-green-500 text-white px-6 lg:px-8 py-3 lg:py-4 rounded-full font-bold text-sm lg:text-lg hover:from-mint-500 hover:to-green-600 transition-all duration-300 hover:scale-105 hover:shadow-xl font-montserrat inline-block"
           >
             Спроси у меня
           </a>
-          <button 
-            onClick={handlePaymentClick}
-            className="bg-gradient-to-r from-coral-500 to-terracotta-500 text-white px-6 lg:px-8 py-3 lg:py-4 rounded-full font-bold text-sm lg:text-lg hover:from-coral-600 hover:to-terracotta-600 transition-all duration-300 hover:scale-105 hover:shadow-xl font-montserrat inline-block"
-          >
-            Купить доступ
-          </button>
         </div>
       </div>
     </section>

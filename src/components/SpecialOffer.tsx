@@ -1,7 +1,6 @@
 import React from 'react';
 import { Award, Target, Heart, CheckCircle, ArrowRight, Shield, Euro, Dumbbell, User, BookOpen, Zap, Star } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
-import { handlePaymentClick } from '../utils/payment';
 
 const SpecialOffer = () => {
   const headerRef = useScrollAnimation();
@@ -101,10 +100,7 @@ const SpecialOffer = () => {
 
               {/* CTA Button */}
               <div className="mt-6 lg:mt-8">
-                <button 
-                  onClick={handlePaymentClick}
-                  className="w-full bg-gradient-to-r from-lime-400 to-green-500 text-white py-3 lg:py-4 rounded-2xl font-bold text-lg lg:text-xl hover:from-lime-500 hover:to-green-600 transition-all duration-300 hover:scale-105 hover:shadow-xl font-montserrat flex items-center justify-center gap-2"
-                >
+                <button className="w-full bg-gradient-to-r from-lime-400 to-green-500 text-white py-3 lg:py-4 rounded-2xl font-bold text-lg lg:text-xl hover:from-lime-500 hover:to-green-600 transition-all duration-300 hover:scale-105 hover:shadow-xl font-montserrat flex items-center justify-center gap-2">
                   КУПИТЬ ДОСТУП
                   <ArrowRight className="w-6 h-6" />
                 </button>
