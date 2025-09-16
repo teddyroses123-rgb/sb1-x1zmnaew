@@ -81,15 +81,6 @@ const FAQ = () => {
           >
             Спроси у меня
           </a>
-          
-          <div className="mt-4">
-            <button 
-              onClick={handlePayment}
-              className="bg-gradient-to-r from-coral-500 to-terracotta-500 text-white px-6 lg:px-8 py-3 lg:py-4 rounded-full font-bold text-sm lg:text-lg hover:from-coral-600 hover:to-terracotta-600 transition-all duration-300 hover:scale-105 hover:shadow-xl font-montserrat"
-            >
-              Купить доступ
-            </button>
-          </div>
         </div>
       </div>
     </section>
