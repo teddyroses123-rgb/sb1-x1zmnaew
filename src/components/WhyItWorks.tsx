@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Clock, Star, Flame, ArrowRight, Gift } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import { handlePaymentClick } from '../utils/payment';
 
 const WhyItWorks = () => {
   const headerRef = useScrollAnimation();
@@ -127,7 +128,10 @@ const WhyItWorks = () => {
 
         {/* CTA Button */}
         <div ref={buttonRef} className="text-center animate-on-scroll">
-          <button className="group bg-white text-orange-600 px-6 lg:px-10 py-3 lg:py-4 rounded-full font-bold text-lg lg:text-xl hover:bg-yellow-300 hover:text-graphite transition-all duration-300 hover:scale-105 hover:shadow-2xl mb-4 font-montserrat relative overflow-hidden animate-pulse-gentle">
+          <button 
+            onClick={handlePaymentClick}
+            className="group bg-white text-orange-600 px-6 lg:px-10 py-3 lg:py-4 rounded-full font-bold text-lg lg:text-xl hover:bg-yellow-300 hover:text-graphite transition-all duration-300 hover:scale-105 hover:shadow-2xl mb-4 font-montserrat relative overflow-hidden animate-pulse-gentle"
+          >
             <div className="absolute inset-0 bg-gradient-to-r from-yellow-300/20 to-lime-300/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <span className="relative z-10 flex items-center justify-center gap-2">
               КУПИТЬ ЗА 12 € СЕЙЧАС
