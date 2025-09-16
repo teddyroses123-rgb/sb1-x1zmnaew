@@ -60,4 +60,4 @@ export const handlePayment = () => {
 Или свяжитесь с нами в Instagram: @artassya
     `);
   }
-};</parameter>
+};
