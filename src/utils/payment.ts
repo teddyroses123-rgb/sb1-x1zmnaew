@@ -10,7 +10,7 @@ export const handlePayment = () => {
         destination: 'Доступ к рецептбуку EAT&FIT',
         comment: 'Покупка доступа к закрытому каналу с рецептами'
       },
-      redirectUrl: window.location.href,
+      redirectUrl: 'https://t.me/+_D-q1Uh1isZjNzIy',
       webHookUrl: `${window.location.origin}/webhook`
     };
 
