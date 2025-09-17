@@ -1,5 +1,22 @@
 // Интеграция с Monobank для оплаты
 export const handlePayment = () => {
+  // ТЕСТОВЫЙ РЕЖИМ - раскомментируйте для тестирования редиректа
+  const isTestMode = true; // Поставьте false для реальных платежей
+  
+  if (isTestMode) {
+    // Имитация успешной оплаты для тестирования
+    const confirmTest = confirm('ТЕСТОВЫЙ РЕЖИМ: Имитировать успешную оплату и перейти в Telegram канал?');
+    if (confirmTest) {
+      // Имитируем задержку как при реальной оплате
+      setTimeout(() => {
+        alert('✅ Тестовая оплата прошла успешно! Переходим в Telegram канал...');
+        // Перенаправляем на Telegram канал
+        window.open('https://t.me/+_D-q1Uh1isZjNzIy', '_blank');
+      }, 1000);
+    }
+    return;
+  }
+  
   try {
     // Создаем запрос к Monobank API с правильными заголовками
     const paymentData = {
