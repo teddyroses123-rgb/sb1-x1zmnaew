@@ -1,7 +1,7 @@
 // Интеграция с Monobank для оплаты
 export const handlePayment = () => {
   // ТЕСТОВЫЙ РЕЖИМ - раскомментируйте для тестирования редиректа
-  const isTestMode = true; // Поставьте false для реальных платежей
+  const isTestMode = false; // Поставьте false для реальных платежей
   
   if (isTestMode) {
     // Имитация успешной оплаты для тестирования
@@ -20,7 +20,7 @@ export const handlePayment = () => {
   try {
     // Создаем запрос к Monobank API с правильными заголовками
     const paymentData = {
-      amount: 60000, // 600 грн в копейках
+      amount: 1000, // 10 грн в копейках
       ccy: 980, // UAH
       merchantPaymInfo: {
         reference: `order_${Date.now()}`,
@@ -63,9 +63,9 @@ export const handlePayment = () => {
 // Fallback метод оплаты
 const showFallbackPayment = () => {
   alert(`
-Для оплаты доступа к рецептбуку (600 грн):
+Для оплаты доступа к рецептбуку (10 грн):
 
-1. Переведите 600 грн на карту Monobank
+1. Переведите 10 грн на карту Monobank
 2. В комментарии укажите ваш email или Telegram
 3. После оплаты вам придет ссылка на канал
 
