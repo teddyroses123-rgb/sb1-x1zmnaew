@@ -10,8 +10,8 @@ export const handlePayment = () => {
       // Имитируем задержку как при реальной оплате
       setTimeout(() => {
         alert('✅ Тестовая оплата прошла успешно! Переходим в Telegram канал...');
-        // Перенаправляем на Telegram канал
-        window.open('https://t.me/+_D-q1Uh1isZjNzIy', '_blank');
+        // Используем window.location.href для надежного перенаправления
+        window.location.href = 'https://t.me/+_D-q1Uh1isZjNzIy';
       }, 1000);
     }
     return;
