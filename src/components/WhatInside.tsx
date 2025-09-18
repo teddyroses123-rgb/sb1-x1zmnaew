@@ -196,7 +196,7 @@ const WhatInside = () => {
                 <div 
                   key={index}
                   ref={bonusRef}
-                  className={`rounded-3xl p-6 lg:p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 animate-on-scroll ${cardColors[index]}`}
+                  className={`rounded-3xl p-6 lg:p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 animate-on-scroll flex flex-col h-full ${cardColors[index]}`}
                 >
                   {/* Иконка сверху */}
                   <div className="flex justify-center mb-4 lg:mb-6">
@@ -215,13 +215,13 @@ const WhatInside = () => {
                   </h4>
                   
                   {/* Описание */}
-                  <p className={`text-xs lg:text-sm leading-relaxed font-manrope ${textColors[index]} opacity-80`}>
+                  <p className={`text-xs lg:text-sm leading-relaxed font-manrope ${textColors[index]} opacity-80 mb-4`}>
                     {bonus.description}
                   </p>
                   
                   {/* Подпункты */}
                   {bonus.details && bonus.details.length > 0 && (
-                    <ul className={`mt-2 lg:mt-3 space-y-1 text-xs lg:text-sm ${textColors[index]} opacity-70`}>
+                    <ul className={`mt-auto space-y-1 text-xs lg:text-sm ${textColors[index]} opacity-70`}>
                       {bonus.details.map((detail, detailIndex) => (
                         <li key={detailIndex} className="flex items-start gap-1">
                           <span className="text-xs mt-0.5">•</span>
