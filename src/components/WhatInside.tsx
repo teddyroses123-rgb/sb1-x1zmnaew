@@ -214,19 +214,19 @@ const WhatInside = () => {
                     </div>
                   </div>
                   
-                  {/* Контент по центру */}
-                  <div className="flex flex-col justify-center flex-1">
-                    {/* Заголовок */}
+                  {/* Заголовок и описание - выровнены по верху */}
+                  <div className="mb-4">
                     <h4 className={`font-bold mb-2 lg:mb-3 text-lg lg:text-xl font-montserrat ${textColors[index]}`}>
                       {bonus.title}
                     </h4>
                     
-                    {/* Описание */}
-                    <p className={`text-xs lg:text-sm leading-relaxed font-manrope ${textColors[index]} opacity-80 mb-4`}>
+                    <p className={`text-xs lg:text-sm leading-relaxed font-manrope ${textColors[index]} opacity-80`}>
                       {bonus.description}
                     </p>
-                    
-                    {/* Подпункты */}
+                  </div>
+                  
+                  {/* Подпункты - центрированы в оставшемся пространстве */}
+                  <div className="flex-1 flex items-center justify-center">
                     {bonus.details && bonus.details.length > 0 && (
                       <ul className={`space-y-1 text-xs lg:text-sm ${textColors[index]} opacity-70`}>
                         {bonus.details.map((detail, detailIndex) => (
