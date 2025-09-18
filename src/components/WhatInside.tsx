@@ -170,6 +170,26 @@ const WhatInside = () => {
               );
             })}
           </div>
+
+          {/* Right Side - Video */}
+          <div className="flex justify-center lg:justify-end">
+            <div className="relative max-w-md w-full">
+              <video 
+                className="w-full h-auto rounded-3xl shadow-2xl"
+                autoPlay
+                muted
+                loop
+                playsInline
+              >
+                <source src="https://res.cloudinary.com/dij7vx3my/video/upload/v1758212742/0918_bqqypi.mp4" type="video/mp4" />
+                Ваш браузер не поддерживает видео.
+              </video>
+              
+              {/* Decorative overlay */}
+              <div className="absolute -bottom-4 -right-4 w-20 h-20 bg-gradient-to-br from-lime-400/30 to-green-400/30 rounded-full blur-xl"></div>
+              <div className="absolute -top-4 -left-4 w-16 h-16 bg-gradient-to-br from-coral-400/30 to-terracotta-400/30 rounded-full blur-xl"></div>
+            </div>
+          </div>
         </div>
 
         {/* Bonuses Section */}
