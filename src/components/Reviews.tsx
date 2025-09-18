@@ -4,25 +4,32 @@ import { Star, Quote } from 'lucide-react';
 const Reviews = () => {
   const reviews = [
     {
-      name: "Анна Петрова",
+      name: "Оксана Гончар",
       age: "29 лет",
-      text: "За 2 месяца похудела на 8 кг, готовя по этим рецептам! Еда вкусная, сытная, а главное - полезная. Семья в восторге!",
+      text: "Рецепты простые, всё готовится быстро, а блюда реально вкусные. Муж тоже подключился - худею сама, и балую вкусненьким мужа!",
       rating: 5,
       image: "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
     },
     {
-      name: "Мария Сидорова",
-      age: "35 лет",
-      text: "Наконец-то нашла рецепты, которые подходят всей семье! Дети едят с удовольствием, а я худею. Рекомендую всем мамам!",
+      name: "Ирина Коваленко",
+      age: "33 года",
+      text: "Очень удобно: не нужно ломать голову, что приготовить. Все рецепты из обычных продуктов, которые есть в магазине возле дома. Экономлю время и деньги.",
       rating: 5,
       image: "https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
     },
     {
-      name: "Елена Козлова",
-      age: "42 года",
-      text: "Больше не мучаюсь вопросом 'что приготовить'. Рецепты простые, продукты доступные. За месяц -5 кг без диет!",
+      name: "Татьяна Мельник",
+      age: "45 лет",
+      text: "Мне важно было наладить питание без строгих диет. Благодаря этому сборнику ушли лишние 4 кг за месяц, и самое главное — появилось больше энергии.",
       rating: 5,
       image: "https://images.pexels.com/photos/1130626/pexels-photo-1130626.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
+    },
+    {
+      name: "Наталия Шевченко",
+      age: "24 года",
+      text: "Я студентка, и у меня мало времени на готовку и никогда нет идей что приготовить. Эти рецепты моё спасение: быстро, недорого и полезно)",
+      rating: 5,
+      image: "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
     }
   ];
 
@@ -36,6 +43,7 @@ const Reviews = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8">
           {reviews.map((review, index) => (
             <div 
               key={index}
