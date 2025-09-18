@@ -180,7 +180,8 @@ const WhatInside = () => {
                   mixBlendMode: 'multiply',
                   filter: 'contrast(1.2) saturate(0)',
                   aspectRatio: '9/16',
-                  maxHeight: '500px'
+                  maxHeight: '600px',
+                  objectPosition: 'center center'
                 }}
                 autoPlay
                 muted
