@@ -8,28 +8,28 @@ const Reviews = () => {
       age: "29 лет",
       text: "Рецепты простые, всё готовится быстро, а блюда реально вкусные. Муж тоже подключился - худею сама, и балую вкусненьким мужа!",
       rating: 5,
-      image: "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
+      image: "https://i.ibb.co/DS6PVRC/IMG-20250918-152536-234.jpg"
     },
     {
       name: "Ирина Коваленко",
       age: "33 года",
       text: "Очень удобно: не нужно ломать голову, что приготовить. Все рецепты из обычных продуктов, которые есть в магазине возле дома. Экономлю время и деньги.",
       rating: 5,
-      image: "https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
+      image: "https://i.ibb.co/jZJ5kZnf/IMG-20250918-152538-322.jpg"
     },
     {
       name: "Татьяна Мельник",
       age: "45 лет",
       text: "Мне важно было наладить питание без строгих диет. Благодаря этому сборнику ушли лишние 4 кг за месяц, и самое главное — появилось больше энергии.",
       rating: 5,
-      image: "https://images.pexels.com/photos/1130626/pexels-photo-1130626.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
+      image: "https://i.ibb.co/RpM3vKQt/IMG-20250918-152539-979.jpg"
     },
     {
       name: "Наталия Шевченко",
       age: "24 года",
       text: "Я студентка, и у меня мало времени на готовку и никогда нет идей что приготовить. Эти рецепты моё спасение: быстро, недорого и полезно)",
       rating: 5,
-      image: "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
+      image: "https://i.ibb.co/fdXyzmTx/IMG-20250918-152542-387.jpg"
     }
   ];
 
