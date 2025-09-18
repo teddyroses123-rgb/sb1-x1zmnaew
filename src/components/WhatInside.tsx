@@ -185,7 +185,7 @@ const WhatInside = () => {
                 loop
                 playsInline
               >
-                <source src="https://res.cloudinary.com/dij7vx3my/video/upload/v1758213492/0918_1_zsoncz.mp4" type="video/mp4" />
+                <source src="https://res.cloudinary.com/dij7vx3my/video/upload/v1758227171/0918_2_opd6i2.mp4" type="video/mp4" />
                 Ваш браузер не поддерживает видео.
               </video>
               
