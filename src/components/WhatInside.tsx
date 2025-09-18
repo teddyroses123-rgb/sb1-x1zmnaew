@@ -214,27 +214,30 @@ const WhatInside = () => {
                     </div>
                   </div>
                   
-                  {/* Заголовок */}
-                  <h4 className={`font-bold mb-2 lg:mb-3 text-lg lg:text-xl font-montserrat ${textColors[index]} min-h-[2.5rem] lg:min-h-[3rem] flex items-center justify-center`}>
-                    {bonus.title}
-                  </h4>
-                  
-                  {/* Описание */}
-                  <p className={`text-xs lg:text-sm leading-relaxed font-manrope ${textColors[index]} opacity-80 mb-4`}>
-                    {bonus.description}
-                  </p>
-                  
-                  {/* Подпункты */}
-                  {bonus.details && bonus.details.length > 0 && (
-                    <ul className={`mt-auto space-y-1 text-xs lg:text-sm ${textColors[index]} opacity-70`}>
-                      {bonus.details.map((detail, detailIndex) => (
-                        <li key={detailIndex} className="flex items-start gap-1">
-                          <span className="text-xs mt-0.5">•</span>
-                          <span className="leading-tight">{detail}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
+                  {/* Контент по центру */}
+                  <div className="flex flex-col justify-center flex-1">
+                    {/* Заголовок */}
+                    <h4 className={`font-bold mb-2 lg:mb-3 text-lg lg:text-xl font-montserrat ${textColors[index]}`}>
+                      {bonus.title}
+                    </h4>
+                    
+                    {/* Описание */}
+                    <p className={`text-xs lg:text-sm leading-relaxed font-manrope ${textColors[index]} opacity-80 mb-4`}>
+                      {bonus.description}
+                    </p>
+                    
+                    {/* Подпункты */}
+                    {bonus.details && bonus.details.length > 0 && (
+                      <ul className={`space-y-1 text-xs lg:text-sm ${textColors[index]} opacity-70`}>
+                        {bonus.details.map((detail, detailIndex) => (
+                          <li key={detailIndex} className="flex items-start gap-1">
+                            <span className="text-xs mt-0.5">•</span>
+                            <span className="leading-tight">{detail}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
                 </div>
               );
             })}
