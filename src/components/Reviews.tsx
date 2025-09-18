@@ -33,9 +33,6 @@ const Reviews = () => {
           <h2 className="text-2xl lg:text-4xl xl:text-5xl font-bold text-graphite mb-4 lg:mb-6 font-montserrat">
             Отзывы покупателей
           </h2>
-          <p className="text-base lg:text-xl text-sage max-w-3xl mx-auto font-manrope">
-            Более 5000 человек уже изменили свою жизнь с помощью наших рецептов
-          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8">
