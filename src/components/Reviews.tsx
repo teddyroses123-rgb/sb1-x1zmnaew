@@ -53,7 +53,9 @@ const Reviews = () => {
                 <img 
                   src={review.image}
                   alt={review.name}
-                  className="w-12 h-12 lg:w-16 lg:h-16 rounded-full object-cover"
+                  className={`w-12 h-12 lg:w-16 lg:h-16 rounded-full object-cover ${
+                    review.name === "Ирина Коваленко" ? "object-top" : ""
+                  }`}
                 />
                 <div>
                   <h4 className="font-bold text-graphite text-sm lg:text-lg font-montserrat">{review.name}</h4>
