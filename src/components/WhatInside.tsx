@@ -226,7 +226,7 @@ const WhatInside = () => {
                   </div>
                   
                   {/* Подпункты - центрированы в оставшемся пространстве */}
-                  <div className="flex-1 flex items-center justify-center">
+                  <div className="flex-1 flex items-start justify-center">
                     {bonus.details && bonus.details.length > 0 && (
                       <ul className={`space-y-1 text-xs lg:text-sm ${textColors[index]} opacity-70`}>
                         {bonus.details.map((detail, detailIndex) => (
