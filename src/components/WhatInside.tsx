@@ -175,12 +175,10 @@ const WhatInside = () => {
           <div className="flex justify-center lg:justify-end">
             <div className="relative max-w-md w-full">
               <video 
-                className="w-full h-auto rounded-3xl shadow-2xl object-cover"
+                className="w-full h-auto rounded-3xl shadow-2xl"
                 style={{
                   mixBlendMode: 'multiply',
-                  filter: 'contrast(1.2) saturate(0)',
-                  aspectRatio: '9/16',
-                  maxHeight: '500px'
+                  filter: 'contrast(1.2) saturate(0)'
                 }}
                 autoPlay
                 muted
