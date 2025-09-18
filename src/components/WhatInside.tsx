@@ -52,22 +52,38 @@ const WhatInside = () => {
     {
       icon: "https://i.ibb.co/XhNmmLM/image.png",
       title: "«Правильная тарелка»",
-      description: "Наглядная схема баланса БЖУ и порций"
+      description: "Наглядная схема баланса БЖУ и порций",
+      details: [
+        "яркие GIF-анимации, показывающие, как собрать тарелку",
+        "карточки с пояснениями по каждой группе продуктов",
+        "примеры сочетаний для сбалансированного питания"
+      ]
     },
     {
       icon: "https://i.ibb.co/p6jKNLy1/image.png",
       title: "Рекомендации по уходу за кожей",
-      description: "Секреты красоты и здоровья"
+      description: "Секреты красоты и здоровья",
+      details: [
+        "подборка лучших скрабов, масел и кремов",
+        "ссылки на проверенные продукты и аксессуары (щётки, массажёры и тп)",
+        "пошаговые советы по уходу и простые ритуалы дома"
+      ]
     },
     {
       icon: "https://i.ibb.co/R4T0DYTX/image.png",
       title: "Видео МФР",
-      description: "Миофасциальный релиз для расслабления и восстановления"
+      description: "Миофасциальный релиз для расслабления и восстановления",
+      details: [
+        "серия видео для разных зон (икры, бедра, спина, руки)",
+        "техники миофасциального релиза для снятия напряжения и расслабления",
+        "рекомендации по выбору роликов и мячей для самомассажа"
+      ]
     },
     {
       icon: "https://i.ibb.co/Q1LSCHC/image.png",
       title: "Индивидуальный подсчёт КБЖУ",
-      description: "Для первых участников канала"
+      description: "Для первых участников канала",
+      details: []
     }
   ];
 
@@ -202,6 +218,18 @@ const WhatInside = () => {
                   <p className={`text-xs lg:text-sm leading-relaxed font-manrope ${textColors[index]} opacity-80`}>
                     {bonus.description}
                   </p>
+                  
+                  {/* Подпункты */}
+                  {bonus.details && bonus.details.length > 0 && (
+                    <ul className={`mt-2 lg:mt-3 space-y-1 text-xs lg:text-sm ${textColors[index]} opacity-70`}>
+                      {bonus.details.map((detail, detailIndex) => (
+                        <li key={detailIndex} className="flex items-start gap-1">
+                          <span className="text-xs mt-0.5">•</span>
+                          <span className="leading-tight">{detail}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </div>
               );
             })}
