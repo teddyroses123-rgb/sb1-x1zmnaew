@@ -75,7 +75,7 @@ const FinalBlock = () => {
             className="group bg-white text-green-700 px-12 py-6 rounded-full font-bold text-2xl hover:bg-yellow-300 hover:text-green-800 transition-all duration-300 hover:scale-110 hover:shadow-2xl font-montserrat flex items-center justify-center gap-3 mx-auto animate-pulse-gentle"
           >
             <Download className="w-6 h-6" />
-            КУПИТЬ ДОСТУП И ВОЙТИ В КАНАЛ
+            ПОЛУЧИТЬ ДОСТУП И ВОЙТИ В КАНАЛ
             <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
           </button>
         </div>
