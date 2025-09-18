@@ -176,12 +176,16 @@ const WhatInside = () => {
             <div className="relative max-w-md w-full">
               <video 
                 className="w-full h-auto rounded-3xl shadow-2xl"
+                style={{
+                  mixBlendMode: 'multiply',
+                  filter: 'contrast(1.2) saturate(0)'
+                }}
                 autoPlay
                 muted
                 loop
                 playsInline
               >
-                <source src="https://res.cloudinary.com/dij7vx3my/video/upload/v1758212742/0918_bqqypi.mp4" type="video/mp4" />
+                <source src="https://res.cloudinary.com/dij7vx3my/video/upload/v1758213492/0918_1_zsoncz.mp4" type="video/mp4" />
                 Ваш браузер не поддерживает видео.
               </video>
               
