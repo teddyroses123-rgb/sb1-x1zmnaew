@@ -136,7 +136,7 @@ const WhatInside = () => {
         </div>
 
         {/* Main Content Grid */}
-        <div className="grid lg:grid-cols-2 gap-12 items-start max-w-6xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
           {/* Left Side - Numbered List */}
           <div className="space-y-6 lg:space-y-8">
             {mainFeatures.map((feature, index) => {
@@ -169,11 +169,6 @@ const WhatInside = () => {
                 </div>
               );
             })}
-          </div>
-
-          {/* Right Side - Empty space where video was */}
-          <div className="hidden lg:block">
-            {/* This space is intentionally left empty after video removal */}
           </div>
         </div>
 

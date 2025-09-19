@@ -43,6 +43,18 @@ const Hero = () => {
 
       {/* Social Icons - Top Right */}
       <div className="absolute top-6 right-6 z-20 flex items-center space-x-3">
+        <a
+          href="https://www.tiktok.com/@artassya" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
+        >
+          <img 
+            src="https://i.ibb.co/jPTV0Pmk/free-icon-tiktok-3669950.png"
+            alt="TikTok"
+            className="w-6 h-6"
+          />
+        </a>
         <a 
           href="https://www.instagram.com/artassya?igsh=MXM3NGNxMDFtd3Vt" 
           target="_blank" 
