@@ -69,12 +69,12 @@ const WhyItWorks = () => {
             </div>
             
             <div className="text-xl lg:text-3xl font-bold text-white mb-2 font-montserrat">
-              <span className="line-through text-white/50 text-base lg:text-xl">950 грн</span>
-              <div className="text-yellow-300 animate-pulse text-xl lg:text-3xl">600 грн</div>
+              <span className="line-through text-white/50 text-base lg:text-xl">19 €</span>
+              <div className="text-yellow-300 animate-pulse text-xl lg:text-3xl">12 €</div>
             </div>
             
             <p className="text-xs lg:text-sm text-white font-manrope">
-              Экономьте <span className="font-bold text-yellow-300">350 грн</span> прямо сейчас!
+              Экономьте <span className="font-bold text-yellow-300">7 €</span> прямо сейчас!
             </p>
           </div>
         </div>
@@ -134,7 +134,7 @@ const WhyItWorks = () => {
           >
             <div className="absolute inset-0 bg-gradient-to-r from-yellow-300/20 to-lime-300/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <span className="relative z-10 flex items-center justify-center gap-2">
-              КУПИТЬ ЗА 600 ГРН СЕЙЧАС
+              КУПИТЬ ЗА 12 € СЕЙЧАС
               <ArrowRight className="w-4 h-4 lg:w-5 lg:h-5 group-hover:translate-x-2 transition-transform" />
             </span>
           </button>

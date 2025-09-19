@@ -94,8 +94,8 @@ const Hero = () => {
               
               <div className="mb-4 lg:mb-6">
                 <div className="flex items-center gap-4 mb-2">
-                  <span className="line-through text-lg lg:text-xl text-gray-500 font-montserrat">950 грн</span>
-                  <span className="font-bold text-3xl lg:text-4xl font-montserrat text-lime-600">600 грн</span>
+                  <span className="line-through text-lg lg:text-xl text-gray-500 font-montserrat">19 €</span>
+                  <span className="font-bold text-3xl lg:text-4xl font-montserrat text-lime-600">12 €</span>
                 </div>
                 <div className="text-gray-600 text-sm font-manrope">
                   До конца акции: <span className="text-lime-600 font-bold">37% скидка</span>
