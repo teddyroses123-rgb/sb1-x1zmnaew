@@ -136,9 +136,9 @@ const WhatInside = () => {
         </div>
 
         {/* Main Content Grid */}
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
+        <div className="max-w-4xl mx-auto">
           {/* Left Side - Numbered List */}
-          <div className="space-y-6 lg:space-y-8">
+          <div className="space-y-6 lg:space-y-8 max-w-3xl mx-auto">
             {mainFeatures.map((feature, index) => {
               const featureRef = useScrollAnimation();
               return (
@@ -169,30 +169,6 @@ const WhatInside = () => {
                 </div>
               );
             })}
-          </div>
-
-          {/* Right Side - Video */}
-          <div className="flex justify-center lg:justify-end">
-            <div className="relative max-w-md w-full">
-              <video 
-                className="w-full h-auto rounded-3xl shadow-2xl"
-                style={{
-                  mixBlendMode: 'multiply',
-                  filter: 'contrast(1.2) saturate(0)'
-                }}
-                autoPlay
-                muted
-                loop
-                playsInline
-              >
-                <source src="https://res.cloudinary.com/dij7vx3my/video/upload/v1758227171/0918_2_opd6i2.mp4" type="video/mp4" />
-                Ваш браузер не поддерживает видео.
-              </video>
-              
-              {/* Decorative overlay */}
-              <div className="absolute -bottom-4 -right-4 w-20 h-20 bg-gradient-to-br from-lime-400/30 to-green-400/30 rounded-full blur-xl"></div>
-              <div className="absolute -top-4 -left-4 w-16 h-16 bg-gradient-to-br from-coral-400/30 to-terracotta-400/30 rounded-full blur-xl"></div>
-            </div>
           </div>
         </div>
 
