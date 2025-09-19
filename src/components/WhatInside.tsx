@@ -136,9 +136,9 @@ const WhatInside = () => {
         </div>
 
         {/* Main Content Grid */}
-        <div className="max-w-4xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-12 items-start max-w-6xl mx-auto">
           {/* Left Side - Numbered List */}
-          <div className="space-y-6 lg:space-y-8 max-w-3xl mx-auto">
+          <div className="space-y-6 lg:space-y-8">
             {mainFeatures.map((feature, index) => {
               const featureRef = useScrollAnimation();
               return (
@@ -169,6 +169,11 @@ const WhatInside = () => {
                 </div>
               );
             })}
+          </div>
+
+          {/* Right Side - Empty space where video was */}
+          <div className="hidden lg:block">
+            {/* This space is intentionally left empty after video removal */}
           </div>
         </div>
 
