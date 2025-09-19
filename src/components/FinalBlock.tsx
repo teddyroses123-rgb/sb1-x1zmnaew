@@ -61,10 +61,10 @@ const FinalBlock = () => {
         <div className="text-center mb-8">
           <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 max-w-md mx-auto mb-6">
             <div className="text-6xl font-bold mb-4 font-montserrat">
-              <span className="line-through text-gray-500">19 €</span>
-              <span className="text-yellow-300 ml-4">12 €</span>
+              <span className="line-through text-gray-500">950 грн</span>
+              <span className="text-yellow-300 ml-4">600 грн</span>
             </div>
-            <p className="text-yellow-300 text-xl font-semibold font-montserrat">Экономия 7 € только сегодня!</p>
+            <p className="text-yellow-300 text-xl font-semibold font-montserrat">Экономия 350 грн только сегодня!</p>
           </div>
         </div>
 
